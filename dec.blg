@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: dec.aux
+The style file: aiaa.bst
+Database file #1: journals-full.bib
+Database file #2: cfd.bib
+Database file #3: myrefs.bib
+Warning--empty pages in charest:2008
+You've used 23 entries,
+            2292 wiz_defined-function locations,
+            877 strings with 11008 characters,
+and the built_in function-call counts, 4673 in all, are:
+= -- 360
+> -- 177
+< -- 9
++ -- 70
+- -- 47
+* -- 420
+:= -- 663
+add.period$ -- 38
+call.type$ -- 23
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 252
+empty$ -- 523
+format.name$ -- 47
+if$ -- 1038
+int.to.chr$ -- 0
+int.to.str$ -- 23
+missing$ -- 23
+newline$ -- 73
+num.names$ -- 23
+pop$ -- 82
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 98
+stack$ -- 0
+substring$ -- 285
+swap$ -- 92
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 43
+width$ -- 25
+write$ -- 204
+(There was 1 warning)

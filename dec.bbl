@@ -1,0 +1,112 @@
+\begin{thebibliography}{10}
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem{hellman:2007}
+Hellman, A.~N., Kaustubh, R.~R., Yoon, H.~H., Bae, S., Palmer, J.~F., Phillips,
+  K.~S., Allbritton, N.~L., and Venugopalan, V., \enquote{Laser-Induced Mixing
+  in Microfluidic Channels,} {\em Anal. Chem\/}, Vol.~79, 2007, pp.~4484--4492.
+
+\bibitem{divitiis:1994}
+de~Divitiis, N., de~Matteis, G., and de~Socio, L.~M., \enquote{Dynamics of
+  Aerospace Vehicles at Very High Altitudes,} {\em Meccanica\/}, Vol.~29, 1994,
+  pp.~61--80.
+
+\bibitem{mcdonald:2005a}
+McDonald, J. and Groth, C. P.~T., \enquote{Numerical Modeling of Micron-Scale
+  Flows Using the Gaussian Moment Closure,} Paper 2005-5035, AIAA, June 2005.
+
+\bibitem{mcdonald:2008}
+McDonald, J. and Groth, C. P.~T., \enquote{Extended Fluid-Dynamic Model for
+  Micron-Scale Flows Based on Gaussian Moment Closure,} Paper 2008-691, AIAA,
+  January 2008.
+
+\bibitem{gombosi:1994a}
+Gombosi, T.~I., {\em Gaskinetic Theory\/}, Cambridge University Press,
+  Cambridge, 1994.
+
+\bibitem{bhatnagar:1954}
+Bhatnagar, P.~L., Gross, E.~P., and Krook, M., \enquote{A Model for Collision
+  Processes in Gases. I.\ Small Amplitude Processes in Charged and Neutral
+  One-Component Systems,} {\em Physical Review\/}, Vol.~94, No.~3, 1954,
+  pp.~511--525.
+
+\bibitem{bird:1976}
+Bird, G.~A., {\em Molecular Gas Dynamics\/}, Clarendon Press, Oxford, 1976.
+
+\bibitem{holway:1966}
+Holway, L.~H., \enquote{New Statistical Methods for Kinetic Theory: Methods of
+  Construction,} {\em Physics of Fluids\/}, Vol.~9, No.~9, 1966,
+  pp.~1658--1673.
+
+\bibitem{grad:1949}
+Grad, H., \enquote{On the Kinetic Theory of Rarefied Gases,} {\em
+  Communications on Pure and Applied Mathematics\/}, Vol.~2, 1949,
+  pp.~331--407.
+
+\bibitem{levermore:1996a}
+Levermore, C.~D., \enquote{Moment Closure Hierarchies for Kinetic Theories,}
+  {\em Journal of Statistical Physics\/}, Vol.~83, 1996, pp.~1021--1065.
+
+\bibitem{hittinger:2000}
+Hittinger, J.~A., {\em Foundations for the Generalization of the Godunov Method
+  to Hyperbolic Systems with Stiff Relaxation Source Terms\/}, Ph.D. thesis,
+  University of Michigan, 2000.
+
+\bibitem{struchtrup:2003}
+Struchtrup, H. and Torrilhon, M., \enquote{Regularization of Grad's 13 Moment
+  Equations: Derivation and Linear Analysis,} {\em Physics of Fluids\/},
+  Vol.~15, 2003, pp.~2668--2680.
+
+\bibitem{mcdonald:2010}
+McDonald, J., {\em Extended Fluid-Dynamic Modelling for Numerical Solution of
+  Micro-Scale Flows\/}, Ph.D. thesis, University of Toronto, 2010.
+
+\bibitem{charest:2008}
+Charest, M. R.~J., Groth, C. P.~T., and G{\"{u}}lder, {\"{O}}.~L., \enquote{A
+  Parallel Solution Adaptive Method for Radiative Heat Transfer Using a
+  Newton-Krylov Approach,} {\em Proceedings of the 18th Annual Conference of
+  the CFD Society of Canada, London, Ontario, Canada, May 18-19, 2010\/}, 2010.
+
+\bibitem{groth:2005}
+Groth, C. P.~T. and Northrup, S.~A., \enquote{Parallel Implicit Adaptive Mesh
+  Refinement Scheme for Body-Fitted Multi-Block Mesh,} Paper 2005-5333, AIAA,
+  June 2005.
+
+\bibitem{saad:1986}
+Saad, Y. and Schultz, M.~H., \enquote{{G}{M}{R}{E}{S}: A Generalized Minimal
+  Residual Algorithm for Solving Nonsymmetric Linear Equations,} {\em SIAM
+  Journal for Scientific and Statistical Computing\/}, Vol.~7, No.~3, 1986,
+  pp.~856--869.
+
+\bibitem{northrup:2009a}
+Northrup, S.~A. and Groth, C. P.~T., \enquote{Prediction of Unsteady Laminar
+  Flames Using a Parallel Implicit Adaptive Mesh Refinement Algorithm,} {\em
+  Proceedings of the U.\ S.\ National Combustion Meeting, Ann Arbor, Michigan,
+  U.S.A., May 17--20, 2009\/}, 2009, p. paper 23H3.
+
+\bibitem{saad:1996}
+Saad, Y., {\em Iterative Methods for Sparse Linear Systems\/}, PWS Publishing
+  Company, Boston, 1996.
+
+\bibitem{nielsen:1995}
+Nielsen, E.~J., Anderson, W.~K., Walters, R.~W., and Keyes, D.~E.,
+  \enquote{Application of {N}ewton-{K}rylov Methodology to a Three-Dimensional
+  Unstructured {E}uler Code,} Paper 95-1733-CP, AIAA, June 1995.
+
+\bibitem{coudeville:1965}
+Coudeville, P. T.~H. and Brun, E., \enquote{Drag Measurements in Slip and
+  Transition Flow,} {\em Proceedings of the Fourth International Symposium on
+  Rarefied Gas Dynamics\/}, Academic Press, New York, 1965, pp. 444--468.
+
+\bibitem{patterson:1961}
+Patterson, G.~N., {\em Introduction to the Kinetic Theory of Gas Flows\/},
+  University of Toronto Press, Toronto, 1961.
+
+\bibitem{granger:1995}
+Granger, R.~A., {\em Fluid Mechanics\/}, Dover, New York, 1995.
+
+\bibitem{vincenti:1975}
+Vincenti, W.~G. and Kruger, C.~H., {\em Introduction to Physical Gas
+  Dynamics\/}, R. E. Krieger Publishing, Huntington, NY, 1975.
+
+\end{thebibliography}

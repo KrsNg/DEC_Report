@@ -1,0 +1,228 @@
+% ----------------------
+% THIS IS MY DEC1 REPORT
+% ----------------------
+
+\documentclass[titlepage,11pt,letterpaper]{article}
+
+\usepackage{graphicx,epsfig,color}
+\usepackage{subfigure}
+\usepackage{setspace}
+\usepackage{amsmath,amssymb}
+\usepackage[hang,small,bf]{caption}
+\setlength{\captionmargin}{10pt}
+
+\newcommand{\pd}[2]{\frac{\partial#1}{\partial#2}}
+% Page Margins
+\voffset=-1.0in
+\topmargin=0.75in
+\headheight=0.0in
+\headsep=0.0in
+\hoffset=-1.0in
+\oddsidemargin=0.7in
+\evensidemargin=0.7in
+
+\parindent      0.2000in
+
+\textwidth=7.0in
+\textheight=9.25in
+
+% Line Spacing
+\renewcommand{\baselinestretch}{1.33}
+
+% Alter some LaTeX defaults for better treatment of figures:
+% See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+   \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+
+    % remember to use [htp] or [htpb] for placement
+
+%\newcommand*{\drop}{\vspace*{0.2\textheight}}
+
+
+
+\begin{document}
+
+
+\newcommand*{\titleRR}
+{\begingroup
+  \centering
+  \vfill
+  \begin{figure}
+    \vspace{1.5cm}
+    \begin{center}
+      \includegraphics[width=0.17\textheight]{./figs/fig_logo.jpg}
+    \end{center}
+    \vspace{1.5cm}
+  \end{figure}
+  {\LARGE h-p Adjoint-based Error Estimation}\\
+  \vspace*{0.3cm}
+  {\LARGE for Thermo-acoustic Coupling in Turbulent Premixed Flames}\\
+  \vspace*{2.0cm}
+  {\large Christopher Ngigi}\\
+  \vspace*{1.cm}
+  {\normalsize\itshape University of
+    Toronto Institute for Aerospace Studies}\\
+  {\normalsize\itshape 4925
+    Dufferin Street, Toronto, Ontario, M3H 5T6, Canada}\\
+  \vspace*{2.cm}
+  {Doctoral Examination Committee Report} \\
+  \vspace*{1.cm}
+  {January 2015}
+  \vfill\null
+\endgroup}
+
+\thispagestyle{empty}\titleRR
+\clearpage
+\setcounter{page}{1}
+
+%\maketitle
+%\tableofcontents
+%\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% Introduction and Motivation
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Introduction and Motivation}
+\noindent Computational Fluid Dynamics (CFD) was developed as to reduce the cost of fluid flow experiments whose lifecycle spanning from conception to testing involved numerous design iterations and modifications. The initial applications of CFD  focused on aerodynamic and hydrodynamic flows within the engineering industry. At the present time, its role has grown to include a vast spectrum of modern day industries. This is due to the ever-increasing power of computers as predicted by Gordon Moore, namely, that computing power would double approximately every two years.~\cite{intel:2005}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% Scope of Research
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Scope of Research}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% CFD Techniques to Model Combustion
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{CFD Techniques to Model Combustion}
+
+\subsection{The Finite Volume Method}
+\subsection{Favre Averaged Navier Stokes Equations}
+\subsection{High Order schemes}
+\subsection{Large Eddy Simulation}
+\subsection{Explicit Filtering and Commutation Errors}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% Adjoint Method for Error Estimation
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Adjoint Method for Error Estimation}
+\subsection{Introduction}
+\subsection{Derivation}
+\subsection{Solution of Linear Systems}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% Anisotropic Mesh Refinement
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Anisotropic Mesh Refinement}
+\subsection{Techniques}
+\subsection{Benefits of Parallelization}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% Summary of Progress to Date and Future Work
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Summary of Progress to Date and Future Work}
+
+\subsection{Progress to Date}
+
+\begin{tabular}{|l|c|} \hline
+\multicolumn{1}{|c|}{\bf{Task}} & \multicolumn{1}{|c|}{\bf{Completion Date}} \\
+
+\hline Literature Review & September-October 2014 \\
+
+\hline Trelis Meshing Software & November 2014 \\
+
+\hline CFFC Group Code Flux Jacobian Analysis & December 2014 \\
+
+\hline Trilinos Package solution for example Poisson Problem & December 2014 \\in serial and parallel configurations & \\
+
+\hline
+\end{tabular}
+
+\subsection{Future Work}
+
+\begin{tabular}{|l|c|} \hline
+\multicolumn{1}{|c|}{\bf{Task}} & \multicolumn{1}{|c|}{\bf{Completion Date}} \\
+
+\hline Implementing the approximate Adjoint Derivative to the Flux Jacobians & April 2015 \\ testing on Euler Equations  &\\
+
+\hline Extension to Mesh adaptation & May 2015\\
+
+\hline Application of Adjoint Problem to Navier Stokes  & June 2015\\
+
+\hline Explicit Filters for High Order FVM implementation  & October 2015\\
+
+\hline Conference Paper I draft & November 2015\\
+
+\hline Coupling of High Order method with Adjoint-based AMR & December 2015\\
+
+\hline CFD simulation of Cold Flow & January 2016\\
+
+\hline CFD simulation of Laminar Non-Premixed Flame & February 2016\\
+
+\hline CFD simulation of Laminar Diffusion Flame & February 2016\\
+
+\hline Journal Paper I & April 2016\\
+
+\hline Conference Paper II draft & April 2016\\
+
+\hline CFD simulation of Turbulent Non-Premixed Flame & May 2016\\
+
+\hline Journal Paper II & July 2016\\
+
+\hline Conference Paper I Presentation  & July 2016\\
+
+\hline Conference Paper II draft  & October 2016\\
+
+\hline Journal Paper III & October 2016\\
+
+\hline CFD simulation of Full Thermo-coupling & October 2016\\
+
+\hline Conference Paper III draft  & November 2016\\
+
+\hline Thesis write-up & September 2017 \\ 
+
+\hline
+
+\end{tabular}
+
+%\newpage
+\bibliographystyle{aiaa} \bibliography{journals-full,cfd,myrefs}
+\end{document}

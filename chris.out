@@ -1,0 +1,18 @@
+\BOOKMARK [1][-]{section.1}{Introduction and Motivation}{}% 1
+\BOOKMARK [1][-]{section.2}{Scope of Research}{}% 2
+\BOOKMARK [1][-]{section.3}{CFD Techniques to Model Combustion}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{The Finite Volume Method}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Favre Averaged Navier Stokes Equations}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{High Order schemes}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Large Eddy Simulation}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.5}{Explicit Filtering and Commutation Errors}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Adjoint Method for Error Estimation}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Introduction}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Derivation}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.3}{Solution of Linear Systems}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Anisotropic Mesh Refinement}{}% 13
+\BOOKMARK [2][-]{subsection.5.1}{Techniques}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.2}{Benefits of Parallelization}{section.5}% 15
+\BOOKMARK [1][-]{section.6}{Summary of Progress to Date and Future Work}{}% 16
+\BOOKMARK [2][-]{subsection.6.1}{Progress to Date}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.2}{Future Work}{section.6}% 18

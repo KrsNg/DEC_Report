@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem{intel:2005}
+\enquote{Excerpts from A Conversation with Gordon Moore: Moore's Law,} Video
+  Transcript 0305/TSM/LAI/XX/PDF 306959-001US, Intel Corporation, September
+  2005.
+
+\bibitem{kaneda:2006}
+Kaneda, Y. and Ishihara, T., \enquote{High-Resolution Direct Numerical
+  Simulation of Turbulence,} {\em Journal of Turbulence\/}, Vol.~7, No.~20,
+  2006.
+
+\end{thebibliography}

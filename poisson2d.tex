@@ -1,0 +1,135 @@
+\documentclass[a4paper, 10pt]{article}
+%
+\usepackage{amsmath, amsthm, amssymb, url}
+\usepackage{mathrsfs}           % pour \mathscr
+\usepackage[latin1]{inputenc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{xspace}     % Vivement conseill� lorsqu'on utilise babel avec
+                        % l'option � frenchb � (xspace permet une meilleure
+                        % gestion de \og et \fg pour les guillemets)
+
+\usepackage{graphicx} % Si le document doit inclure des images
+\usepackage{epsfig}
+\usepackage{makeidx}
+\usepackage{palatino}
+% \usepackage{algorithm} % Caution : needs to be a the end of the package list
+% \usepackage{algorithmic}
+
+% \textwidth 15truecm \textheight 22truecm
+\setlength{\textwidth}{6.8in}
+\setlength{\textheight}{9.4in}
+
+\usepackage{qresize}
+\resize
+
+\parskip 0.05in
+
+%\setcounter{secnumdepth}{-2}
+
+%\newcommand{\half}{{\frac{1}{2}}}
+%
+\newtheorem{assumption}{Assumption}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{theorem}{Theorem}
+\newtheorem{defi}{Definition}
+\newtheorem{prop}{Proposition}
+\newtheorem{lem}{Lemma}
+\newtheorem{rem}{Remark}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\buu}{\mathbf{U}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\btheta}{\boldsymbol{\theta}}
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\newcommand{\bzero}{\mathbf{0}}
+\newcommand{\bvarphi}{\boldsymbol{\varphi}}
+\newcommand{\bPhi}{\boldsymbol{\Phi}}
+\newcommand{\balpha}{\boldsymbol{\alpha}}
+\newcommand{\bxi}{\boldsymbol{\xi}}
+\newcommand{\bgamma}{\boldsymbol{\gamma}}
+\newcommand{\btau}{\boldsymbol{\tau}}
+\newcommand{\bnabla}{\boldsymbol{\nabla}}
+\newcommand{\uth}{u^{\btheta}}
+\newcommand{\fth}{f^{\btheta}}
+\newcommand{\gth}{g^{\btheta}}
+\newcommand{\vth}{v^{\btheta}}
+\newcommand{\wth}{w^{\btheta}}
+\newcommand{\zth}{z^{\btheta}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\etk}{\eta^k}
+\newcommand{\xik}{\xi^k}
+\newcommand{\bbth}{{\mathbf{b}}^{\theta_3}}
+\newcommand{\xiav}{\langle \bxi \rangle}
+
+\reversemarginpar
+%\al
+
+%/////////////////////////////////////////////////
+\begin{document}
+%/////////////////////////////////////////////////
+
+\begin{center}
+\Large Two-dimensional Poisson equation
+\end{center}
+
+\vspace{1cm}
+
+We seek to solve the Poisson equation
+\begin{eqnarray}
+-\Delta u &=& f \mbox{ in } D,\label{eq:1}\\[1ex]
+%
+u &=& 0 \mbox{ on } \partial D,\label{eq:2}
+\end{eqnarray}
+where $D=[0,1]^2$, $f(x,y)=2(x(1-x)+y(1-y))$ is the source term and $u(x,y)$ is the solution to be computed.
+
+\begin{enumerate}
+
+\item We consider a finite difference (FD) scheme for solving (\ref{eq:1}). The spatial domain $D$ is discretized using a
+regular grid made of $(N+1)^2$ points $\bx_{ij}=(ih,jh)$ with $0\leq i,j \leq N$, $h=\frac{1}{N}$. We denote by $u_{ij}$
+and $f_{ij}$ the approximate solution $u(\bx_{ij})$ and $f(\bx_{ij})$, respectively.
+Using the centered FD scheme
+$$
+-\frac{u_{i+1,j}+u_{i-1,j}+u_{i,j+1}+u_{i,j-1}-4 u_{ij}}{h^2}=f_{ij},
+$$
+written at each interior node $\bx_{ij}$, $1 \leq i,j \leq N-1$, and taking into account the boundary conditions
+(\ref{eq:2}), write down a linear system 
+\begin{equation}\label{eq:linsyst}
+\bA \bu = \bb
+\end{equation}
+of size $(N-1)^2\times (N-1)^2$, where $\bu$ is a vector that contains the $u_{ij}$ corresponding to the interior nodes.
+
+\item Code up the resolution of (\ref{eq:linsyst}) with $N=500$ using Trilinos 
+(assemble $\bA$, $\bb$ and get $\bu$ using GMRES algorithms).
+
+\item Validation: Check the approximate solution corresponds to the exact solution $u_{ex}(x,y)=xy(1-x)(1-y)$. 
+Plot in Matlab the approximate/exact solutions and compute the error norm $||u_{approx}-u_{ex}||_{L^2}$, where $||\cdot||_{L^2}$
+is computed as $||u||_{L^2}=\int_{D} u^2(\bx)d\bx \simeq h \bigl(\sum_{i,j}u^2_{ij}\bigr)^{1/2}$.
+
+\item Use a sequential implementation (for which global and local indices are the same) and a parallel version based on local indices.
+
+\end{enumerate}
+
+
+
+%/////////////////////////////////////////////////
+\end{document}
+%/////////////////////////////////////////////////

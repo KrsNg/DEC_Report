@@ -109,16 +109,16 @@
 \noindent Because of the huge discrepancy in scales when it comes to turbulence, ranging from the Integral scales to the Kolmogorov scales, vast computational resources would be required to model the entire turbulent regime. This high-fidelity branch of CFD is known as Direct Numerical Simulation (DNS), and is only achievable on Supercomputers, such as was recently demonstrated by Kaneda and Ishihara. ~\cite{kaneda:2006} DNS remains very expensive in terms of  computational and time resources: in reality, complex simulations are impossible, some requiring solution time on the order of $10^8$ years.\\ \\
 \noindent Large Eddy Simulation(LES) is a branch of CFD has been successfully applied to combustion simulation in the last two decades. It serves as a compromise to model Turbulent scales up to a given specific scale (which we call the filter size): any scale smaller than this is modelled. \\ \\
 \noindent Within a Gas Turbine combustion chamber, heat release and pressure are a coupled phenomenon, and any sporadic fluctuations in heat release or pressure will affect the other. This is the field of study for \textit{Thermoacoustics}. Higher temperatures within the combustion chamber raise the pressure which in turn increase the temperature even further, leading to a cycle where heat feeds off pressure and vice versa. It often results in structural damage to components within the combustion chamber and the turbine blades, and these pose huge safety risks and result in very high maintenance costs.\\ \\
-\noindent Notice the several stages at which innacuracies can be introduced into the simulation: one is at the algorithm level due to both the meshing of the geometry and the discretization of the governing equations, and the other at the modelling level due to the selection of turbulence models and filter sizes. \\
+\noindent Notice the several stages at which innacuracies can be introduced into the simulation: one is at the algorithm level due to both the meshing of the geometry and the discretization of the governing equations, and the other at the modelling level due to the selection of turbulence models and filter sizes. \\ 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% -------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------
 % Scope of Research
-% -------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \newpage
+%\newpage
 \section{Scope of Research}
 \noindent The present work intends to address a two-pronged technique to reduce the computational error arising from discretization and meshing. The technique will involve implementation of the adjoint-based error estimation method to be implemented for mesh refinement. Adjoints will be used for sensitivity analysis, namely, monitoring the computational cells to which the functional outputs of the CFD analysis are most sensitive.\\ \\
 \noindent The second part involves the use of high-order finite volume discretization of the governing equations: Favre-Averaged Navier Stokes (FANS). The higher the order of discretization, the higher the accuracy of the solution. This minimizes error and is often desired since for a coarser level of mesh refinement, a higher solution accuracy can be achieved, thus this can be viewed as reducing the computational cost.\\ \\
@@ -129,9 +129,9 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------
 % CFD Techniques to Model Combustion
-%-------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{CFD Techniques to Model Combustion}

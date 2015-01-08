@@ -73,7 +73,7 @@
     \end{center}
     \vspace{1.5cm}
   \end{figure}
-  {\LARGE \textbf{h-p Adjoint-based Error Estimation for Thermo-acoustic Coupling in Turbulent Premixed Flames}}\\
+  {\LARGE \textbf{Adjoint-Based Error Estimation and Mesh Adaptation for LES of Turbulent Premixed Flames}}\\
   \vspace*{2.0cm}
   {\large Christopher Ngigi}\\
   \vspace*{1.cm}
@@ -138,11 +138,11 @@
 
 \noindent We will preview some of\\
 \subsection{The Finite Volume Method}
-\subsection{Favre Averaged Navier Stokes Equations}
-\subsection{High Order schemes}
-\subsection{Large Eddy Simulation}
+\subsection{The High-Order Centrally Essentially Non-Oscillatory (CENO) Scheme}
 \subsection{Explicit Filtering and Commutation Errors}
-
+\subsection{Block-Based Adaptive Mesh Refinement (AMR)}
+\subsubsection{Isotropic AMR}
+\subsubsection{Anisotropic AMR}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %-------------------------------------------------------------------------------------------
@@ -150,23 +150,14 @@
 %-------------------------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Adjoint Method for Error Estimation}
+\section{Adjoint-Based Method for Error Estimation}
 \subsection{Introduction}
+\subsubsection{Steady Adjoints}
+\subsubsection{Unsteady Adjoints}
 \subsection{Derivation}
 \subsection{Solution of Linear Systems}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------------------------------------------------------------------------------
-% Anisotropic Mesh Refinement
-%-------------------------------------------------------------------------------------------
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\section{Anisotropic Mesh Refinement}
-\subsection{Techniques}
-\subsection{Benefits of Parallelization}
-
-
+\subsection{Use of solution Adjoints for Mesh adaptation}
+\subsection{Implementing Isotropic Mesh Refinement}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %-------------------------------------------------------------------------------------------
@@ -188,6 +179,8 @@
 \hline CFFC Group Code Flux Jacobian Analysis & December 2014 \\
 
 \hline Trilinos Package solution for example Poisson Problem & December 2014 \\in serial and parallel configurations & \\
+
+\hline Running a current-state LES case of a Turbulent Premixed & January 2015 \\Methane Flame using PCM-FPI to get a threshold estimation & \\ of solution run time\\
 
 \hline
 \end{tabular}

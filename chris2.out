@@ -1,0 +1,24 @@
+\BOOKMARK [1][-]{section.1}{Introduction and Motivation}{}% 1
+\BOOKMARK [1][-]{section.2}{Scope of Research}{}% 2
+\BOOKMARK [1][-]{section.3}{Proposed Adaptive Mesh Refinement Strategy}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{The Finite Volume Method}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{The High-Order Centrally Essentially Non-Oscillatory \(CENO\) Scheme}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Explicit Filtering and Commutation Errors}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Block-Based Adaptive Mesh Refinement \(AMR\)}{section.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Isotropic AMR}{subsection.3.4}% 8
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Anisotropic AMR}{subsection.3.4}% 9
+\BOOKMARK [1][-]{section.4}{Adjoint-Based Method for Error Estimation}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Introduction}{section.4}% 11
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Steady Adjoints}{subsection.4.1}% 12
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Unsteady Adjoints}{subsection.4.1}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Derivation}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.3}{Solution of Linear Systems}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.4}{Use of Solution Error Estimates in Mesh Adaptation}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.5}{Implementing Isotropic Mesh Refinement}{section.4}% 17
+\BOOKMARK [1][-]{section.5}{Poisson Solver}{}% 18
+\BOOKMARK [2][-]{subsection.5.1}{Model Problem}{section.5}% 19
+\BOOKMARK [1][-]{section.6}{LES of a Turbulent Premixed Methane Flame}{}% 20
+\BOOKMARK [2][-]{subsection.6.1}{Model Problem}{section.6}% 21
+\BOOKMARK [1][-]{section.7}{Summary of Progress to Date and Future Work}{}% 22
+\BOOKMARK [2][-]{subsection.7.1}{Progress to Date}{section.7}% 23
+\BOOKMARK [2][-]{subsection.7.2}{Future Work}{section.7}% 24

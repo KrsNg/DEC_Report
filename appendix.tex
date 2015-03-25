@@ -1,0 +1,187 @@
+%%=================================================
+\section{Appendix} 
+\setcounter{equation}{0}
+\subsection{Navier Stokes Equations} \label{section:Navier}
+The conservation equations
+for a thermally perfect reactive mixture of $N$ chemical species
+evolving in time, $t$, and space, $\Vector{x}$, can then be written
+using tensor notation as \cite{HPerez:2011}\par
+%
+\indent Conservation of Mass:
+\begin{equation}
+  \label{eq:mass}
+  \frac{\partial \rho}{\partial t} 
+  + \frac{\partial (\rho u_j)}{\partial x_j}  =  0 \,,
+\end{equation}
+%
+\indent Conservation of Momentum:
+\begin{equation}
+  \label{eq:momentum} 
+  \frac{\partial (\rho u_i)}{\partial t} 
+  + \frac{\partial (\rho u_i u_j + \delta_{ij} p)}{\partial x_j}  
+  - \frac{\partial \tau_{ij}}{\partial x_j}
+  =  \rho g_i \,, 
+\end{equation}
+%
+\indent Conservation of Energy:
+\begin{equation}
+  \label{eq:energy}
+  \frac{\partial (\rho E)}{\partial t} 
+  + \frac{\partial [(\rho E + p) u_j]}{\partial x_j} 
+  - \frac{\partial (\tau_{ij} u_i)}{\partial x_j} 
+  + \frac{\partial q_j}{\partial x_j}
+  =  \rho g_i u_i \,,  
+\end{equation}
+%
+\indent Conservation of Species Fraction:
+\begin{equation}
+  \label{eq:species}
+  \frac{\partial (\rho Y_\alpha)}{\partial t} 
+  + \frac{\partial (\rho Y_\alpha u_j)}{\partial x_j}
+  + \frac{\partial \mathcal{J}_{j,\alpha} }{\partial{x_j}} 
+  =  \dot{\omega}_{\alpha} \,, 
+\end{equation}
+%
+where
+%
+\begin{eqnarray}
+  \label{eq:stress_tensor}
+  \tau_{ij} & = & \mu \left( \frac{\partial u_i}{\partial x_j} 
+  + \frac{\partial u_j}{\partial x_i} \right) 
+  - \frac{2}{3} \mu \delta_{ij} \frac{\partial u_l}{\partial x_l} \,,  \\
+  \label{eq:heat_flux}
+  q_j & = & - \lambda \frac{\partial T}{\partial x_j} 
+  - \rho \sum_{\alpha=1}^N h_\alpha\mathcal{D}_\alpha \frac{\partial Y_\alpha}{\partial x_j}  \,, \\
+  \label{eq:species_diffusive_flux}
+  \mathcal{J}_{j,\alpha} & = & - \rho \mathcal{D}_\alpha \frac{\partial Y_\alpha}{\partial x_j} \,,  
+\end{eqnarray}
+%
+
+
+
+%%===================================================
+\subsection{Favre-Averaged Navier Stokes Equations} \label{section:Favre}
+Favre-Filtering, essentially a density-weighted filtering procedure is defined as:
+\begin{equation}
+ \tilde{\phi}=\frac{\overline{\rho \phi}}{\overline{\rho}},
+ \end{equation}
+where $\tilde{\phi}$ represents the Favre-filtered variable.
+
+Performing this on the governing equations, and assuming that the differentiation and filtering operations commute, we obtain the Favre-Filtered Equations \cite{HPerez:2011}:\par
+
+Conservation of Mass:
+\begin{equation}
+  \label{eq:filt_mass} 
+  \Pfrac{\bar{\rho}}{t} + \Pfrac{(\bar{\rho} \tilde{u}_j )}{x_j} = 0 \,,
+\end{equation}
+%
+\indent Conservation of Momentum:
+\begin{equation} 
+  \label{eq:filt_momentum}
+  \Pfrac{( \bar{\rho} \tilde{u}_i )}{t} 
+  + \Pfrac{( \bar{\rho} \tilde{u}_i \tilde{u}_j + \delta_{ij} \bar{p} )}{x_j} 
+  - \Pfrac{\check{\tau}_{ij}}{x_j} 
+  =  \bar{\rho} g_i 
+  + \underbrace{\Pfrac{\sigma_{ij}}{x_j}}_{\bf I}
+  + \underbrace{\Pfrac{( \bar{\tau}_{ij} - \check{\tau}_{ij} )}{x_j}}_{\bf II} \,,
+\end{equation}
+%
+\indent Conservation of Energy:
+\begin{eqnarray}
+  \label{eq:filt_energy}
+  \Pfrac{( \bar{\rho} \tilde{E} )}{t} 
+  + \Pfrac{[ (\bar{\rho} \tilde{E} + \bar{p}) \tilde{u}_j ]}{x_j}  
+  - \Pfrac{( \check{\tau}_{ij} \tilde{u}_i )}{x_j}  
+  + \Pfrac{\check{q}_j}{x_j} 
+  & = & 
+  \bar{\rho} \tilde{u}_i g_i
+  - \underbrace{\Pfrac{[ \bar{\rho} (\widetilde{h_{\mathrm{s}} u_j} - \check{h}_{\mathrm{s}} \tilde{u}_j) ]}{x_j}
+  }_{\bf III} 
+  {} \nonumber \\  &  & {} 
+  \!\!\!\!\! + \underbrace{\Pfrac{(\overline{\tau_{ij} u_i} - \check{\tau}_{ij} \tilde{u}_i)}{x_j}
+  }_{\bf IV}
+  - \underbrace{\Pfrac{(\bar{q}_j - \check{q}_j)}{x_j}}_{\bf V}
+  {} \nonumber \\   &  & {} 
+  \!\!\!\!\! - \underbrace{ \frac{1}{2} \Pfrac{[ \bar{\rho} (\widetilde{u_j u_i u_i}
+      - \tilde{u}_j \widetilde{u_i u_i}) ]}{x_j}}_{\bf VI}
+  {} \nonumber \\  &  & {}
+  \!\!\!\!\! - \underbrace{\Pfrac{[ \sum_{\alpha=1}^N \Delta h^0_{\mathrm{f}_\alpha} \bar{\rho}
+      (\widetilde{Y_\alpha u_{j}} - \tilde{Y}_\alpha \tilde{u}_j) ]}{x_j} \,,
+  }_{\bf VII}
+\end{eqnarray}
+%
+\indent Conservation of Species Fraction:
+\begin{equation} 
+  \label{eq:filt_species}
+  \Pfrac{( \bar{\rho} \tilde{Y}_\alpha )}{t} 
+  + \Pfrac{( \bar{\rho} \tilde{Y}_\alpha \tilde{u}_j )}{x_j}
+  + \Pfrac{\check{\cal J}_{j,\alpha}}{x_j} 
+  = - \underbrace{\Pfrac{[ \bar{\rho}(\widetilde{Y_\alpha u_j} - 
+                  \tilde{Y}_\alpha \tilde{u}_j) ]}{x_j}}_{\bf VIII} 
+  - \underbrace{\Pfrac{(\bar{\cal J}_{j,\alpha} - \check{\cal J}_{j,\alpha})}{x_j}}_{\bf IX} 
+  + \underbrace{\bar{\dot{\omega}}_\alpha}_{\bf X} \,,
+\end{equation}
+%
+Where we use the equation of state:
+\begin{equation} 
+  \label{eq:filt_eq_state} 
+  \bar{p} = \bar{\rho} \check{R} \tilde{T} 
+  + \underbrace{ \sum_{\alpha=1}^N R_\alpha \bar{\rho}
+    (\widetilde{Y_\alpha T} - \tilde{Y}_\alpha \tilde{T}) }_{\bf XI} \,,
+\end{equation}
+%
+%
+where
+%
+\begin{equation}
+  \label{eq:sfs_stresses}
+  \sigma_{ij} = - \bar{\rho} \left( \widetilde{u_i u_j} - \tilde{u}_i \tilde{u}_j \right) \,, 
+\end{equation}
+%                     
+is the SFS stress tensor. The total energy is written as:
+%
+\begin{equation}
+  \tilde{E} = \check{h}_{\mathrm{s}} - \frac{\bar{p}}{\bar{\rho}} 
+  + \sum_{\alpha=1}^N \Delta h^0_{\mathrm{f}_\alpha} \tilde{Y}_\alpha 
+  + \frac{1}{2}\tilde{u}_i \tilde{u}_i + k_\Delta \,,
+\end{equation}
+%
+where
+% 
+\begin{equation}
+  k_\Delta = \frac{1}{2} \left( \widetilde{u_i u_i} - \tilde{u_i}\tilde{u_i} \right) \,,
+\end{equation}
+%
+is the Sub-Filter Scale (SFS) Turbulent Kinetic Energy. The effects of the subfilter scales appear in the filtered total energy, $\tilde{E}$, the filtered
+equation of state and the right-hand-sides of the governing continuity, momentum, energy and species mass fraction equations (i.e., terms \textbf{I},\ldots,\textbf{XI}). The symbol $(\,\check{}\,)$ is used to indicate the evaluation of expressions in terms of filtered variables, i.e.,
+$\check{R}\!=\!R(\tilde{Y}_\alpha)$,
+$\check{h}_{\mathrm{s}}\!=\!h_{\mathrm{s}}(\tilde{Y}_\alpha,\tilde{T})$,
+and so on. The fluxes $\check{\tau}_{ij}$, $\check{q}_j$, and
+$\check{\cal J}_{j,\alpha}$ are expressed as
+%
+\begin{eqnarray}
+  \check{\tau}_{ij} & = &  2 \check{\mu} \left( \check{S}_{ij} - 
+  \frac{1}{3} \delta_{ij}\check{S}_{ll} \right) \,,  \\
+%
+  \check{q}_j & = &  - \check{\lambda} \frac{\partial \tilde{T}}{\partial x_j} 
+  - \bar{\rho} \sum_{\alpha=1}^N \check{h}_\alpha \check{D}_\alpha \frac{\partial \tilde{Y}_\alpha}{\partial x_j} \,, \\
+%
+  \check{\cal J}_{j,\alpha} & = &  - \bar{\rho} \check{D}_\alpha \frac{\partial \tilde{Y}_\alpha}{\partial x_j} \,,
+\end{eqnarray}
+%
+where 
+%
+$\check{S}_{ij} \!=\! \frac{1}{2} \left(\partial \tilde{u}_{i}/\partial
+  x_{j} + \partial \tilde{u}_j/ \partial x_i \right)$, is the strain rate tensor calculated with the Favre-filtered velocity.  The temperature used for the molecular transport coefficients $\check{\mu}$, $\check{\lambda}$, and $\check{D}_\alpha$ calculations is $\tilde{T}$.
+
+Modelling of the SFS terms is required to close the above system of equations. Term \textbf{II} is neglected under the assumption that the filtered viscous stresses, $\bar{\tau}_{ij}$, can be approximated to the viscous stresses evaluated in terms of the Favre-filtered velocity, $\check{\tau}_{ij}$. Following similar assumptions for the total heat and species mass diffusion fluxes, terms \textbf{V} and
+\textbf{IX} may be neglected. Vreman \etal ~\cite{vreman:1995} performed a priori LES of a mixing layer at different Mach numbers and concluded that neglecting the non-linearities of the diffusion terms in the momentum and energy equations is acceptable. Regarding term \textbf{IV} (SFS viscous diffusion), it is generally much smaller than the other terms that require a model~\cite{martin:2000}, and so is neglected. As for term \textbf{XI} (SFS temperature-species correlation), it is assumed to be small and generally neglected.
+%
+Following the work of Knight \etal.~\cite{knight:1998}, term \textbf{VI} (the SFS turbulent diffusion) can be modelled in terms of the SFS stresses and the resolved velocity as
+%
+\begin{equation}
+  - \frac{\bar{\rho} \left(\widetilde{u_j u_i u_i} - \tilde{u}_j\widetilde{u_i u_i} \right)}{2} 
+  = \sigma_{ij}\tilde{u}_i \,.
+\end{equation}
+%
+Term \textbf{VII} involves the SFS species fluxes (term \textbf{VIII}) and is closed with the modelled SFS species fluxes. 

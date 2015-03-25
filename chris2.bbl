@@ -1,14 +1,57 @@
 \begin{thebibliography}{1}
-\newcommand{\enquote}[1]{``#1''}
 
 \bibitem{intel:2005}
-\enquote{Excerpts from A Conversation with Gordon Moore: Moore's Law,} Video
-  Transcript 0305/TSM/LAI/XX/PDF 306959-001US, Intel Corporation, September
-  2005.
+Excerpts from a conversation with gordon moore: Moore's law.
+\newblock Video Transcript 0305/TSM/LAI/XX/PDF 306959-001US, Intel Corporation,
+  September 2005.
 
 \bibitem{kaneda:2006}
-Kaneda, Y. and Ishihara, T., \enquote{High-Resolution Direct Numerical
-  Simulation of Turbulence,} {\em Journal of Turbulence\/}, Vol.~7, No.~20,
-  2006.
+Y.~Kaneda and T.~Ishihara.
+\newblock High-resolution direct numerical simulation of turbulence.
+\newblock {\em Journal of Turbulence}, 7(20), 2006.
+
+\bibitem{Brisebois:2014}
+C.~Arndt V.~Caux-Brisebois, A.~Steinberg and W.~Meier.
+\newblock Thermo-acoustic velocity coupling in a swirl stabilized gas turbine
+  model combustor.
+\newblock {\em Combustion and Flame}, 161:3166--3180, 2014.
+
+\bibitem{Northrup:2013}
+S.~A. Northrup.
+\newblock {\em A Parallel Implicit Adaptive Mesh Refinement Algorithm for
+  Predicting Unsteady Fully-Compressible Reactive Flows}.
+\newblock PhD thesis, University of Toronto, 2013.
+
+\bibitem{Deconinck:2008}
+W.~Deconinck.
+\newblock Design and application of discrete explicit filters for large eddy
+  simulation of compressible turbulent flows.
+\newblock Master's thesis, University of Toronto, 2008.
+
+\bibitem{ivan:2007b}
+L.~Ivan and C.~P.~T. Groth.
+\newblock High-order central {CENO} finite-volume scheme with adaptive mesh
+  refinement.
+\newblock Paper 07--4323, AIAA, June 2007.
+
+\bibitem{Zhang:2011}
+Z.~J. Zhang and C.~P.~T. Groth.
+\newblock Parallel high-order anisotropic block-based adaptive mesh refinement
+  finite-volume scheme.
+\newblock In {\em 20th AIAA Computational Fluid Dynamics Conference}. American
+  Institute of Aeronautics and Astronautics, June 2011.
+
+\bibitem{Williamschen:2013}
+M.~J. Williamschen and C.~P.~T. Groth.
+\newblock Parallel anisotropic block-based adaptive mesh refinement algorithm
+  for three-dimensional flows.
+\newblock In {\em 21st AIAA Computational Fluid Dynamics Conference}. American
+  Institute of Aeronautics and Astronautics, June 2013.
+
+\bibitem{HPerez:2011}
+F.~E. Hern{\'a}ndez-P{\'e}rez.
+\newblock {\em Subfilter Scale Modelling for Large Eddy Simulation of Lean
+  Hydrogen-Enriched Turbulent Premixed Combustion}.
+\newblock PhD thesis, University of Toronto, 2011.
 
 \end{thebibliography}

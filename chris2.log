@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.7.11)  9 JAN 2015 14:58
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.7.11)  16 JAN 2015 10:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -311,7 +311,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip52
 )
 Package hyperref Info: Option `colorlinks' set `false' on input line 16.
- (./chris2.aux)
+
+\@input{commands.aux}
+\openout2 = `commands.aux'.
+
+(./commands.tex) (./chris2.aux)
 \openout1 = `chris2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
@@ -382,7 +386,7 @@ LaTeX Info: Redefining \nameref on input line 62.
 \openout3 = `chris2.out'.
 
 
-<./figs/utias_logo_blue.jpg, id=100, 651.8754pt x 826.7688pt>
+<./figs/utias_logo_blue.jpg, id=120, 651.8754pt x 826.7688pt>
 File: ./figs/utias_logo_blue.jpg Graphic file (type jpg)
 
 <use ./figs/utias_logo_blue.jpg>
@@ -390,125 +394,72 @@ Package pdftex.def Info: ./figs/utias_logo_blue.jpg used on input line 91.
 (pdftex.def)             Requested size: 113.64334pt x 144.13162pt.
  [1
 
+
+
 {/nfs/kris/d1/local_net2/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.
-map} <./figs/utias_logo_blue.jpg>]
-LaTeX Font Info:    Try loading font information for U+msa on input line 109.
+map} <./figs/utias_logo_blue.jpg>]pdfTeX warning (ext4): destination with the s
+ame identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.121 T
+       his will involve implementation of High Order Finite Volume Scheme, a...
+[1
+
+] [2]
+LaTeX Font Info:    Try loading font information for U+msa on input line 148.
 
 (/nfs/kris/d1/local_net2/texlive/2010/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 109.
+LaTeX Font Info:    Try loading font information for U+msb on input line 148.
 
 (/nfs/kris/d1/local_net2/texlive/2010/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 106--113
-
+[3] [4] [5] [6] [7] [8] (./chris2.bbl
+Underfull \hbox (badness 7468) in paragraph at lines 4--7
+[]\OT1/cmr/m/n/10.95 Excerpts from a con-ver-sa-tion with gor-don moore: Moore'
+s law.  Video Tran-script
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--113
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--113
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--113
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--113
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--113
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--113
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.113 
-       [1
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 123--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--127
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-
- []
-
-[3] [4] [5] [6] (./chris2.bbl
-Underfull \hbox (badness 5161) in paragraph at lines 5--8
-[]\OT1/cmr/m/n/10.95 ``Excerpts from A Con-ver-sa-tion with Gor-don Moore: Moor
-e's Law,'' Video Tran-script
- []
-
-[7])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 259.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 259.
+[9])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 380.
+ [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 380.
  (./chris2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 259.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 259.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 380.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 380.
 Package rerunfilecheck Info: File `chris2.out' has not changed.
-(rerunfilecheck)             Checksum: 37C292FD0B4CE1CFD3E9E27762E7B58D;1784.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 259.
+(rerunfilecheck)             Checksum: 900577C4C05071B3264AAEA955985371;2297.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 380.
  ) 
 Here is how much of TeX's memory you used:
- 7011 strings out of 493763
- 105689 string characters out of 3138789
- 193057 words of memory out of 3000000
- 10196 multiletter control sequences out of 15000+200000
- 10758 words of font info for 40 fonts, out of 3000000 for 9000
+ 7063 strings out of 493763
+ 106444 string characters out of 3138789
+ 201770 words of memory out of 3000000
+ 10220 multiletter control sequences out of 15000+200000
+ 11379 words of font info for 42 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 36i,7n,38p,694b,430s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,17n,38p,1231b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
 </nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx10.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb></nfs/kris/d1/local_net2/texlive/2010/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></nfs/kris/d1/local_net2/texliv
-e/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></nfs/kris/d1/local_n
-et2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on chris2.pdf (9 pages, 194571 bytes).
+s/type1/public/amsfonts/cm/cmbx8.pfb></nfs/kris/d1/local_net2/texlive/2010/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></nfs/kris/d1/local_net2/texli
+ve/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></nfs/kris/d1/loca
+l_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></nfs/k
+ris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.
+pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr8.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nfs/kris/d1/local_net2/texliv
+e/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></nfs/kris/d1/local
+_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on chris2.pdf (11 pages, 265488 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 164 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
- 198 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 268 PDF objects out of 1000 (max. 8388607)
+ 238 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 238 words of extra memory for PDF output out of 10000 (max. 10000000)
 

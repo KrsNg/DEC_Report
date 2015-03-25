@@ -1,0 +1,51 @@
+\subsection{The Finite Volume Method}
+Godunov-type Finite Volume Methods (FVM) apply a cell-centered spatial discretization resulting in the solution domain split into control volumes ~\cite{Toro:1997}. The integral form of the governing equations is applied. The Navier Stokes and Favre-Averaged Navier Stokes are described in the Appendix, see Section ~\ref{section:Navier} and ~\ref{section:Favre}.\par 
+The Favre-filtered form of the conservation equations for mass, momentum, total energy, and species mass fractions, along with the equation of state are used here in the LES of turbulent reactive flows and can be re-expressed in the following general weak conservation form using matrix-vector notation ~\cite{Neto:2014}
+%%
+\begin{equation}
+\label{eq:weak.form}
+\frac{\partial \overline{\Vector{U}}}{\partial t} 
++ \vec{\nabla} \cdot \vec{\mathcal{F}} =
+\frac{\partial \overline{\Vector{U}}}{\partial t} + 
+\vec{\nabla} \cdot \vec{\mathcal{F}}^{\mathrm{I}} \left( \overline{\Vector{U}} \right) - 
+\vec{\nabla} \cdot \vec{\mathcal{F}}^{\mathrm{V}} 
+\left( \overline{\Vector{U}}, \vec{\nabla} \overline{\Vector{U}} \right) = 
+\overline{\Vector{S}}
+\end{equation}
+%%
+where $\overline{\Vector{U}}$ is the vector of conserved solution variables and $\vec{\mathcal{F}}$ is the solution flux dyad.  The flux dyad can be decomposed into two components and written as $\vec{\mathcal{F}} =  \vec{\mathcal{F}}^{\mathrm I} - \vec{\mathcal{F}}^{\mathrm{V}}$ where $\vec{\mathcal{F}}^{\mathrm I} = \vec{\mathcal{F}}^{\mathrm I}(\overline{\Vector{U}})$ contains the hyperbolic or inviscid components of the solution fluxes $\vec{\mathcal{F}}^{\mathrm{V}} =  \vec{\mathcal{F}}^{\mathrm{V}}(\overline{\Vector{U}}, \vec{\nabla} \overline{\Vector{U}})$ contains the elliptic or viscous components of the fluxes.
+
+A very important key in FVM is how these fluxes are resolved. The common approach is to evaluate inviscid fluxes within each cell (control volume) via a solution to a Riemann Problem, starting from initial value left and right states for each cell. The goal is to obtain the final cell-centered, cell-average value. 
+
+A semi-discrete form of the governing equations can be derived from the application of the finite-volume method to the integral form of Eq.~(\ref{eq:weak.form}) for cell $(i,j,k)$ of a three-dimensional multi-block mesh composed of hexahedral volume elements. Using a $N_G$-point Gaussian quadrature numerical integration procedure to evaluate the solution flux along each of the $N_f$ faces of the cell, the following semi-discrete form is obtained:
+
+\begin{equation}
+\label{eqn:semi_discrete}
+ \frac{\mathrm{d}\overline{\Vector U}_{ijk}}{\mathrm{d}t} =
+ - \frac{1}{{V}_{ijk}} \sum_{l=1}^{N_f} 
+ \sum_{m=1}^{N_{GF}} \left( \omega_m \left(\vec{\mathcal{F}^{\mathrm{I}}} - 
+ \vec{\mathcal{F}^{\mathrm{V}}} \right)\cdot \hat{n} {A} \right)_{ijk,l,m}
+ + \sum_{n=1}^{N_{GV}} \left( \omega_n {\Vector S} \right)_{i,j,k,n}
+ = \overline{\Vector{R}}_{ijk} \left( \overline{\Vector{U}} \right),
+\end{equation}
+where $\omega_m$ are the face quadrature weighting coefficients, $\omega_n$ are the volumetric quadrature weighting coefficients, $A_l$ denotes the surface area of face $l$, and $\overline{\Vector{R}}_{ijk}$ is the residual operator. After the evaluation of $\overline{\Vector{R}}$, one can advance the solution in time, and therefore iteratively solve the time dependent problem that is described by the equations. Quadrature rules are used to determine the Flux evaluation points on the surface, $N_{GF}$ and those for the volume, $N_{GV}$. The remaining procedure is:
+\begin{itemize}
+ \item Apply Solution Reconstruction (see ~\ref{section:CENO});
+ \item Evaluate the Inviscid and Viscous Fluxes and apply the weights to respective Gauss-Legendre points;
+ \item Evaluate the Source Vector, which adds effects of turbulence and chemistry in reacting flows;
+ \item Apply an appropriate time-marching scheme, such as a fourth-order Runge-Kutta (RK4) suitable for High-Order methods.
+\end{itemize}
+
+\subsubsection{The Centrally Essentially Non-Oscillatory (CENO) Scheme}
+\label{section:CENO}
+In solution reconstruction, given the cell average values, a Taylor series expansion polynomial is defined to represent the variation of the solution within the particular cell and the average solution of its neighbors. \par
+The High-Order CENO reconstruction scheme of Ivan and Groth ~\cite{Ivan:2013} uses a \textit{k}-exact least-squares reconstruction technique, essentially a $k^{th}$ order Taylor series expansion of solution variable $U$ about the cell center. This reconstruction techniques is applied to a monotonicity-preserving limited linear scheme. For Favre-Averaged Navier Stokes (FANS), \textit{k} corresponds to the spatial accuracy of the scheme. A smoothness indicator is used to switch between reconstruction procedures.\par
+Some of the advantages of CENO are ~\cite{Groth:2013}:
+\begin{itemize}
+\item It provides accuracy of other Essentially Non-Oscillatory (ENO) schemes and maintains monotonicity near discontinuities;
+\item Uses the same central stencil while avoiding complexities of other ENO schemes ~\cite{Ivan:2013};
+\item Can be extended to unstructured meshes and multiple dimensions ~\cite{Charest:2013}; 
+\item Identifies regions where under-resolution and non-smooth data occurs, and this could prove useful for mesh adaptation techniques.
+\end{itemize}
+
+High-Order generally refers to $k>2$. These kind of methods generally have less numerical dissipation, require fewer mesh points to achieve solution accuracy, (as compared to a $2^{nd}$ Order method, for example)

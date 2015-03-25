@@ -6,25 +6,25 @@
 %%
 %% aiaa.dtx  (with options: `bibstyle')
 %% 
-%% The "aiaa" distribution by bil kleb <w.l.kleb@larc.nasa.gov>.
-%% Please see the file `aiaa.ins' for information on how you may
-%% (re-)distribute the `aiaa' bundle of files.
+%% Welcome to the AIAA LaTeX package.
 %% 
-%% Description: a bundle of LaTeX and BibTeX files to produce
-%%              AIAA papers and simulated journal articles/notes
-%% Keywords: LaTeX, class, AIAA, BibTeX, bibliographic-style, 9pt-option
-%% Author: Bil Kleb <w.l.kleb@larc.nasa.gov>
+%% For further details and support, read the Users Manual, aiaa.pdf.
+%% 
+%% This software is released under the terms of the LaTeX Project Public
+%% License.  Copyright (C) 2004 by Bil Kleb, Bill Wood, and Erich Knausenberger.
+%% 
+%% Description: LaTeX package for AIAA technical conference papers.
+%% Keywords: LaTeX, class, AIAA, BibTeX, bibliographic-style
+%% Author: Bil Kleb, Bill Wood, Erich Knausenberger
 %% Maintainer: same
-%% Version: 2.4 <22 feb 1999>
+%% Version: 3.6 <23 May 2004>
 %%
-%% Please see the information in file `aiaa.ins' on how you
-%% may use and (re-)distribute this file.  Run LaTeX on the file
-%% `aiaa.ins' to get the main aiaa class and other auxilary packages.
-%% Also run LaTeX on `aiaa.dtx' (this file) to obtain a users manual
-%% and code documentation.
+%% Run (PDF)LaTeX on `aiaa.dtx' to obtain a Users Manual and code
+%% documentation.  Note: to get detailed code documentation you need to
+%% comment out the \OnlyDescription line in `aiaa.dtx'.
 %%
-%% NOTE: This file may NOT be distributed if not accompanied
-%%       by 'aiaa.ins' and `aiaalgo.eps'.
+%% See `aiaa.ins' and the Users Manual for installation instructions.
+%%
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -223,9 +223,6 @@ FUNCTION {capitalize}
 FUNCTION {space.word}
 { " " swap$ * " " * }
 
- % Here are the language-specific definitions for explicit words.
- % Each function has a name bbl.xxx where xxx is the English word.
- % The language selected here is ENGLISH
 FUNCTION {bbl.and}
 { "and"}
 
@@ -362,7 +359,7 @@ MACRO {jsr} {"Journal of Spacecraft and Rockets"}
 
 MACRO {aa} {"Aerospace America"}
 
-MACRO {sn} {"Space News"}
+MACRO {Sb} {"Space News"}
 
 MACRO {awst} {"Aviation Week \& Space Technology"}
 

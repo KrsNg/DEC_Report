@@ -1,0 +1,10 @@
+\subsection{Combustion Modelling via the Presumed Conditional Moment and Flame Propagation for Intrinsic Low Dimensional Manifold (PCM-FPI) Model}
+
+When performing LES of turbulent reactive flows, there is need to predict the chemical reaction rates. Implementation of the PCM-FPI model in LES within the CFD Group was carried out by Hern{\'a}ndez-P{\'e}rez ~\cite{HPerez:2011} and Shahbazian \etal ~\cite{Shahbazian:2011}.\par
+
+The FPI model was proposed to build databases based on detailed simulations of simple flames. The basis of tabulations is the steady-state one-dimensional laminar flame, which are solved using CANTERA software. These flame quanitities are stored in a table that is then read by the CFFC program. The main objective of the FPI tabulation technique is to reduce the cost of performing reactive
+flow computations with large detailed chemical kinetic mechanisms, but still retain the accuracy of detailed results, by building databases of relevant quantities based on detailed simulations of simple flames. ~\cite{HPerez:2011} \par
+
+The PCM technique uses a statistical approach and utilizes Probability Density Functions (PDFs). The approach presumes a PDF-like distribution of a subfilter-scale fluctuating quantity. The PDF subfilter is incorporated into the Favre-filtered reaction rates for species.\par
+
+Combining PCM with FPI allows an approach to model complex chemistry from tabulated data, is a very general model that can be used for premixed, non-premixed and partially-premixed flames. e.g. In the event that turbulent premixed combustion is the focus of the analysis, look up tables of filtered terms are built up from laminar premixed flamelet data.\par

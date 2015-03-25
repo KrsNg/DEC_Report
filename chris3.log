@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.7.11)  25 MAR 2015 09:37
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.7.11)  25 MAR 2015 10:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,7 +434,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
 
-[5]) (./AMR.tex [6]) (./CombModelling.tex) (./Adjoint.tex [7] [8] [9] [10])
+[5]) (./AMR.tex [6]) (./CombModelling.tex [7]) (./Adjoint.tex [8] [9] [10])
 (./Poisson.tex
 \c@assumption=\count121
 \c@hypothesis=\count122
@@ -443,7 +443,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 \c@prop=\count125
 \c@lem=\count126
 \c@rem=\count127
-
+ [11]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 85.
 
@@ -452,14 +452,13 @@ Overfull \hbox (53.34564pt too wide) detected at line 86
 []
  []
 
-[11] <figs/Poisson2D.png, id=284, 560.0925pt x 472.6458pt>
+<figs/Poisson2D.png, id=287, 560.0925pt x 472.6458pt>
 File: figs/Poisson2D.png Graphic file (type png)
-
-<use figs/Poisson2D.png>
+ <use figs/Poisson2D.png>
 Package pdftex.def Info: figs/Poisson2D.png used on input line 97.
 (pdftex.def)             Requested size: 240.72217pt x 202.3529pt.
 
-<figs/Poisson3D.jpeg, id=287, 711.65875pt x 632.3625pt>
+<figs/Poisson3D.jpeg, id=290, 711.65875pt x 632.3625pt>
 File: figs/Poisson3D.jpeg Graphic file (type jpg)
 
 <use figs/Poisson3D.jpeg>
@@ -496,13 +495,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
  ) 
 Here is how much of TeX's memory you used:
- 7401 strings out of 493763
- 110203 string characters out of 3138789
- 207035 words of memory out of 3000000
- 10438 multiletter control sequences out of 15000+200000
+ 7403 strings out of 493763
+ 110232 string characters out of 3138789
+ 207069 words of memory out of 3000000
+ 10439 multiletter control sequences out of 15000+200000
  15195 words of font info for 56 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 36i,26n,38p,1250b,428s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,26n,38p,1250b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
 </nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx10.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/font
@@ -524,10 +523,10 @@ d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 /amsfonts/cm/cmti7.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmti8.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on chris3.pdf (20 pages, 664241 bytes).
+Output written on chris3.pdf (20 pages, 665291 bytes).
 PDF statistics:
- 443 PDF objects out of 1000 (max. 8388607)
- 393 compressed objects within 4 object streams
- 122 named destinations out of 1000 (max. 500000)
+ 446 PDF objects out of 1000 (max. 8388607)
+ 396 compressed objects within 4 object streams
+ 123 named destinations out of 1000 (max. 500000)
  268 words of extra memory for PDF output out of 10000 (max. 10000000)
 

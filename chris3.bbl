@@ -119,6 +119,14 @@ Z.~J. Zhang.
   finite-volume scheme.
 \newblock Master's thesis, University of Toronto, 2011.
 
+\bibitem{Freret:2015}
+L.~Freret and C.~P.~T. Groth.
+\newblock Anisotropic non-uniform block-based adaptive mesh refinement for
+  three-dimensional inviscid and viscous flows.
+\newblock 22nd aiaa computational fluid dynamics conference, American Institute
+  of Aeronautics and Astronautics, June 2015.
+\newblock Accepted.
+
 \bibitem{HPerez:2011}
 F.~E. Hern{\'a}ndez-P{\'e}rez.
 \newblock {\em Subfilter Scale Modelling for Large Eddy Simulation of Lean

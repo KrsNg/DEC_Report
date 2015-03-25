@@ -7,36 +7,36 @@ Database file #1: journals-full.bib
 Database file #2: cfd.bib
 Database file #3: chris_ref.bib
 Warning--empty author in intel:2005
-You've used 28 entries,
+You've used 29 entries,
             1791 wiz_defined-function locations,
-            794 strings with 11366 characters,
-and the built_in function-call counts, 4822 in all, are:
-= -- 447
-> -- 207
+            801 strings with 11586 characters,
+and the built_in function-call counts, 4972 in all, are:
+= -- 462
+> -- 215
 < -- 6
-+ -- 82
-- -- 54
-* -- 268
-:= -- 864
-add.period$ -- 90
-call.type$ -- 28
-change.case$ -- 33
++ -- 85
+- -- 56
+* -- 274
+:= -- 894
+add.period$ -- 94
+call.type$ -- 29
+change.case$ -- 35
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 219
-empty$ -- 447
-format.name$ -- 54
-if$ -- 1048
+cite$ -- 30
+duplicate$ -- 225
+empty$ -- 459
+format.name$ -- 56
+if$ -- 1080
 int.to.chr$ -- 0
-int.to.str$ -- 28
+int.to.str$ -- 29
 missing$ -- 14
-newline$ -- 149
-num.names$ -- 27
-pop$ -- 51
+newline$ -- 155
+num.names$ -- 28
+pop$ -- 52
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 75
+skip$ -- 77
 stack$ -- 0
 substring$ -- 177
 swap$ -- 26
@@ -45,7 +45,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 39
-width$ -- 30
-write$ -- 322
+while$ -- 40
+width$ -- 31
+write$ -- 335
 (There was 1 warning)

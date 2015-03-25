@@ -50,6 +50,12 @@ M.~J. Williamschen and C.~P.~T. Groth.
   June 2013.
 \newblock 21st AIAA Computational Fluid Dynamics Conference.
 
+\bibitem{HPerez:2011}
+F.~E. Hern{\'a}ndez-P{\'e}rez.
+\newblock {\em Subfilter Scale Modelling for Large Eddy Simulation of Lean
+  Hydrogen-Enriched Turbulent Premixed Combustion}.
+\newblock PhD thesis, University of Toronto, 2011.
+
 \bibitem{Lund:03}
 T~Lund.
 \newblock The use of explicit filters in large eddy simulation.
@@ -127,12 +133,6 @@ L.~Freret and C.~P.~T. Groth.
   of Aeronautics and Astronautics, June 2015.
 \newblock Accepted.
 
-\bibitem{HPerez:2011}
-F.~E. Hern{\'a}ndez-P{\'e}rez.
-\newblock {\em Subfilter Scale Modelling for Large Eddy Simulation of Lean
-  Hydrogen-Enriched Turbulent Premixed Combustion}.
-\newblock PhD thesis, University of Toronto, 2011.
-
 \bibitem{Shahbazian:2011}
 N.~Shahbazian, C.~P.~T. Groth, and {\"O}.~L. G{\"u}lder.
 \newblock Assessment of presumed pdf models for large eddy simulation of
@@ -157,6 +157,12 @@ D.~A. Venditti and D.~L. Darmofal.
 \newblock Anisotropic grid adaptation for functional outputs: application to
   two-dimensional flows.
 \newblock {\em Journal of Computational Physics}, 187:22--46, 2003.
+
+\bibitem{Fidkowski:2011}
+K.~J. Fidkowski and D.~L. Darmofal.
+\newblock Review of output-based error estimation and mesh adaptation in
+  computational fluid dynamics.
+\newblock {\em AIAA Journal}, 49(4), 2011.
 
 \bibitem{Fidkowski:2013}
 K.~J. Fidkowski.

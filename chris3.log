@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.7.11)  25 MAR 2015 10:19
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.7.11)  25 MAR 2015 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -394,7 +394,7 @@ LaTeX Info: Redefining \nameref on input line 72.
 \openout3 = `chris3.out'.
 
 
-<./figs/utias_logo_blue.jpg, id=124, 651.8754pt x 826.7688pt>
+<./figs/utias_logo_blue.jpg, id=132, 651.8754pt x 826.7688pt>
 File: ./figs/utias_logo_blue.jpg Graphic file (type jpg)
 
 <use ./figs/utias_logo_blue.jpg>
@@ -410,8 +410,8 @@ map} <./figs/utias_logo_blue.jpg>]
 me identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.6 T
-     he approach to be used will be to first implement the Adjoint solver wi...
+l.4 T
+     his will involve implementation of High Order Finite Volume Scheme, as ...
 [1
 
 ]) (./LES.tex [2]
@@ -434,7 +434,83 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
 
-[5]) (./AMR.tex [6]) (./CombModelling.tex [7]) (./Adjoint.tex [8] [9] [10])
+[5]) (./AMR.tex
+Package epstopdf Info: Source file: <./figs/parallel-domain-decomp.eps>
+(epstopdf)                    date: 2015-03-25 12:40:32
+(epstopdf)                    size: 1621555 bytes
+(epstopdf)             Output file: <./figs/parallel-domain-decomp-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2015-03-25 15:22:33
+(epstopdf)                    size: 51705 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/parallel-domain-dec
+omp-eps-converted-to.pdf ./figs/parallel-domain-decomp.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/parallel-domain-decomp-eps-converted-to.pdf, id=222, 490.83376pt x 327.
+2225pt>
+File: ./figs/parallel-domain-decomp-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use ./figs/parallel-domain-decomp-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/parallel-domain-decomp-eps-converted-to.pdf use
+d on input line 11.
+(pdftex.def)             Requested size: 265.593pt x 177.06458pt.
+ [6]
+Package epstopdf Info: Source file: <figs/2dgrid_ghostcells.eps>
+(epstopdf)                    date: 2015-03-25 12:40:29
+(epstopdf)                    size: 12742 bytes
+(epstopdf)             Output file: <figs/2dgrid_ghostcells-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2015-03-25 15:22:33
+(epstopdf)                    size: 5814 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/2dgrid_ghostcells-eps
+-converted-to.pdf figs/2dgrid_ghostcells.eps>
+(epstopdf)             \includegraphics on input line 25.
+Package epstopdf Info: Output file is already uptodate.
+
+<figs/2dgrid_ghostcells-eps-converted-to.pdf, id=235, 472.76625pt x 418.56375pt
+>
+File: figs/2dgrid_ghostcells-eps-converted-to.pdf Graphic file (type pdf)
+ <use figs/2dgrid_ghostcells-eps-converted-to.pdf>
+Package pdftex.def Info: figs/2dgrid_ghostcells-eps-converted-to.pdf used on in
+put line 25.
+(pdftex.def)             Requested size: 200.63765pt x 177.06458pt.
+Package epstopdf Info: Source file: <figs/amr-blocks-ghosts.eps>
+(epstopdf)                    date: 2015-03-25 12:40:30
+(epstopdf)                    size: 358647 bytes
+(epstopdf)             Output file: <figs/amr-blocks-ghosts-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2015-03-25 15:22:34
+(epstopdf)                    size: 98722 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/amr-blocks-ghosts-eps
+-converted-to.pdf figs/amr-blocks-ghosts.eps>
+(epstopdf)             \includegraphics on input line 29.
+Package epstopdf Info: Output file is already uptodate.
+
+<figs/amr-blocks-ghosts-eps-converted-to.pdf, id=238, 760.8425pt x 580.1675pt>
+File: figs/amr-blocks-ghosts-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figs/amr-blocks-ghosts-eps-converted-to.pdf>
+Package pdftex.def Info: figs/amr-blocks-ghosts-eps-converted-to.pdf used on in
+put line 29.
+(pdftex.def)             Requested size: 233.30273pt x 177.06458pt.
+ [7 <./figs/2dgrid_ghostcells-eps-converted-to.pdf> <./figs/amr-blocks-ghosts-e
+ps-converted-to.pdf> <./figs/parallel-domain-decomp-eps-converted-to.pdf>]
+<./figs/BlockDivision.jpg, id=265, 1061.9675pt x 737.75626pt>
+File: ./figs/BlockDivision.jpg Graphic file (type jpg)
+
+<use ./figs/BlockDivision.jpg>
+Package pdftex.def Info: ./figs/BlockDivision.jpg used on input line 42.
+(pdftex.def)             Requested size: 254.8774pt x 177.06458pt.
+
+<./figs/Non-UniformBlock.png, id=272, 1138.2525pt x 829.0975pt>
+File: ./figs/Non-UniformBlock.png Graphic file (type png)
+
+<use ./figs/Non-UniformBlock.png>
+Package pdftex.def Info: ./figs/Non-UniformBlock.png used on input line 57.
+(pdftex.def)             Requested size: 243.0869pt x 177.06458pt.
+) (./CombModelling.tex [8 <./figs/BlockDivision.jpg>]) (./Adjoint.tex [9 <./fig
+s/Non-UniformBlock.png>] [10] [11] [12])
 (./Poisson.tex
 \c@assumption=\count121
 \c@hypothesis=\count122
@@ -443,7 +519,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 \c@prop=\count125
 \c@lem=\count126
 \c@rem=\count127
- [11]
+ [13]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 85.
 
@@ -452,56 +528,122 @@ Overfull \hbox (53.34564pt too wide) detected at line 86
 []
  []
 
-<figs/Poisson2D.png, id=287, 560.0925pt x 472.6458pt>
+<figs/Poisson2D.png, id=348, 560.0925pt x 472.6458pt>
 File: figs/Poisson2D.png Graphic file (type png)
  <use figs/Poisson2D.png>
 Package pdftex.def Info: figs/Poisson2D.png used on input line 97.
 (pdftex.def)             Requested size: 240.72217pt x 202.3529pt.
 
-<figs/Poisson3D.jpeg, id=290, 711.65875pt x 632.3625pt>
+<figs/Poisson3D.jpeg, id=350, 711.65875pt x 632.3625pt>
 File: figs/Poisson3D.jpeg Graphic file (type jpg)
 
 <use figs/Poisson3D.jpeg>
 Package pdftex.def Info: figs/Poisson3D.jpeg used on input line 102.
 (pdftex.def)             Requested size: 228.18599pt x 202.3529pt.
-) (./LES_example.tex) [12 <./figs/Poisson2D.png> <./figs/Poisson3D.jpeg>] (./Pr
-ogress.tex) [13]
+) (./LES_example.tex
+<./figs/Time_averaged_c_O2.png, id=352, 794.97pt x 705.63625pt>
+File: ./figs/Time_averaged_c_O2.png Graphic file (type png)
+
+<use ./figs/Time_averaged_c_O2.png>
+Package pdftex.def Info: ./figs/Time_averaged_c_O2.png used on input line 8.
+(pdftex.def)             Requested size: 227.96378pt x 202.3529pt.
+ [14 <./figs/Poisson2D.png> <./figs/Poisson3D.jpeg>] <figs/fsd2_0ms.png, id=365
+, 1178.4025pt x 1067.99pt>
+File: figs/fsd2_0ms.png Graphic file (type png)
+
+<use figs/fsd2_0ms.png>
+Package pdftex.def Info: figs/fsd2_0ms.png used on input line 25.
+(pdftex.def)             Requested size: 139.6804pt x 126.47249pt.
+ <figs/fsd4_25ms.png, id=367, 1178.4025pt x 1072.005pt>
+File: figs/fsd4_25ms.png Graphic file (type png)
+
+<use figs/fsd4_25ms.png>
+Package pdftex.def Info: figs/fsd4_25ms.png used on input line 30.
+(pdftex.def)             Requested size: 139.14618pt x 126.47249pt.
+
+Underfull \hbox (badness 4647) in paragraph at lines 30--30
+[]\OT1/cmr/m/n/9 (b) At t=4.25ms 5595 (8x8x8)
+ []
+
+<figs/fsd7_0ms.png, id=369, 1178.4025pt x 1073.00874pt>
+File: figs/fsd7_0ms.png Graphic file (type png)
+
+<use figs/fsd7_0ms.png>
+Package pdftex.def Info: figs/fsd7_0ms.png used on input line 35.
+(pdftex.def)             Requested size: 139.02153pt x 126.47249pt.
+) (./Adjoint_examples.tex [15 <./figs/fsd2_0ms.png (PNG copy)> <./figs/fsd4_25m
+s.png (PNG copy)> <./figs/fsd7_0ms.png (PNG copy)> <./figs/Time_averaged_c_O2.p
+ng (PNG copy)>]
+
+LaTeX Warning: Reference `fig:Adjoints' on page 16 undefined on input line 13.
+
+<figs/shockCubeAll1.png, id=385, 792.9625pt x 705.63625pt>
+File: figs/shockCubeAll1.png Graphic file (type png)
+
+<use figs/shockCubeAll1.png>
+Package pdftex.def Info: figs/shockCubeAll1.png used on input line 19.
+(pdftex.def)             Requested size: 170.85129pt x 151.76854pt.
+
+<figs/rho_Adjoint.png, id=387, 794.97pt x 705.63625pt>
+File: figs/rho_Adjoint.png Graphic file (type png)
+
+<use figs/rho_Adjoint.png>
+Package pdftex.def Info: figs/rho_Adjoint.png used on input line 23.
+(pdftex.def)             Requested size: 171.29013pt x 151.76854pt.
+
+<figs/u_Adjoint.png, id=389, 794.97pt x 705.63625pt>
+File: figs/u_Adjoint.png Graphic file (type png)
+ <use figs/u_Adjoint.png>
+Package pdftex.def Info: figs/u_Adjoint.png used on input line 27.
+(pdftex.def)             Requested size: 171.29013pt x 151.76854pt.
+
+<figs/p_Adjoint.png, id=391, 794.97pt x 705.63625pt>
+File: figs/p_Adjoint.png Graphic file (type png)
+ <use figs/p_Adjoint.png>
+Package pdftex.def Info: figs/p_Adjoint.png used on input line 31.
+(pdftex.def)             Requested size: 171.29013pt x 151.76854pt.
+)
+[16 <./figs/shockCubeAll1.png (PNG copy)> <./figs/rho_Adjoint.png (PNG copy)> <
+./figs/u_Adjoint.png (PNG copy)> <./figs/p_Adjoint.png (PNG copy)>]
+(./Progress.tex) [17]
 \openout2 = `appendix.aux'.
 
- (./appendix.tex [14
+ (./appendix.tex [18
 
-] [15]) [16]
-(./chris3.bbl
+] [19]) [20] (./chris3.bbl
 Underfull \hbox (badness 6300) in paragraph at lines 4--7
 []\OT1/cmr/m/n/10.95 Excerpts from a con-ver-sa-tion with gor-don moore: Moore'
 s law.  Video Tran-script
  []
 
-[17
+[21
 
-] [18])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 174.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
+] [22])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
+ [23]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
  (./chris3.aux (./appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
 Package rerunfilecheck Info: File `chris3.out' has not changed.
-(rerunfilecheck)             Checksum: 0E472AEDC4040C9933AC603D83B3ED37;2330.
+(rerunfilecheck)             Checksum: 61323D2DA8121500E1240B8E461F24C8;2478.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 183.
  ) 
 Here is how much of TeX's memory you used:
- 7403 strings out of 493763
- 110232 string characters out of 3138789
- 207069 words of memory out of 3000000
- 10439 multiletter control sequences out of 15000+200000
- 15195 words of font info for 56 fonts, out of 3000000 for 9000
+ 7528 strings out of 493763
+ 112945 string characters out of 3138789
+ 208185 words of memory out of 3000000
+ 10522 multiletter control sequences out of 15000+200000
+ 16559 words of font info for 62 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 36i,26n,38p,1250b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,26n,38p,1238b,438s stack positions out of 5000i,500n,10000p,200000b,50000s
 </nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx10.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/font
@@ -514,19 +656,20 @@ pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr10.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmr12.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr6.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></nfs/kris/d1/local_net2/texlive/
-2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></nfs/kris/d1/local_net
-2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nfs/kris/
-d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-</nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti10.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmti7.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmti8.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on chris3.pdf (20 pages, 665291 bytes).
+-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></nfs/kris/d1/local_net2/texlive/
+2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></nfs/kris/d1/local_net
+2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></nfs/kris/d1
+/local_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmti10.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti7.pfb></nfs/kris/d1/local_net2/texlive/2010/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti8.pfb></nfs/kris/d1/local_net2/texlive/20
+10/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on chris3.pdf (24 pages, 2833401 bytes).
 PDF statistics:
- 446 PDF objects out of 1000 (max. 8388607)
- 396 compressed objects within 4 object streams
- 123 named destinations out of 1000 (max. 500000)
- 268 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 556 PDF objects out of 1000 (max. 8388607)
+ 472 compressed objects within 5 object streams
+ 147 named destinations out of 1000 (max. 500000)
+ 403 words of extra memory for PDF output out of 10000 (max. 10000000)
 

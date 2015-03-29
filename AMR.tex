@@ -41,23 +41,55 @@ Isotropic AMR  occurs by uniformly splitting the Parent cell into 8 children (in
     \begin{center}
       \includegraphics[height=0.35\textwidth]{./figs/BlockDivision.jpg}
     \end{center}
-    \caption{Isotropic and Anisotropic AMR \cite{Zhang:2011b}}  
+    \caption{Isotropic and Anisotropic AMR \cite{zhang:2011a}}  
     \vspace{0.2cm}
 \end{figure}
 
 \item \textbf{Anisotropic AMR}: \\
-For flows having a directional bias, e.g. in the simulation of a jet exiting a nozzle, the dominant direction will be along the axis of symmetry of the nozzle. Therefore, a priori, we can tell that the mesh cells would ideally need to be stretched along this same axis. Whenever we have this kind of bias on the cell geometry, we have anisotropy. Mesh refinement occurs in a slightly different manner, as now we switch to a binary tree system, which stores refinement history and cell connectivity. Two, four, or eight refined blocks can be created, resulting in five distinct possible refinements for a single block to better adapt to evolving flow features. Studies by Zhang ~\cite{Zhang:2011b}, and Zhang and Groth ~\cite{Zhang:2011a} indicate that Anisotropic AMR for given simulations result in lower cell counts, although the refinement procedure is more difficult than that of the Isotropic AMR.\par
+For flows having a directional bias, e.g. in the simulation of a jet exiting a nozzle, the dominant direction will be along the axis of symmetry of the nozzle. Therefore, a priori, we can tell that the mesh cells would ideally need to be stretched along this same axis. Whenever we have this kind of bias on the cell geometry, we have anisotropy. Mesh refinement occurs in a slightly different manner, as now we switch to a binary tree system, which stores refinement history and cell connectivity. Two, four, or eight refined blocks can be created, resulting in five distinct possible refinements for a single block to better adapt to evolving flow features. Studies by Zhang ~\cite{zhang:2011a}, Zhang and Groth ~\cite{zhang:2011b}, Freret and Groth ~\cite{Freret:2015} indicate that anisotropic AMR for given simulations result in lower cell counts (see figure \ref{fig:isoAniso}), although the refinement procedure is more difficult than that of the Isotropic AMR. The number of cells to reach a convergence criteria is reduced in the case of figure \ref{fig:outErr} by a factor of approximately $1.5$.  \par
 
 
-Freret and Groth \cite{Freret:2015} have completed a new formulation for a Non-uniform block-based approach that targets the the ghost cells. In this method, a block will copy over the mesh resolution and solution information of its neighboring block to its own ghost cells, and this eliminates the interpolation error within a Uniform block-based scheme that would otherwise have resulted in necessary solution restriction and prolongation (if the mesh discretization levels were different). Further, this saves the computational cost of flux correction cycles, done via message passing between the blocks, as described by Zhang to be a temporary remedy to ghost-cell evaluation.\cite{Zhang:2011a}
+Freret and Groth \cite{Freret:2015} have completed a new formulation for a Non-uniform block-based approach that targets the the ghost cells. In this method, a block will copy over the mesh resolution and solution information of its neighboring block to its own ghost cells, and this eliminates the interpolation error within a Uniform block-based scheme that would otherwise have resulted in necessary solution restriction and prolongation (if the mesh discretization levels were different). Further, this saves the computational cost of flux correction cycles, done via message passing between the blocks, as described by Zhang to be a temporary remedy to ghost-cell evaluation.\cite{zhang:2011b}
 
 \begin{figure}
     \vspace{0.2cm}
     \begin{center}
       \includegraphics[height=0.35\textwidth]{./figs/Non-UniformBlock.png}
     \end{center}
-    \caption{Non-Uniform Ghost Cells on Block \cite{Freret:2015}}  
+    \caption{Non-Uniform Ghost Cells on Block [Freret and Groth: 2015] \cite{Freret:2015}}  
     \vspace{0.2cm}
 \end{figure}
 
 \end{enumerate}
+
+\begin{figure}[t!]
+  \centering
+	\subfigure[Initial density (t=0s) obtained after 6 initial  refinements. 14057 blocks]
+   {\label{fig:iso0}	   
+   \includegraphics[height=0.3\textwidth]{figs/shockCubeIso0.jpg}}%
+   \:
+   \subfigure[Density (at t=0.5s). 7036 blocks.]
+   {\label{fig:iso3}	   
+   \includegraphics[height=0.3\textwidth]{figs/shockCubeIso3.jpg}}%
+	\:
+	\subfigure[Initial density (t=0s) obtained after 6 initial refinements. 1089 blocks. ]
+   {\label{fig:Aniso0}	   
+   \includegraphics[height=0.3\textwidth]{figs/shockCubeAniso0.jpg}}%
+   \:
+	\subfigure[Density (at t=0.5s). 5522 blocks]
+   {\label{fig:Aniso3}	   
+   \includegraphics[height=0.3\textwidth]{figs/shockCubeAniso3.jpg}}%
+   \caption{Differences between the isotropic and anisotropic AMR on a shockcube problem. Initial conditions have large density jumps between left and right states: 1 block = 8x8x8 cells. [Freret and Groth: 2015] \cite{Freret:2015} } 
+\label{fig:isoAniso}      
+\end{figure}  
+
+
+\begin{figure}
+    \vspace{0.2cm}
+    \begin{center}
+      \includegraphics[height=0.45\textwidth]{./figs/outflowError.png}
+    \end{center}
+    \caption{Resulting error in the density norm [Freret and Groth: 2015] \cite{Freret:2015}}  
+    \vspace{0.2cm}
+    \label{fig:outErr}
+\end{figure}

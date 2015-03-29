@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.10)  17 JAN 2015 13:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.10)  28 MAR 2015 21:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2878,12 +2878,13 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no [ in font nullfont!
-\citation{Ivan:2013}
+Missing character: There is no [ in font nullfont!
+\citation{ivan:2007}
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.42 ...scheme of Ivan and Groth ~\cite{Ivan:2013}
-                                                   uses a \textit{k}-exact l...
+l.42 ...cheme of Ivan and Groth [~\cite{ivan:2007}
+                                                  , \cite{ivan:2013b}] uses ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2891,8 +2892,27 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Ivan:2013' on page  undefined on input line 42.
+LaTeX Warning: Citation `ivan:2007' on page  undefined on input line 42.
 
+Missing character: There is no ] in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no [ in font nullfont!
+\citation{ivan:2013b}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.42 ...roth [~\cite{ivan:2007}, \cite{ivan:2013b}
+                                                  ] uses a \textit{k}-exact ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `ivan:2013b' on page  undefined on input line 42.
+
+Missing character: There is no ] in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -3256,6 +3276,11 @@ Overfull \hbox (5.43053pt too wide) in paragraph at lines 42--42
  []
 
 
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 42--42
+[]
+ []
+
+
 Overfull \hbox (4.59996pt too wide) in paragraph at lines 42--42
 \OT1/cmr/m/it/10 k
  []
@@ -3506,11 +3531,11 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-\citation{Ivan:2013}
+\citation{ivan:2007}
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.46 ...ies of other ENO schemes ~\cite{Ivan:2013}
+l.46 ... ENO schemes ~\cite{ivan:2007, ivan:2013b}
                                                   ;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3519,10 +3544,31 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Ivan:2013' on page  undefined on input line 46.
+LaTeX Warning: Citation `ivan:2007' on page  undefined on input line 46.
+
+Missing character: There is no , in font nullfont!
+\citation{ivan:2013b}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.46 ... ENO schemes ~\cite{ivan:2007, ivan:2013b}
+                                                  ;
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `ivan:2013b' on page  undefined on input line 46.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 46--47
+[]
+ []
+
 
 Overfull \hbox (5.43053pt too wide) in paragraph at lines 46--47
 [] 
@@ -3895,11 +3941,11 @@ Missing character: There is no ) in font nullfont!
 
  
 Here is how much of TeX's memory you used:
- 24 strings out of 493109
- 325 string characters out of 6135003
- 57967 words of memory out of 5000000
- 3587 multiletter control sequences out of 15000+600000
+ 25 strings out of 493109
+ 337 string characters out of 6135003
+ 58967 words of memory out of 5000000
+ 3588 multiletter control sequences out of 15000+600000
  4294 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 20i,5n,26p,644b,104s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 20i,5n,26p,644b,105s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

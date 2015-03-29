@@ -39,11 +39,11 @@ where $\omega_m$ are the face quadrature weighting coefficients, $\omega_n$ are 
 \subsubsection{The Centrally Essentially Non-Oscillatory (CENO) Scheme}
 \label{section:CENO}
 In solution reconstruction, given the cell average values, a Taylor series expansion polynomial is defined to represent the variation of the solution within the particular cell and the average solution of its neighbors. \par
-The High-Order CENO reconstruction scheme of Ivan and Groth ~\cite{Ivan:2013} uses a \textit{k}-exact least-squares reconstruction technique, essentially a $k^{th}$ order Taylor series expansion of solution variable $U$ about the cell center. This reconstruction techniques is applied to a monotonicity-preserving limited linear scheme. For Favre-Averaged Navier Stokes (FANS), \textit{k} corresponds to the spatial accuracy of the scheme. A smoothness indicator is used to switch between reconstruction procedures.\par
+The High-Order CENO reconstruction scheme of Ivan and Groth [~\cite{ivan:2007}, \cite{ivan:2013b}] uses a \textit{k}-exact least-squares reconstruction technique, essentially a $k^{th}$ order Taylor series expansion of solution variable $U$ about the cell center. This reconstruction techniques is applied to a monotonicity-preserving limited linear scheme. For Favre-Averaged Navier Stokes (FANS), \textit{k} corresponds to the spatial accuracy of the scheme. A smoothness indicator is used to switch between reconstruction procedures.\par
 Some of the advantages of CENO are ~\cite{Groth:2013}:
 \begin{itemize}
 \item It provides accuracy of other Essentially Non-Oscillatory (ENO) schemes and maintains monotonicity near discontinuities;
-\item Uses the same central stencil while avoiding complexities of other ENO schemes ~\cite{Ivan:2013};
+\item Uses the same central stencil while avoiding complexities of other ENO schemes ~\cite{ivan:2007, ivan:2013b};
 \item Can be extended to unstructured meshes and multiple dimensions ~\cite{Charest:2013}; 
 \item Identifies regions where under-resolution and non-smooth data occurs, and this could prove useful for mesh adaptation techniques.
 \end{itemize}

@@ -10,12 +10,6 @@ Y.~Kaneda and T.~Ishihara.
 \newblock High-resolution direct numerical simulation of turbulence.
 \newblock {\em Journal of Turbulence}, 7(20), 2006.
 
-\bibitem{Brisebois:2014}
-V.~Caux-Brisebois, A.~Steinberg, C.~Arndt, and W.~Meier.
-\newblock Thermo-acoustic velocity coupling in a swirl stabilized gas turbine
-  model combustor.
-\newblock {\em Combustion and Flame}, 161:3166--3180, 2014.
-
 \bibitem{Northrup:2013}
 S.~A. Northrup.
 \newblock {\em A Parallel Implicit Adaptive Mesh Refinement Algorithm for
@@ -28,19 +22,23 @@ W.~Deconinck.
   simulation of compressible turbulent flows.
 \newblock Master's thesis, University of Toronto, 2008.
 
-\bibitem{ivan:2007b}
+\bibitem{ivan:2007}
 L.~Ivan and C.~P.~T. Groth.
-\newblock High-order central {CENO} finite-volume scheme with adaptive mesh
+\newblock High-order central {ENO} finite-volume scheme with adaptive mesh
   refinement.
-\newblock Paper 07--4323, AIAA, June 2007.
+\newblock Paper 2007-4324, AIAA, June 2007.
 
-\bibitem{Zhang:2011a}
+\bibitem{ivan:2013b}
+L.~Ivan and C.~P.~T. Groth.
+\newblock High-order solution-adaptive central essentially non-oscillatory
+  ({CENO}) method for viscous flows.
+\newblock {\em Journal of Computational Physics}, 257:830--862, 2013.
+
+\bibitem{zhang:2011b}
 Z.~J. Zhang and C.~P.~T. Groth.
 \newblock Parallel high-order anisotropic block-based adaptive mesh refinement
   finite-volume scheme.
-\newblock Technical report, American Institute of Aeronautics and Astronautics,
-  June 2011.
-\newblock 20th AIAA Computational Fluid Dynamics Conference.
+\newblock Paper 2011-3695, AIAA, June 2011.
 
 \bibitem{Williamschen:2013}
 M.~J. Williamschen and C.~P.~T. Groth.
@@ -49,6 +47,14 @@ M.~J. Williamschen and C.~P.~T. Groth.
 \newblock Technical report, American Institute of Aeronautics and Astronautics,
   June 2013.
 \newblock 21st AIAA Computational Fluid Dynamics Conference.
+
+\bibitem{Freret:2015}
+L.~Freret and C.~P.~T. Groth.
+\newblock Anisotropic non-uniform block-based adaptive mesh refinement for
+  three-dimensional inviscid and viscous flows.
+\newblock 22nd aiaa computational fluid dynamics conference, American Institute
+  of Aeronautics and Astronautics, June 2015.
+\newblock Accepted.
 
 \bibitem{HPerez:2011}
 F.~E. Hern{\'a}ndez-P{\'e}rez.
@@ -85,12 +91,6 @@ L.~Tobaldlini Neto and C.~P.~T. Groth.
   January 2014.
 \newblock 52nd Aerospace Sciences Meeting.
 
-\bibitem{Ivan:2013}
-L.~Ivan and C.~P.~T. Groth.
-\newblock High-order solution-adaptive central essentially non-oscillatory
-  (ceno) method for viscous flows.
-\newblock {\em Journal of Computational Physics}, 257:830--862, 2013.
-
 \bibitem{Groth:2013}
 C.~P.~T. Groth.
 \newblock Control and reduction of numerical errors in reactive flow les.
@@ -119,27 +119,17 @@ C.~P.~T. Groth and S.~A. Northrup.
   June 2005.
 \newblock 17th AIAA Computational Fluid Dynamics Conference.
 
-\bibitem{Zhang:2011b}
+\bibitem{zhang:2011a}
 Z.~J. Zhang.
 \newblock Parallel anisotropic block-based adaptive mesh refinement
   finite-volume scheme.
 \newblock Master's thesis, University of Toronto, 2011.
 
-\bibitem{Freret:2015}
-L.~Freret and C.~P.~T. Groth.
-\newblock Anisotropic non-uniform block-based adaptive mesh refinement for
-  three-dimensional inviscid and viscous flows.
-\newblock 22nd aiaa computational fluid dynamics conference, American Institute
-  of Aeronautics and Astronautics, June 2015.
-\newblock Accepted.
-
 \bibitem{Shahbazian:2011}
-N.~Shahbazian, C.~P.~T. Groth, and {\"O}.~L. G{\"u}lder.
+N.~Shahbazian, C.~P.~T. Groth, and \"{O}.~L. G\"{u}lder.
 \newblock Assessment of presumed pdf models for large eddy simulation of
   turbulent premixed flames.
-\newblock Technical Report AIAA 2011-781, American Institute of Aeronautics and
-  Astronautics, January 2011.
-\newblock 49th AIAA Aerospace Sciences Meeting.
+\newblock Paper 2011-0781, AIAA, January 2011.
 
 \bibitem{Giles:2000}
 M.~B. Giles and N.~A. Pierce.
@@ -173,7 +163,7 @@ K.~J. Fidkowski.
 \bibitem{vreman:1995}
 B.~Vreman, B.~Geurts, and H.~Kuerten.
 \newblock Subgrid-modeling in {LES} of compressible flow.
-\newblock {\em Applied Scientific Research}, 54:191--203, 1995.
+\newblock 54:191--203, 1995.
 
 \bibitem{martin:2000}
 M.~P. Mart\'in, U.~Piomelli, and G.~V. Candler.

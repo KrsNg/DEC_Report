@@ -49,7 +49,7 @@
 \newcommand{\xik}{\xi^k}
 \newcommand{\bbth}{{\mathbf{b}}^{\theta_3}}
 \newcommand{\xiav}{\langle \bxi \rangle}
-
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
 \reversemarginpar
 
 \section{Poisson Solver}
@@ -74,7 +74,7 @@ Using the centered FD scheme in 2D:
 $$
 -\frac{u_{i+1,j}+u_{i-1,j}+u_{i,j+1}+u_{i,j-1}-4 u_{ij}}{h^2}=f_{ij},
 $$
-written at each interior node $\bx_{ijk}$, $1 \leq i,j,k \leq N-1$, and taking into account the boundary conditions (\ref{eq:2}), write down a linear system \begin{equation}\label{eq:linsyst} \bA \bu = \bb
+written at each interior node $\bx_{ijk}$, $1 \leq i,j,k \leq N-1$, and taking into account the boundary conditions (\ref{eq:2}), write down a linear system \begin{equation}\label{eq:linsyst1} \bA \bu = \bb
 \end{equation} of size $(N-1)^2\times (N-1)^2$, where $\bu$ is a vector that contains the $u_{ij}$ corresponding to the interior nodes.
 
 \item In 3D: \\
@@ -82,10 +82,10 @@ $D=[0,1]^3$, $f(x,y,z)=3(x(1-x)+y(1-y)+z(1-z))$ is the source term and $u(x,y,z)
 Using the centered FD scheme in 3D:
 
 $$
-\small{-\frac{u_{i+1,j,k-1}+u_{i-1,j,k-1}+u_{i,j+1,k-1}+u_{i,j-1,k-1} + u_{i+1,j,k+1}+u_{i-1,j,k+1}+u_{i,j+1,k+1}+u_{i,j-1,k+1}-6 u_{ijk}}{h^2}=f_{ijk},}
+\Scale[1]{-\frac{u_{i+1,j,k-1}+u_{i-1,j,k-1}+u_{i,j+1,k-1}+u_{i,j-1,k-1} + u_{i+1,j,k+1}+u_{i-1,j,k+1}+u_{i,j+1,k+1}+u_{i,j-1,k+1}-6 u_{ijk}}{h^2}=f_{ijk},}
 $$
 
-written at each interior node $\bx_{ijk}$, $1 \leq i,j,k \leq N-1$, and taking into account the boundary conditions (\ref{eq:2}), write down a linear system \begin{equation}\label{eq:linsyst} \bA \bu = \bb
+written at each interior node $\bx_{ijk}$, $1 \leq i,j,k \leq N-1$, and taking into account the boundary conditions (\ref{eq:2}), write down a linear system \begin{equation}\label{eq:linsyst2} \bA \bu = \bb
 \end{equation} of size $(N-1)^3\times (N-1)^3$, where $\bu$ is a vector that contains the $u_{ij}$ corresponding to the interior nodes.
 
 \end{itemize}

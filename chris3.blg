@@ -8,47 +8,46 @@ Database file #2: cfd.bib
 Warning--string name "applscires" is undefined
 --line 13682 of file cfd.bib
 Database file #3: chris_ref.bib
-Warning--empty author in intel:2005
 Warning--empty journal in vreman:1995
-You've used 29 entries,
+You've used 28 entries,
             1791 wiz_defined-function locations,
-            847 strings with 12559 characters,
-and the built_in function-call counts, 4856 in all, are:
-= -- 450
-> -- 209
-< -- 7
-+ -- 83
+            842 strings with 12425 characters,
+and the built_in function-call counts, 4747 in all, are:
+= -- 440
+> -- 208
+< -- 6
++ -- 82
 - -- 54
-* -- 264
-:= -- 874
-add.period$ -- 92
-call.type$ -- 29
-change.case$ -- 34
+* -- 255
+:= -- 859
+add.period$ -- 90
+call.type$ -- 28
+change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 225
-empty$ -- 449
+cite$ -- 29
+duplicate$ -- 218
+empty$ -- 437
 format.name$ -- 54
-if$ -- 1051
+if$ -- 1027
 int.to.chr$ -- 0
-int.to.str$ -- 29
+int.to.str$ -- 28
 missing$ -- 14
-newline$ -- 153
+newline$ -- 149
 num.names$ -- 28
-pop$ -- 56
+pop$ -- 53
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 79
+skip$ -- 77
 stack$ -- 0
 substring$ -- 154
-swap$ -- 26
-text.length$ -- 7
+swap$ -- 25
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
+warning$ -- 1
 while$ -- 40
-width$ -- 31
-write$ -- 330
-(There were 3 warnings)
+width$ -- 30
+write$ -- 321
+(There were 2 warnings)

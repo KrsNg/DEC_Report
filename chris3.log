@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.10)  28 MAR 2015 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.10)  28 MAR 2015 22:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -386,8 +386,9 @@ utias_logo_blue.jpg>] (./Introduction.tex)
 age.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4 ...ill then be performed upon conclusion. \par
-                                                   [1
+l.6 T
+     he CFFC code already has most of the needed formulations required for t...
+[1
 
 ]) (./LES.tex [2]
 LaTeX Font Info:    Try loading font information for U+msa on input line 14.
@@ -406,8 +407,8 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
- [5])
-(./AMR.tex
+) (./AMR.tex
+[5]
 Package epstopdf Info: Source file: <./figs/parallel-domain-decomp.eps>
 (epstopdf)                    date: 2015-03-25 19:14:53
 (epstopdf)                    size: 1621555 bytes
@@ -420,7 +421,7 @@ omp-eps-converted-to.pdf ./figs/parallel-domain-decomp.eps>
 (epstopdf)             \includegraphics on input line 11.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/parallel-domain-decomp-eps-converted-to.pdf, id=228, 490.83376pt x 327.
+<./figs/parallel-domain-decomp-eps-converted-to.pdf, id=226, 490.83376pt x 327.
 2225pt>
 File: ./figs/parallel-domain-decomp-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -428,7 +429,6 @@ File: ./figs/parallel-domain-decomp-eps-converted-to.pdf Graphic file (type pdf
 Package pdftex.def Info: ./figs/parallel-domain-decomp-eps-converted-to.pdf use
 d on input line 11.
 (pdftex.def)             Requested size: 265.593pt x 177.06458pt.
- [6 <./figs/parallel-domain-decomp-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figs/2dgrid_ghostcells.eps>
 (epstopdf)                    date: 2015-03-25 19:14:53
 (epstopdf)                    size: 12742 bytes
@@ -441,7 +441,7 @@ f>
 (epstopdf)             \includegraphics on input line 25.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/2dgrid_ghostcells-eps-converted-to.pdf, id=244, 472.76625pt x 418.56375pt
+<figs/2dgrid_ghostcells-eps-converted-to.pdf, id=231, 472.76625pt x 418.56375pt
 >
 File: figs/2dgrid_ghostcells-eps-converted-to.pdf Graphic file (type pdf)
  <use figs/2dgrid_ghostcells-eps-converted-to.pdf>
@@ -460,15 +460,15 @@ f>
 (epstopdf)             \includegraphics on input line 29.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/amr-blocks-ghosts-eps-converted-to.pdf, id=247, 760.8425pt x 580.1675pt>
+<figs/amr-blocks-ghosts-eps-converted-to.pdf, id=234, 760.8425pt x 580.1675pt>
 File: figs/amr-blocks-ghosts-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/amr-blocks-ghosts-eps-converted-to.pdf>
 Package pdftex.def Info: figs/amr-blocks-ghosts-eps-converted-to.pdf used on in
 put line 29.
 (pdftex.def)             Requested size: 233.30273pt x 177.06458pt.
-
-<./figs/BlockDivision.jpg, id=250, 1061.9675pt x 737.75626pt>
+ [6 <./figs/parallel-domain-decomp-eps-converted-to.pdf>]
+<./figs/BlockDivision.jpg, id=249, 1061.9675pt x 737.75626pt>
 File: ./figs/BlockDivision.jpg Graphic file (type jpg)
 
 <use ./figs/BlockDivision.jpg>
@@ -476,47 +476,47 @@ Package pdftex.def Info: ./figs/BlockDivision.jpg used on input line 42.
 (pdftex.def)             Requested size: 254.8774pt x 177.06458pt.
  [7 <./figs/2dgrid_ghostcells-eps-converted-to.pdf> <./figs/amr-blocks-ghosts-e
 ps-converted-to.pdf> <./figs/BlockDivision.jpg>]
-<./figs/Non-UniformBlock.png, id=281, 1138.2525pt x 829.0975pt>
+<./figs/Non-UniformBlock.png, id=277, 1138.2525pt x 829.0975pt>
 File: ./figs/Non-UniformBlock.png Graphic file (type png)
 
 <use ./figs/Non-UniformBlock.png>
-Package pdftex.def Info: ./figs/Non-UniformBlock.png used on input line 57.
+Package pdftex.def Info: ./figs/Non-UniformBlock.png used on input line 54.
 (pdftex.def)             Requested size: 243.0869pt x 177.06458pt.
 
-<figs/shockCubeIso0.jpg, id=285, 792.9625pt x 705.63625pt>
+<figs/shockCubeIso0.jpg, id=281, 792.9625pt x 705.63625pt>
 File: figs/shockCubeIso0.jpg Graphic file (type jpg)
 
 <use figs/shockCubeIso0.jpg>
-Package pdftex.def Info: figs/shockCubeIso0.jpg used on input line 69.
+Package pdftex.def Info: figs/shockCubeIso0.jpg used on input line 66.
 (pdftex.def)             Requested size: 170.54411pt x 151.76854pt.
 
-<figs/shockCubeIso3.jpg, id=286, 792.9625pt x 705.63625pt>
+<figs/shockCubeIso3.jpg, id=282, 792.9625pt x 705.63625pt>
 File: figs/shockCubeIso3.jpg Graphic file (type jpg)
 
 <use figs/shockCubeIso3.jpg>
-Package pdftex.def Info: figs/shockCubeIso3.jpg used on input line 73.
+Package pdftex.def Info: figs/shockCubeIso3.jpg used on input line 70.
 (pdftex.def)             Requested size: 170.54411pt x 151.76854pt.
 
-<figs/shockCubeAniso0.jpg, id=287, 792.9625pt x 705.63625pt>
+<figs/shockCubeAniso0.jpg, id=283, 792.9625pt x 705.63625pt>
 File: figs/shockCubeAniso0.jpg Graphic file (type jpg)
 
 <use figs/shockCubeAniso0.jpg>
-Package pdftex.def Info: figs/shockCubeAniso0.jpg used on input line 77.
+Package pdftex.def Info: figs/shockCubeAniso0.jpg used on input line 74.
 (pdftex.def)             Requested size: 170.54411pt x 151.76854pt.
 
-<figs/shockCubeAniso3.jpg, id=288, 792.9625pt x 705.63625pt>
+<figs/shockCubeAniso3.jpg, id=284, 792.9625pt x 705.63625pt>
 File: figs/shockCubeAniso3.jpg Graphic file (type jpg)
 
 <use figs/shockCubeAniso3.jpg>
-Package pdftex.def Info: figs/shockCubeAniso3.jpg used on input line 81.
+Package pdftex.def Info: figs/shockCubeAniso3.jpg used on input line 78.
 (pdftex.def)             Requested size: 170.54411pt x 151.76854pt.
 
-<./figs/outflowError.png, id=291, 745.78625pt x 664.4825pt>
+<./figs/outflowError.png, id=289, 745.78625pt x 664.4825pt>
 File: ./figs/outflowError.png Graphic file (type png)
 
 <use ./figs/outflowError.png>
-Package pdftex.def Info: ./figs/outflowError.png used on input line 90.
-(pdftex.def)             Requested size: 255.49854pt x 227.64894pt.
+Package pdftex.def Info: ./figs/outflowError.png used on input line 89.
+(pdftex.def)             Requested size: 283.89105pt x 252.94499pt.
 ) (./CombModelling.tex [8 <./figs/Non-UniformBlock.png>]) (./Adjoint.tex [9 <./
 figs/shockCubeIso0.jpg> <./figs/shockCubeIso3.jpg> <./figs/shockCubeAniso0.jpg>
  <./figs/shockCubeAniso3.jpg>] [10 <./figs/outflowError.png (PNG copy)>] [11] [
@@ -529,33 +529,33 @@ figs/shockCubeIso0.jpg> <./figs/shockCubeIso3.jpg> <./figs/shockCubeAniso0.jpg>
 \c@lem=\count127
 \c@rem=\count128
  [13]
-<figs/Poisson2D.png, id=366, 560.0925pt x 472.6458pt>
+<figs/Poisson2D.png, id=364, 560.0925pt x 472.6458pt>
 File: figs/Poisson2D.png Graphic file (type png)
  <use figs/Poisson2D.png>
 Package pdftex.def Info: figs/Poisson2D.png used on input line 97.
 (pdftex.def)             Requested size: 240.72217pt x 202.3529pt.
 
-<figs/Poisson3D.jpeg, id=368, 711.65875pt x 632.3625pt>
+<figs/Poisson3D.jpeg, id=366, 711.65875pt x 632.3625pt>
 File: figs/Poisson3D.jpeg Graphic file (type jpg)
 
 <use figs/Poisson3D.jpeg>
 Package pdftex.def Info: figs/Poisson3D.jpeg used on input line 102.
 (pdftex.def)             Requested size: 228.18599pt x 202.3529pt.
 ) (./LES_example.tex
-<./figs/Time_averaged_c_O2.png, id=370, 794.97pt x 705.63625pt>
+<./figs/Time_averaged_c_O2.png, id=368, 794.97pt x 705.63625pt>
 File: ./figs/Time_averaged_c_O2.png Graphic file (type png)
 
 <use ./figs/Time_averaged_c_O2.png>
 Package pdftex.def Info: ./figs/Time_averaged_c_O2.png used on input line 8.
 (pdftex.def)             Requested size: 227.96378pt x 202.3529pt.
  [14]
-<figs/fsd2_0ms.png, id=380, 1178.4025pt x 1067.99pt>
+<figs/fsd2_0ms.png, id=378, 1178.4025pt x 1067.99pt>
 File: figs/fsd2_0ms.png Graphic file (type png)
  <use figs/fsd2_0ms.png>
 Package pdftex.def Info: figs/fsd2_0ms.png used on input line 25.
 (pdftex.def)             Requested size: 139.53218pt x 126.47249pt.
 
-<figs/fsd4_25ms.png, id=381, 1178.4025pt x 1072.005pt>
+<figs/fsd4_25ms.png, id=379, 1178.4025pt x 1072.005pt>
 File: figs/fsd4_25ms.png Graphic file (type png)
 
 <use figs/fsd4_25ms.png>
@@ -566,7 +566,7 @@ Underfull \hbox (badness 4556) in paragraph at lines 30--30
 []\OT1/cmr/m/n/9 (b) At t=4.25ms 5595 (8x8x8)
  []
 
-<figs/fsd7_0ms.png, id=382, 1178.4025pt x 1073.00874pt>
+<figs/fsd7_0ms.png, id=380, 1178.4025pt x 1073.00874pt>
 File: figs/fsd7_0ms.png Graphic file (type png)
 
 <use figs/fsd7_0ms.png>
@@ -579,27 +579,27 @@ Underfull \hbox (badness 4120) in paragraph at lines 35--35
 
 [15 <./figs/Poisson2D.png> <./figs/Poisson3D.jpeg> <./figs/Time_averaged_c_O2.p
 ng (PNG copy)>]) (./Adjoint_examples.tex
-<figs/shockCubeAll1.png, id=397, 792.9625pt x 705.63625pt>
+<figs/shockCubeAll1.png, id=395, 792.9625pt x 705.63625pt>
 File: figs/shockCubeAll1.png Graphic file (type png)
 
 <use figs/shockCubeAll1.png>
 Package pdftex.def Info: figs/shockCubeAll1.png used on input line 19.
 (pdftex.def)             Requested size: 170.85129pt x 151.76854pt.
 
-<figs/rho_Adjoint.png, id=399, 794.97pt x 705.63625pt>
+<figs/rho_Adjoint.png, id=397, 794.97pt x 705.63625pt>
 File: figs/rho_Adjoint.png Graphic file (type png)
 
 <use figs/rho_Adjoint.png>
 Package pdftex.def Info: figs/rho_Adjoint.png used on input line 23.
 (pdftex.def)             Requested size: 171.29013pt x 151.76854pt.
 
-<figs/u_Adjoint.png, id=401, 794.97pt x 705.63625pt>
+<figs/u_Adjoint.png, id=399, 794.97pt x 705.63625pt>
 File: figs/u_Adjoint.png Graphic file (type png)
  <use figs/u_Adjoint.png>
 Package pdftex.def Info: figs/u_Adjoint.png used on input line 27.
 (pdftex.def)             Requested size: 171.29013pt x 151.76854pt.
 
-<figs/p_Adjoint.png, id=403, 794.97pt x 705.63625pt>
+<figs/p_Adjoint.png, id=401, 794.97pt x 705.63625pt>
 File: figs/p_Adjoint.png Graphic file (type png)
  <use figs/p_Adjoint.png>
 Package pdftex.def Info: figs/p_Adjoint.png used on input line 31.
@@ -614,13 +614,7 @@ figs/p_Adjoint.png (PNG copy)>] [18]
  (./appendix.tex [19
 
 ] [20]) [21]
-(./chris3.bbl
-Underfull \hbox (badness 6300) in paragraph at lines 4--7
-[]\OT1/cmr/m/n/10.95 Excerpts from a con-ver-sa-tion with gor-don moore: Moore'
-s law.  Video Tran-script
- []
-
-[22
+(./chris3.bbl [22
 
 ] [23])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
@@ -634,10 +628,10 @@ Package rerunfilecheck Info: File `chris3.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 183.
  ) 
 Here is how much of TeX's memory you used:
- 7817 strings out of 493109
- 116729 string characters out of 6135003
- 206496 words of memory out of 5000000
- 10965 multiletter control sequences out of 15000+600000
+ 7815 strings out of 493109
+ 116702 string characters out of 6135003
+ 206463 words of memory out of 5000000
+ 10964 multiletter control sequences out of 15000+600000
  16559 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,26n,40p,1161b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -661,10 +655,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2014/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2014/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on chris3.pdf (25 pages, 3765714 bytes).
+Output written on chris3.pdf (25 pages, 3764583 bytes).
 PDF statistics:
- 581 PDF objects out of 1000 (max. 8388607)
- 491 compressed objects within 5 object streams
- 153 named destinations out of 1000 (max. 500000)
+ 579 PDF objects out of 1000 (max. 8388607)
+ 489 compressed objects within 5 object streams
+ 152 named destinations out of 1000 (max. 500000)
  410 words of extra memory for PDF output out of 10000 (max. 10000000)
 

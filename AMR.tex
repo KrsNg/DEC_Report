@@ -48,9 +48,6 @@ Isotropic AMR  occurs by uniformly splitting the Parent cell into 8 children (in
 \item \textbf{Anisotropic AMR}: \\
 For flows having a directional bias, e.g. in the simulation of a jet exiting a nozzle, the dominant direction will be along the axis of symmetry of the nozzle. Therefore, a priori, we can tell that the mesh cells would ideally need to be stretched along this same axis. Whenever we have this kind of bias on the cell geometry, we have anisotropy. Mesh refinement occurs in a slightly different manner, as now we switch to a binary tree system, which stores refinement history and cell connectivity. Two, four, or eight refined blocks can be created, resulting in five distinct possible refinements for a single block to better adapt to evolving flow features. Studies by Zhang ~\cite{zhang:2011a}, Zhang and Groth ~\cite{zhang:2011b}, Freret and Groth ~\cite{Freret:2015} indicate that anisotropic AMR for given simulations result in lower cell counts (see figure \ref{fig:isoAniso}), although the refinement procedure is more difficult than that of the Isotropic AMR. The number of cells to reach a convergence criteria is reduced in the case of figure \ref{fig:outErr} by a factor of approximately $1.5$.  \par
 
-
-Freret and Groth \cite{Freret:2015} have completed a new formulation for a Non-uniform block-based approach that targets the the ghost cells. In this method, a block will copy over the mesh resolution and solution information of its neighboring block to its own ghost cells, and this eliminates the interpolation error within a Uniform block-based scheme that would otherwise have resulted in necessary solution restriction and prolongation (if the mesh discretization levels were different). Further, this saves the computational cost of flux correction cycles, done via message passing between the blocks, as described by Zhang to be a temporary remedy to ghost-cell evaluation.\cite{zhang:2011b}
-
 \begin{figure}
     \vspace{0.2cm}
     \begin{center}
@@ -83,11 +80,13 @@ Freret and Groth \cite{Freret:2015} have completed a new formulation for a Non-u
 \label{fig:isoAniso}      
 \end{figure}  
 
+Freret and Groth \cite{Freret:2015} have completed a new formulation for a Non-uniform block-based approach that targets the the ghost cells. In this method, a block will copy over the mesh resolution and solution information of its neighboring block to its own ghost cells, and this eliminates the interpolation error within a Uniform block-based scheme that would otherwise have resulted in necessary solution restriction and prolongation (if the mesh discretization levels were different). Further, this saves the computational cost of flux correction cycles, done via message passing between the blocks, as described by Zhang to be a temporary remedy to ghost-cell evaluation.\cite{zhang:2011b}
+
 
 \begin{figure}
     \vspace{0.2cm}
     \begin{center}
-      \includegraphics[height=0.45\textwidth]{./figs/outflowError.png}
+      \includegraphics[height=0.5\textwidth]{./figs/outflowError.png}
     \end{center}
     \caption{Resulting error in the density norm [Freret and Groth: 2015] \cite{Freret:2015}}  
     \vspace{0.2cm}

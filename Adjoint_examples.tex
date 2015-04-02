@@ -1,34 +1,24 @@
-\section{Discrete Adjoint Solutions based on a Primal Problem}
-\label{section:Discrete_Adjoint}
-\subsection{Background}
+\subsection{Discrete adjoint solutions on a shock cube problem}
+\label{subsection:Discrete_Adjoint}
 
 Following the adjoint formulation explained in section \ref{section:Adjoint} it is seen that the adjoint formulation (also known as the \textit{dual problem}) can be written as a linear system:
 
 \begin{equation}
-A^Tx = -b^T
+\mathbf{A}^T\mathbf{x} = -\mathbf{b}^T
 \end{equation}
 
-Thus we can write the transpose of the Residual Jacobian matrix, $\frac{\partial{R}}{\partial{U}}$ as matrix $A^T$ and the right hand side vector b as the derivative of the functional with respect to the state,$\frac{\partial{J}}{\partial{U_i}}$\par
+Thus we can write the transpose of the residual Jacobian matrix, $\frac{\partial{R}}{\partial{U}}$ as matrix $A^T$ and the right hand side vector $\mathbf{b}$ as the derivative of the functional with respect to the state,$\frac{\partial{J}}{\partial{U_i}}$\par
 
-Some current plots obtained for the adjoint sensitivities are shown in figure \ref{fig:Adjoints}. The initial condition was that of a shock cube problem, and average pressure was selected as the functional, $J$. This case is still ongoing as the formulation is still being verified.\par
+Adjoint sensitivities were evaluated for a shock cube problem governed by the Euler equations (see figure \ref{fig:Adjoints}). The initial conditions were $\frac{\rho_L}{\rho_R} = 8$, $\frac{P_R}{P_L} = 10$. Average pressure in the entire domain was selected as the functional, $J$. \par
 
 \begin{figure}[t!]
   \centering
-	\subfigure[Initial conditions with large density and pressure jumps between left and right states]
+   \subfigure[Initial conditions for density showing large jump between left and right states]
    {\label{fig:init_cond}	   
-   \includegraphics[height=0.3\textwidth, trim=0.2cm 0.2cm 0.2cm .2cm,clip=true]{figs/shockCubeAll1.png}}%
-   \:
+   \includegraphics[height=0.45\textwidth]{figs/20Rho.png}}%
    \subfigure[sensitivity to Density]
    {\label{fig:rho_Adjoint}	   
-   \includegraphics[height=0.3\textwidth, trim=0.2cm 0.2cm 0.2cm .2cm,clip=true]{figs/rho_Adjoint.png}}%
-	\:
-	\subfigure[sensitivity to x-Momentum]
-   {\label{fig:u_Adjoint}	   
-   \includegraphics[height=0.3\textwidth, trim=0.2cm 0.2cm 0.2cm .2cm,clip=true]{figs/u_Adjoint.png}}%
-   \:
-	\subfigure[sensitivity to Pressure]
-   {\label{fig:p_Adjoint}	   
-   \includegraphics[height=0.3\textwidth, trim=0.2cm 0.2cm 0.2cm .2cm,clip=true]{figs/p_Adjoint.png}}%
-   \caption{Contours of adjoint sensitivities to changes in the conserved state variables } 
+   \includegraphics[height=0.45\textwidth]{./figs/20RhoAdj.png}}%
+\caption{Contours of $\rho$ and adjoint $\psi_{\rho}$ at t = 0 sec. 27 (20x20x20) blocks} 
 \label{fig:Adjoints}      
 \end{figure}  

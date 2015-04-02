@@ -1,21 +1,4 @@
-\section{LES of a Turbulent Premixed Methane Flame}
-\subsection{Model Problem}
-
-
-\begin{figure}
-    \vspace{0.2cm}
-    \begin{center}
-      \includegraphics[height=0.4\textwidth]{./figs/Time_averaged_c_O2.png}
-    \end{center}
-    \caption{Time averaged $O_2$ species concentration}  
-    \vspace{0.2cm}
-    \label{fig:oxygen}	
-\end{figure}
-
-The CFFC code was used to run a simulation for a Turbulent Premixed Methane flame, using 800 nodes, 3200 blocks and each block having $8^3 = 512$ cells, hence a total of $1,638,400$ cells. Time averaged results for t=6ms, 7ms, 8ms, 9ms, 10ms and 11ms are shown in figure \ref{fig:oxygen}, the contours representing the species concentration of Oxygen.\par
-
-
-Included here are some pictures from previous CFFC simulations that show the varying mesh cell sizes among the different blocks.
+\subsection{LES of a turbulent premixed methane flame}
 
 \begin{figure}[t!]
   \centering
@@ -33,8 +16,27 @@ Included here are some pictures from previous CFFC simulations that show the var
 (3 levels of mesh refinement)]
    {\label{fig:7msflame}	   
    \includegraphics[height=0.25\textwidth]{figs/fsd7_0ms.png}}%
-   \caption{Some figures showing isotropic mesh refinement with 3 levels of refinement for a lean premixed methane air flame in air. LES solutions were obtained with the flame surface density (FSD) model and the refinement was based on temperature gradient.} 
-      
+\caption{Some figures showing isotropic mesh refinement with 3 levels of refinement for a lean premixed methane air flame in air. LES solutions were obtained with the flame surface density (FSD) model and the refinement was based on temperature gradient.}   
+ \label{fig:LES_case1}        
+\end{figure} 
+
+\begin{figure}[t!]
+  \centering
+	\subfigure[Time averaged $O_2$ species concentration (t = 6-11 ms)]
+   {\label{fig:oxygen}	   
+  \includegraphics[height=0.4\textwidth]{./figs/Time_averaged_c_O2.png}}%
+   \:
+  \subfigure[Flame temperature at t= 9.0 ms] 
+  {\label{fig:flametemp}
+  \includegraphics[height=0.4\textwidth]{./figs/Flame_temp.png}}   
+
+\caption{Turbulent premixed methane flame having equivalence ratio $\Phi = 0.7$}    
+ \label{fig:LES_case2}        
 \end{figure}  
 
+
+The CFFC code was used to run a simulation for a turbulent premixed methane flame, using 800 nodes, 3200 blocks and each block having $8^3 = 512$ cells, hence a total of $1,638,400$ cells. Time averaged results for t=6ms, 7ms, 8ms, 9ms, 10ms and 11ms are shown in figure~\ref{fig:LES_case}, the contours representing the species concentration of Oxygen.\par
+
+
+Included here are some pictures from previous CFFC simulations that show the varying mesh cell sizes among the different blocks.
 

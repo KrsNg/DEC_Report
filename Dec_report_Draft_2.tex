@@ -1,0 +1,197 @@
+% ----------------------
+% THIS IS MY DEC1 REPORT
+% ----------------------
+
+\documentclass[titlepage,11pt,letterpaper]{article}
+
+\usepackage{graphicx,epsfig,color}
+\usepackage{subfigure}
+\usepackage{setspace}
+\usepackage{amsmath,amssymb}
+\usepackage[hang,small,bf]{caption}
+\usepackage[colorlinks]{hyperref}
+\hypersetup{
+	colorlinks=false,
+	citebordercolor={0 1 0}
+}
+\setlength{\captionmargin}{10pt}
+\setlength\parindent{0in}
+\include{commands}
+\newcommand{\pd}[2]{\frac{\partial#1}{\partial#2}}
+% Page Margins
+\voffset=-1.0in
+\topmargin=0.75in
+\headheight=0.0in
+\headsep=0.0in
+\hoffset=-1.0in
+\oddsidemargin=0.7in
+\evensidemargin=0.7in
+\bibliographystyle{unsrt}
+\parindent      0.2000in
+
+\textwidth=7.0in
+\textheight=9.25in
+
+% Line Spacing
+\renewcommand{\baselinestretch}{1.33}
+
+% Alter some LaTeX defaults for better treatment of figures:
+% See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+   \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+
+    % remember to use [htp] or [htpb] for placement
+
+%\newcommand*{\drop}{\vspace*{0.2\textheight}}
+\newenvironment{absolutelynopagebreak}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+   
+   
+\usepackage{chngcntr}
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}   
+\numberwithin{equation}{subsection}
+
+
+\begin{document}
+
+
+\newcommand*{\titleRR}
+{\begingroup
+  \centering
+  \vfill
+  \begin{figure}
+    \vspace{1.5cm}
+    \begin{center}
+      \includegraphics[width=0.17\textheight]{./figs/utias_logo_blue.jpg}
+    \end{center}
+    \vspace{1.5cm}
+  \end{figure}
+  {\LARGE \textbf{Development of ${h-p}$ adjoint-based error estimation for LES of reactive flows}}\\
+  \vspace*{2.0cm}
+  {\large Christopher Ngigi}\\
+  \vspace*{1.cm}
+  {\normalsize\itshape University of
+    Toronto Institute for Aerospace Studies}\\
+  {\normalsize\itshape 4925
+    Dufferin Street, Toronto, Ontario, M3H 5T6, Canada}\\
+  \vspace*{2.cm}
+  {Doctoral Examination Committee I Report} \\
+  \vspace*{1.cm}
+  {April 2015}
+  \vfill\null
+\endgroup}
+
+\thispagestyle{empty}\titleRR
+\clearpage
+\setcounter{page}{1}
+
+%\maketitle
+%\tableofcontents
+%\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% Introduction and Motivation
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\input{Introduction.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% CFD Techniques to Model Combustion
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Proposed error estimation strategy}
+
+The planned approach to perform the Adjoint-based Error Estimation (covered in Section \ref{section:Adjoint}) will utilize the following techniques
+
+\input{AMR.tex}
+
+\input{FVM.tex}
+
+\input{LES.tex}
+
+\input{CombModelling.tex}
+
+\input{Error.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% Adjoint Method for Error Estimation
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Adjoint.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Scope of Research
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Scope.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% Error Estimation technique
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Error_estimation_indicators.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Simulations carried out to date}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% Poisson Solver Case
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Poisson.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% LES of Premixed Flames
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{LES_example.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% Adjoint Cases run
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Adjoint_examples.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------
+% Summary of Progress to Date and Future Work
+%-------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\input{Progress.tex}
+
+\newpage
+\include{appendix}
+%\newpage
+%%\bibliographystyle{aiaa}
+\bibliography{journals-full,cfd,chris_ref}
+\end{document}

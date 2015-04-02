@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Dec_report_Draft_2.aux
+The style file: unsrt.bst
+A level-1 auxiliary file: appendix.aux
+Database file #1: journals-full.bib
+Database file #2: cfd.bib
+Warning--string name "applscires" is undefined
+--line 13682 of file cfd.bib
+Database file #3: chris_ref.bib
+Warning--empty journal in vreman:1995
+You've used 34 entries,
+            1791 wiz_defined-function locations,
+            870 strings with 13088 characters,
+and the built_in function-call counts, 6003 in all, are:
+= -- 555
+> -- 253
+< -- 7
++ -- 100
+- -- 66
+* -- 334
+:= -- 1061
+add.period$ -- 107
+call.type$ -- 34
+change.case$ -- 36
+chr.to.int$ -- 0
+cite$ -- 35
+duplicate$ -- 278
+empty$ -- 563
+format.name$ -- 66
+if$ -- 1310
+int.to.chr$ -- 0
+int.to.str$ -- 34
+missing$ -- 18
+newline$ -- 178
+num.names$ -- 34
+pop$ -- 67
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 105
+stack$ -- 0
+substring$ -- 241
+swap$ -- 39
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 52
+width$ -- 36
+write$ -- 385
+(There were 2 warnings)

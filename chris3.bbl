@@ -5,99 +5,17 @@ Y.~Kaneda and T.~Ishihara.
 \newblock High-resolution direct numerical simulation of turbulence.
 \newblock {\em Journal of Turbulence}, 7(20), 2006.
 
+\bibitem{Rashad:2009}
+R.~Rashad.
+\newblock Development of a high-order finite-volume method for the
+  navier-stokes equations in three dimensions.
+\newblock Master's thesis, University of Toronto, 2009.
+
 \bibitem{Northrup:2013}
 S.~A. Northrup.
 \newblock {\em A Parallel Implicit Adaptive Mesh Refinement Algorithm for
   Predicting Unsteady Fully-Compressible Reactive Flows}.
 \newblock PhD thesis, University of Toronto, 2013.
-
-\bibitem{Deconinck:2008}
-W.~Deconinck.
-\newblock Design and application of discrete explicit filters for large eddy
-  simulation of compressible turbulent flows.
-\newblock Master's thesis, University of Toronto, 2008.
-
-\bibitem{ivan:2007}
-L.~Ivan and C.~P.~T. Groth.
-\newblock High-order central {ENO} finite-volume scheme with adaptive mesh
-  refinement.
-\newblock Paper 2007-4324, AIAA, June 2007.
-
-\bibitem{ivan:2013b}
-L.~Ivan and C.~P.~T. Groth.
-\newblock High-order solution-adaptive central essentially non-oscillatory
-  ({CENO}) method for viscous flows.
-\newblock {\em Journal of Computational Physics}, 257:830--862, 2013.
-
-\bibitem{zhang:2011b}
-Z.~J. Zhang and C.~P.~T. Groth.
-\newblock Parallel high-order anisotropic block-based adaptive mesh refinement
-  finite-volume scheme.
-\newblock Paper 2011-3695, AIAA, June 2011.
-
-\bibitem{Williamschen:2013}
-M.~J. Williamschen and C.~P.~T. Groth.
-\newblock Parallel anisotropic block-based adaptive mesh refinement algorithm
-  for three-dimensional flows.
-\newblock Technical report, American Institute of Aeronautics and Astronautics,
-  June 2013.
-\newblock 21st AIAA Computational Fluid Dynamics Conference.
-
-\bibitem{Freret:2015}
-L.~Freret and C.~P.~T. Groth.
-\newblock Anisotropic non-uniform block-based adaptive mesh refinement for
-  three-dimensional inviscid and viscous flows.
-\newblock 22nd aiaa computational fluid dynamics conference, American Institute
-  of Aeronautics and Astronautics, June 2015.
-\newblock Accepted.
-
-\bibitem{HPerez:2011}
-F.~E. Hern{\'a}ndez-P{\'e}rez.
-\newblock {\em Subfilter Scale Modelling for Large Eddy Simulation of Lean
-  Hydrogen-Enriched Turbulent Premixed Combustion}.
-\newblock PhD thesis, University of Toronto, 2011.
-
-\bibitem{Lund:03}
-T~Lund.
-\newblock The use of explicit filters in large eddy simulation.
-\newblock {\em Computers and Mathematics with Applications}, Jan 2003.
-
-\bibitem{Pope:2005}
-Stephen~B. Pope.
-\newblock {\em Turbulent Flows}, chapter~6, page 183.
-\newblock Cambridge University Press, 4th edition, 2005.
-
-\bibitem{Smagorinsky:1963}
-J~Smagorinsky.
-\newblock General circulation experiments with the primitive equations.
-\newblock {\em Monthly Weather Review}, 91(3):99--164, 1963.
-
-\bibitem{Toro:1997}
-E.~F. Toro.
-\newblock {\em Riemann solvers and numerical methods for fluid dynamics : a
-  practical introduction}.
-\newblock Springer, Berlin, New York, 1997.
-
-\bibitem{Neto:2014}
-L.~Tobaldlini Neto and C.~P.~T. Groth.
-\newblock A high-order finite-volume scheme for large-eddy simulation of
-  turbulent premixed flames.
-\newblock Technical report, American Institute of Aeronautics and Astronautics,
-  January 2014.
-\newblock 52nd Aerospace Sciences Meeting.
-
-\bibitem{Groth:2013}
-C.~P.~T. Groth.
-\newblock Control and reduction of numerical errors in reactive flow les.
-\newblock Technical report, UTRC Workshop, September 2013.
-
-\bibitem{Charest:2013}
-M.~R.~J. Charest and C.~P.~T. Groth.
-\newblock A high-order central eno finite-volume scheme for three-dimensional
-  turbulent flows on unstructured mesh.
-\newblock Technical report, American Institute of Aeronautics and Astronautics,
-  June 2013.
-\newblock 21st AIAA Computational Fluid Dynamics Conference.
 
 \bibitem{Groth:1999}
 C.~P.~T. Groth, D.~L.~De Zeeuw, K.~G. Powell, T.~I. Gombosi, and Q.~F. Stout.
@@ -120,6 +38,78 @@ Z.~J. Zhang.
   finite-volume scheme.
 \newblock Master's thesis, University of Toronto, 2011.
 
+\bibitem{Freret:2015}
+L.~Freret and C.~P.~T. Groth.
+\newblock Anisotropic non-uniform block-based adaptive mesh refinement for
+  three-dimensional inviscid and viscous flows.
+\newblock 22nd aiaa computational fluid dynamics conference, American Institute
+  of Aeronautics and Astronautics, June 2015.
+\newblock Accepted.
+
+\bibitem{zhang:2011b}
+Z.~J. Zhang and C.~P.~T. Groth.
+\newblock Parallel high-order anisotropic block-based adaptive mesh refinement
+  finite-volume scheme.
+\newblock Paper 2011-3695, AIAA, June 2011.
+
+\bibitem{Toro:1997}
+E.~F. Toro.
+\newblock {\em Riemann solvers and numerical methods for fluid dynamics : a
+  practical introduction}.
+\newblock Springer, Berlin, New York, 1997.
+
+\bibitem{Neto:2014}
+L.~Tobaldlini Neto and C.~P.~T. Groth.
+\newblock A high-order finite-volume scheme for large-eddy simulation of
+  turbulent premixed flames.
+\newblock Technical report, American Institute of Aeronautics and Astronautics,
+  January 2014.
+\newblock 52nd Aerospace Sciences Meeting.
+
+\bibitem{ivan:2007}
+L.~Ivan and C.~P.~T. Groth.
+\newblock High-order central {ENO} finite-volume scheme with adaptive mesh
+  refinement.
+\newblock Paper 2007-4324, AIAA, June 2007.
+
+\bibitem{ivan:2013b}
+L.~Ivan and C.~P.~T. Groth.
+\newblock High-order solution-adaptive central essentially non-oscillatory
+  ({CENO}) method for viscous flows.
+\newblock {\em Journal of Computational Physics}, 257:830--862, 2013.
+
+\bibitem{Groth:2013}
+C.~P.~T. Groth.
+\newblock Control and reduction of numerical errors in reactive flow les.
+\newblock Technical report, UTRC Workshop, September 2013.
+
+\bibitem{HPerez:2011}
+F.~E. Hern{\'a}ndez-P{\'e}rez.
+\newblock {\em Subfilter Scale Modelling for Large Eddy Simulation of Lean
+  Hydrogen-Enriched Turbulent Premixed Combustion}.
+\newblock PhD thesis, University of Toronto, 2011.
+
+\bibitem{Deconinck:2008}
+W.~Deconinck.
+\newblock Design and application of discrete explicit filters for large eddy
+  simulation of compressible turbulent flows.
+\newblock Master's thesis, University of Toronto, 2008.
+
+\bibitem{Lund:03}
+T~Lund.
+\newblock The use of explicit filters in large eddy simulation.
+\newblock {\em Computers and Mathematics with Applications}, Jan 2003.
+
+\bibitem{Pope:2005}
+Stephen~B. Pope.
+\newblock {\em Turbulent Flows}, chapter~6, page 183.
+\newblock Cambridge University Press, 4th edition, 2005.
+
+\bibitem{Smagorinsky:1963}
+J~Smagorinsky.
+\newblock General circulation experiments with the primitive equations.
+\newblock {\em Monthly Weather Review}, 91(3):99--164, 1963.
+
 \bibitem{Shahbazian:2011}
 N.~Shahbazian, C.~P.~T. Groth, and \"{O}.~L. G\"{u}lder.
 \newblock Assessment of presumed pdf models for large eddy simulation of
@@ -131,6 +121,38 @@ M.~B. Giles and N.~A. Pierce.
 \newblock An introduction to the adjoint approach to design.
 \newblock {\em Flow, Turbulence and Combustion}, 65:393--415, 2000.
 
+\bibitem{Venditti:2000}
+D.~A. Venditti and D.~L. Darmofal.
+\newblock Adjoint error estimation and grid adaptation for functional outputs:
+  Application to quasi-one-dimensional flow.
+\newblock {\em Journal of Computational Physics}, 164:204--~227, 2000.
+
+\bibitem{Venditti:2002}
+D.~A. Venditti and D.~L. Darmofal.
+\newblock Grid adaptation for functional outputs: Application to
+  two-dimensional inviscid flows.
+\newblock {\em Journal of Computational Physics}, 176:40--~69, 2002.
+
+\bibitem{Venditti:2003}
+D.~A. Venditti and D.~L. Darmofal.
+\newblock Anisotropic grid adaptation for functional outputs: application to
+  two-dimensional viscous flows.
+\newblock {\em Journal of Computational Physics}, 187:22--46, 2003.
+
+\bibitem{Fidkowski:2011}
+K.~J. Fidkowski and D.~L. Darmofal.
+\newblock Review of output-based error estimation and mesh adaptation in
+  computational fluid dynamics.
+\newblock {\em AIAA Journal}, 49(4), 2011.
+
+\bibitem{Williamschen:2013}
+M.~J. Williamschen and C.~P.~T. Groth.
+\newblock Parallel anisotropic block-based adaptive mesh refinement algorithm
+  for three-dimensional flows.
+\newblock Technical report, American Institute of Aeronautics and Astronautics,
+  June 2013.
+\newblock 21st AIAA Computational Fluid Dynamics Conference.
+
 \bibitem{Becker:2001}
 R.~Becker and R.~Rannacher.
 \newblock An optimal control approach to a posteriori error estimation in
@@ -140,20 +162,26 @@ R.~Becker and R.~Rannacher.
 \bibitem{Venditti:2001}
 D.~A. Venditti and D.~L. Darmofal.
 \newblock Anisotropic grid adaptation for functional outputs: application to
-  two-dimensional flows.
+  two-dimensional viscous flows.
 \newblock {\em Journal of Computational Physics}, 187:22--46, 2003.
-
-\bibitem{Fidkowski:2011}
-K.~J. Fidkowski and D.~L. Darmofal.
-\newblock Review of output-based error estimation and mesh adaptation in
-  computational fluid dynamics.
-\newblock {\em AIAA Journal}, 49(4), 2011.
 
 \bibitem{Fidkowski:2013}
 K.~J. Fidkowski.
 \newblock High-order output-based adaptive methods for steady and unsteady
   aerodynamics.
 \newblock Invited lecture, Von Karman Institute, December 2013.
+
+\bibitem{hperez:2011a}
+F.~E. Hern\'{a}ndez-P\'{e}rez.
+\newblock {\em Subfilter Scale Modelling for Large Eddy Simulation of Lean
+  Hydrogen-Enriched Turbulent Premixed Combustion}.
+\newblock PhD thesis, University of Toronto, April 2011.
+
+\bibitem{northrup:2013a}
+S.~A. Northrup.
+\newblock {\em A Parallel Implicit Adaptive Mesh Refinement Algorithm for
+  Predicting Unsteady Fully-Compressible Reactive Flows}.
+\newblock PhD thesis, University of Toronto, December 2013.
 
 \bibitem{vreman:1995}
 B.~Vreman, B.~Geurts, and H.~Kuerten.

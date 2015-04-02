@@ -1,0 +1,17 @@
+\section{Error estimation indicators}
+This is based on the work of Venditti and Darmofal~\cite{Venditti:2000} and Fidkowski and Darmofal~\cite{Fidkowski:2011}. The goal is to reduce discretization errors based on the mesh resolution.
+
+\begin{itemize}
+\item Consider 2 levels of mesh resolution: coarse (H) and fine (h). We calculate the state ($\mathbf{U}_H$) and functional ($\mathbf{J}_H(\mathbf{U}_H)$) on the coarse space. Residual, $\mathbf{R}_H(\mathbf{U}_H) = 0$
+\item We would like to evaluate the functional on the fine space, $\mathbf{J}_h(\mathbf{U}_h)$ (expensive). Thus we use a prolongation operator ($\mathbf{U}_h^H = I_h^H \mathbf{U}_H$) to inject the fine space state onto the coarse space state.
+\item The output error, $\delta \mathbf{J} \equiv \mathbf{J}_H(\mathbf{U}_H) - \mathbf{J}_h(\mathbf{U}_h) \neq 0$
+\item Expect the new residual, $\mathbf{R}_h(\mathbf{U}_h^H) \neq 0$ 
+\item The injected coarse state solves: $ \mathbf{R}_h(\mathbf{U}_h^\prime) - \mathbf{R}_h(\mathbf{U}_h^H) = 0 \rightarrow (\mathbf{U}_h^\prime) = (\mathbf{U}_h^H)$
+\item $ \delta \mathbf{J} \approx  \mathbf{J}_h(\mathbf{U}_h^H) - \mathbf{J}_h(U_h) = \mathbf{\Psi}_h^T \delta \mathbf{R}_h = -\mathbf{\Psi}_h^T \mathbf{R}_h(\mathbf{U}_h^H)   $, using the definition of the fine space adjoint, $\mathbf{\Psi}_h$
+\item Error estimate is the value of $\delta \mathbf{J}$, and does not need evaluation of $U_h$, primal solution on the fine space. We can use this error estimate as a flag for refinement, given some threshold value
+\end{itemize}
+
+For unsteady adjoints, the adaptation is achieved by marching the solution forward in time while evaluating $\psi$, and then marching backwards in time. Once all the sensitivities are obtained, they can be used to refine the mesh at those time levels. The tolerance is compared to the set threshold value and repeat until convergence.\par
+One of the main benefits of adjoint vs gradient based methods are that the adjoint technique is a one time calculation for the sensitivity of a single output to several inputs, whereas a gradient based approach requires a separate evaluation for each new sensitivity. ~\cite{Giles:2000}
+
+One other use for the evaluation of the error estimate is that it can be used to flag cells for adaptation. This can be done by either refining the mesh ($h$ adaptation), or for this block of cells, a higher order scheme can be used to achieve the higher accuracy. This would essentially materialize the ability for $\mathcal{O}(h^p)$ refinement.

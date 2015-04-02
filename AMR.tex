@@ -1,33 +1,42 @@
-\subsection{Block-Based Adaptive Mesh Refinement (AMR)}
-Having discretized the governing equations, the geometry similarly needs to be discretized into unique cells, in a process called meshing. For increase in accuracy, a finer mesh resolution (smaller grid size) will be required. \par
+\subsection{Block-based adaptive mesh refinement (AMR)}
+The model geometry needs to be discretized into unique cells, in a process called meshing. For increase in accuracy, a finer mesh resolution (smaller grid size) is usually be required. \par
 
-Adaptive Mesh Refinement (AMR) takes its name from the variational increase in localized grid resolution to allow for improved accuracy at without carrying out the same at a ubiquitous scale. Global refinement is often cheaper to perform, whereas localized (Adaptive) is not; however, the computational cost for refining many more cells and storing this information makes it more expensive, in spite of the fact that a well designed approach selection will need to be programmed to perform an adaptive refinement.\par
-Block-based AMR groups cells into blocks, making it an optimal configuration for parallel systems, where each processor could have a certain number of Blocks, and protocols such as the Message Passing Interface (MPI) could be used for Block-Block inter-communication. Communication between Blocks occurs via Ghost cells, and in case neighboring blocks have a difference in mesh resolution, then Mutligrid-type restriction and prolongation is used.\par
+Adaptive Mesh Refinement (AMR) takes its name from the increase in localized grid resolution to allow for improved accuracy, and this commonly results in a reduction of cost. Performing a uniform refinement over all the cells would be easier to perform, but often results in a high performance and storage cost to achieve the same effectiveness as s localized approach.\par
 
-%parallel here
-\begin{figure}
-    \vspace{0.2cm}
-    \begin{center}
-      \includegraphics[height=0.35\textwidth]{./figs/parallel-domain-decomp.eps}
-    \end{center}
-    \caption{Parallel Implementation of Block-based AMR \cite{Northrup:2013}}  
-    \vspace{0.2cm}
+Groth \etal ~\cite{Groth:1999, Williamschen:2013, Northrup:2005b, Groth:2013, zhang:2011a, zhang:2011b} developed some of the initial work with Block-Based AMR extended it to enable parallel implementation for a variety of complex flows.
+
+Block-based AMR groups cells into blocks, making it an optimal configuration for parallel systems, where each processor could have a certain number of blocks. Message Passing Interface (MPI) could be used for processor inter-communication, whereby  information exchange between the different blocks is facilitated by ghost cells that lie in the periphery of the block. Originally, the ghost cells were of the same mesh refinement level as the interior block.
+
+However, Freret and Groth \cite{Freret:2015} have completed a new formulation for a non-uniform block-based approach that targets the the ghost cells. In this method, a block will copy over the mesh resolution and solution information of its neighboring block to its own ghost cells. This eliminates the interpolation error in multiple restriction and prolongation cycles within a uniform block-based scheme, while saving the computational cost of otherwise-necessary message passing to ensure flux conservation between the blocks. This message passing was described by Zhang~\cite{zhang:2011b} as a temporary remedy for inter-block flux evaluation applied to the ghost-cells.\par
+
+
+%
+\begin{figure}[t!]
+\centering
+    \subfigure[3D Block-Ghost configuration \cite{Rashad:2009}]
+    {\label{fig:3D Block}	   
+    \includegraphics[height=0.35\textwidth, trim=0.2cm 0.2cm 0.2cm .2cm,clip=true]{figs/ghostblock.png}}% 
+    \subfigure[Parallel domain decomposition \cite{Rashad:2009}]
+    {\label{fig:3D Block}	     
+    \includegraphics[height=0.35\textwidth]{./figs/parallel-domain-decomp.eps}}
+\caption{The block-cell structure renders block based AMR easily parallelizable \cite{Northrup:2013}}  
+\label{fig:moreAMR}
 \end{figure}
 
-Groth \etal ~\cite{Groth:1999} developed some of the initial work with Block-Based AMR for Computational Magnetohydrodynamics, and was extended to enable parallel implementation for a variety of complex flows. Northrup and Groth ~\cite{Northrup:2005b} implemented a fully-implicit, parallel Newton-Krylov method, and applies Schwarz preconditioning to take advantage of the Block structure of the computational grid.
+Northrup and Groth ~\cite{Northrup:2005b} implemented a fully-implicit, parallel Newton-Krylov method, and applies Schwarz preconditioning to take advantage of the Block structure of the computational grid.
 Within Block-based AMR, the cell-connectivity is stored in a tree structure, which will typically be an octree in a 3D domain. Block-Based AMR is more optimized than a refinement performed on a cell-by-cell basis, as the information storage process for the latter is computationally expensive: The tree approach is much simpler, faster and cheaper. Blocks flagged for increased resolution can be refined using two approaches: \par
 
-  
+%  
 \begin{figure}[t!]
   \centering
-   \subfigure[2D Block-Ghost configuration \cite{Northrup:2013}]
-   {\label{fig:2D Block}	   
-   \includegraphics[height=0.35\textwidth, trim=0.2cm 0.2cm 0.2cm .2cm,clip=true]{figs/2dgrid_ghostcells.eps}}%
-	\:
-	\subfigure[3D Block-Ghost configuration \cite{Northrup:2013}]
+   \subfigure[Isotropic and anisotropic AMR. Zhang,~\cite{zhang:2011a}]
    {\label{fig:3D Block}	   
-   \includegraphics[height=0.35\textwidth, trim=0.2cm 0.2cm 0.2cm .2cm,clip=true]{figs/amr-blocks-ghosts.eps}}%
-     \caption{Block structure depicting interior cells and ghost cell configurations}  
+   \includegraphics[height=0.35\textwidth, trim=0.2cm 0.2cm 0.2cm .2cm,clip=true]{figs/BlockDivision.jpg}}%
+   \subfigure[Non-uniform block structure, Freret and Groth~\cite{Freret:2015}]
+   {\label{fig:nonUni}	   
+   \includegraphics[height=0.42\textwidth, trim=2cm 0cm 9cm 0cm,clip=true]{./figs/Non-UniformBlock.png}}%  
+\caption{Block structure depicting interior cells and ghost cell configurations} 
+\label{fig:unifNon}    
 \end{figure}  
   
 
@@ -36,26 +45,9 @@ Within Block-based AMR, the cell-connectivity is stored in a tree structure, whi
 \item \textbf{Isotropic AMR}:\\
 Isotropic AMR  occurs by uniformly splitting the Parent cell into 8 children (in a 3D domain) or into 4 children (in a 2D domain). This considers that the physics is occurring without a preference for a given direction, and usually results in a larger-than-desired cell count.
 
-\begin{figure}
-    \vspace{0.2cm}
-    \begin{center}
-      \includegraphics[height=0.35\textwidth]{./figs/BlockDivision.jpg}
-    \end{center}
-    \caption{Isotropic and Anisotropic AMR \cite{zhang:2011a}}  
-    \vspace{0.2cm}
-\end{figure}
 
 \item \textbf{Anisotropic AMR}: \\
-For flows having a directional bias, e.g. in the simulation of a jet exiting a nozzle, the dominant direction will be along the axis of symmetry of the nozzle. Therefore, a priori, we can tell that the mesh cells would ideally need to be stretched along this same axis. Whenever we have this kind of bias on the cell geometry, we have anisotropy. Mesh refinement occurs in a slightly different manner, as now we switch to a binary tree system, which stores refinement history and cell connectivity. Two, four, or eight refined blocks can be created, resulting in five distinct possible refinements for a single block to better adapt to evolving flow features. Studies by Zhang ~\cite{zhang:2011a}, Zhang and Groth ~\cite{zhang:2011b}, Freret and Groth ~\cite{Freret:2015} indicate that anisotropic AMR for given simulations result in lower cell counts (see figure \ref{fig:isoAniso}), although the refinement procedure is more difficult than that of the Isotropic AMR. The number of cells to reach a convergence criteria is reduced in the case of figure \ref{fig:outErr} by a factor of approximately $1.5$.  \par
-
-\begin{figure}
-    \vspace{0.2cm}
-    \begin{center}
-      \includegraphics[height=0.35\textwidth]{./figs/Non-UniformBlock.png}
-    \end{center}
-    \caption{Non-Uniform Ghost Cells on Block [Freret and Groth: 2015] \cite{Freret:2015}}  
-    \vspace{0.2cm}
-\end{figure}
+For flows with directional bulk bias it can be predicted that mesh cells would ideally be stretched along this axis. Anisotropy refers to a preference in mesh refinement axes. Studies by Zhang ~\cite{zhang:2011a}, Zhang and Groth ~\cite{zhang:2011b}, Freret and Groth ~\cite{Freret:2015} indicate that anisotropic AMR for given simulations result in lower cell counts (see figure \ref{fig:isoAniso}), although the refinement procedure is more difficult than that of the Isotropic AMR. \par
 
 \end{enumerate}
 
@@ -63,32 +55,22 @@ For flows having a directional bias, e.g. in the simulation of a jet exiting a n
   \centering
 	\subfigure[Initial density (t=0s) obtained after 6 initial  refinements. 14057 blocks]
    {\label{fig:iso0}	   
-   \includegraphics[height=0.3\textwidth]{figs/shockCubeIso0.jpg}}%
+   \includegraphics[height=0.2\textwidth]{figs/shockCubeIso0.jpg}}%
    \:
    \subfigure[Density (at t=0.5s). 7036 blocks.]
    {\label{fig:iso3}	   
-   \includegraphics[height=0.3\textwidth]{figs/shockCubeIso3.jpg}}%
+   \includegraphics[height=0.2\textwidth]{figs/shockCubeIso3.jpg}}%
 	\:
 	\subfigure[Initial density (t=0s) obtained after 6 initial refinements. 1089 blocks. ]
    {\label{fig:Aniso0}	   
-   \includegraphics[height=0.3\textwidth]{figs/shockCubeAniso0.jpg}}%
+   \includegraphics[height=0.2\textwidth]{figs/shockCubeAniso0.jpg}}%
    \:
 	\subfigure[Density (at t=0.5s). 5522 blocks]
    {\label{fig:Aniso3}	   
-   \includegraphics[height=0.3\textwidth]{figs/shockCubeAniso3.jpg}}%
-   \caption{Differences between the isotropic and anisotropic AMR on a shockcube problem. Initial conditions have large density jumps between left and right states: 1 block = 8x8x8 cells. [Freret and Groth: 2015] \cite{Freret:2015} } 
+   \includegraphics[height=0.2\textwidth]{figs/shockCubeAniso3.jpg}}%
+   \caption{Differences between the isotropic and anisotropic AMR on a shockcube problem. Initial conditions have large density jumps between left and right states: 1 block = 8x8x8 cells. For this case, a savings of $\approx 28\%$ in cell count is achieved by the anisotropic method. [Freret and Groth: 2015] \cite{Freret:2015} } 
 \label{fig:isoAniso}      
 \end{figure}  
 
-Freret and Groth \cite{Freret:2015} have completed a new formulation for a Non-uniform block-based approach that targets the the ghost cells. In this method, a block will copy over the mesh resolution and solution information of its neighboring block to its own ghost cells, and this eliminates the interpolation error within a Uniform block-based scheme that would otherwise have resulted in necessary solution restriction and prolongation (if the mesh discretization levels were different). Further, this saves the computational cost of flux correction cycles, done via message passing between the blocks, as described by Zhang to be a temporary remedy to ghost-cell evaluation.\cite{zhang:2011b}
 
 
-\begin{figure}
-    \vspace{0.2cm}
-    \begin{center}
-      \includegraphics[height=0.5\textwidth]{./figs/outflowError.png}
-    \end{center}
-    \caption{Resulting error in the density norm [Freret and Groth: 2015] \cite{Freret:2015}}  
-    \vspace{0.2cm}
-    \label{fig:outErr}
-\end{figure}

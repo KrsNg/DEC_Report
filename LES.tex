@@ -1,29 +1,24 @@
-\subsection{Large Eddy Simulation (LES)}
-The level of fidelity of LES lies between the fully resolved Direct Numerical Simulation (DNS) and the fully modelled Reynolds-Averaged Navier Stokes (RANS) methods. LES will applies a filter size to the turbulence scales, resolving the larger ones, and modelling the smaller ones (i.e. those smaller than the filter size). Flow variables need to be decomposed into filtered(resolved) and residual (modelled or Sub-Filter Scale (SFS) )components via a spatial filtering procedure. Consequently, the Navier Stokes Equations (Section \ref{section:Navier}) need to be Favre-filtered (Section \ref{section:Favre}) before being used in LES.\par  
+\subsection{Large eddy simulation (LES)}
+The level of fidelity of LES lies between the fully resolved Direct Numerical Simulation (DNS) and the fully modelled Reynolds-Averaged Navier Stokes (RANS) methods. LES applies a filter size ($\bar{\Delta}$) to the turbulence scales, resolving the larger ones, and modelling those smaller than the filter size. Flow variables need to be decomposed into filtered(resolved) and residual (modelled or Sub-Filter Scale (SFS)) components via a spatial filtering procedure. Consequently, the Navier Stokes Equations (Section \ref{section:Navier}) need to be Favre-filtered (Section \ref{section:Favre}) before being used in LES. Two main techniques for Filtering are used: implicit and explicit filtering.\par  
 
-\subsubsection{Explicit Filtering} \label{section:Explicit Filtering}
-In LES, a filter is applied to separate the resolved scales from the modelled scales. The governing equations (Compressible form of the Navier Stokes) are filtered via a spatial filtering procedure.\par
-
-As described by H. Perez\cite{HPerez:2011}, two main techniques for Filtering are used: The first is Implicit Filtering, and the second is Explicit Filtering. For Implicit Filtering, filtering occurs indirectly as an effect of the computational mesh size and the discretization operators. The spatial discretization schemes have a dissipation property that depend on the wave-number of the scales. Thus the filter width is inherently related to mesh spacing. That means that for variously refined meshes running the same LES case, then the results may not indicate convergence for a desired output: the finer the mesh, the more the resolved scales, thus making it difficult to distinguish effects of added scales in comparison to that of improved refinement.\par
-
-For Explicit filtering however, the filter size is fixed for the entire grid, regardless of the levels of mesh refinement that are in effect. Convergence can then be easier to monitor, and results could be compared to DNS results if required. In order to be able to manipulate the Navier-Stokes equations after applying a filter, we require that filters possess the following three properties: Conservation of constants, commutation with addition, and commutation with differentiation values.\par
+In implicit filtering, the filter width is not explicitly defined and is inherently related to grid resolution. The main disadvantage is that it is difficult to compare results of adapted/refined meshes. Hence there is need for explicit filtering, whereby Define $\bar{\Delta} $ is fixed for the entire mesh, and convergence tests are more consistent. \cite{HPerez:2011, Deconinck:2008}
 
 
-\subsubsection{Aliasing Errors} \label{section:aliasing_errors}
-Favre filtering of the convective term in the Navier-Stokes equation (see section \ref{section:Favre}) results in the non-linear correlation\par
+\subsubsection{Aliasing errors} \label{section:aliasing_errors}
+As a result of Favre filtering on the governing equations, (see section \ref{section:Favre}) a non-linear correlation will result:\par
 \begin{equation}
  \frac{\partial \;\;}{\partial x_\mathrm{j}} (\overline{\rho u_\mathrm{i} u_\mathrm{j}}) \: ,
  \end{equation}
-creating a closure problem. This term is typically treated by computing the product of the closed filtered velocities and modelling the remainder which essentially transfers the closure problem to the right-hand side of the filtered Navier-Stokes equation:
+This creates a closure problem. To solve this, the product of the closed filtered velocities is evaluated and the remaining term is modeled, essentially transfering the closure problem to the right-hand side of the filtered Navier-Stokes equation:
 \begin{equation}
 \overline{\rho u_\mathrm{i} u_\mathrm{j}} = \bar{\rho} \tilde{u}_\mathrm{i} \tilde{u}_\mathrm{j} 
 +\underbrace{ (\overline{\rho u_\mathrm{i} u_\mathrm{j}} - \bar{\rho} \tilde{u}_\mathrm{i} \tilde{u}_\mathrm{j} ) }_{\sigma_\mathrm{ij}} \: ,
 \end{equation}
-where $\sigma_\mathrm{ij}$ is the SFS stress tensor. The problem with this decomposition is that the non-linear product $\tilde{u}_\mathrm{i} \tilde{u}_\mathrm{j}$ generates frequencies beyond the characteristic frequency that defines $\tilde{u}_\mathrm{i}$~. These frequencies alias back as resolved and act as fictitious stresses \cite{Lund:03}.
-The resulting errors are difficult to eliminate and control if implicit filtering is used. Please refer to the work by H. Perez \cite{HPerez:2011} for additional details.\par
+where $\sigma_\mathrm{ij}$ is the SFS stress tensor. This decomposition leads to the non-linear product $\tilde{u}_\mathrm{i} \tilde{u}_\mathrm{j}$ generating frequencies that are beyond the characteristic frequency that defines $\tilde{u}_\mathrm{i}$~ and act as fictitious stresses \cite{Lund:03}.
+The resulting errors are difficult to eliminate and control if implicit filtering is used. Explicit filtering allows control of these. Please refer to the work of H. Perez \cite{HPerez:2011} and Deconinck~\cite{Deconinck:2008} for additional details.\par
 
-\subsubsection{Commutation Errors} \label{section:commutation_errors}
-For inhomogeneous turbulent flows, the smallest resolvable eddy sizes differ in regions of the flow. Usually, flow close to solid walls  produces smaller  eddies due to wall damping effects. This implies that the mesh should be refined to resolve these scales in the near-wall region. To ensure the structure of filtered equations remains unchanged before and after filtering, the filtering operation should commute with the differential operation, and this is described by H. Perez \cite{HPerez:2011} as follows: 
+\subsubsection{Commutation errors} \label{section:commutation_errors}
+For most inhomogeneous turbulent flows, the smallest eddy sizes that can be resolved differ in various regions of the flow. Usually, flow close to solid walls  produces smaller eddies due to damping effects. This implies that the mesh should be refined to resolve these scales in the near-wall region. To ensure the structure of filtered equations remains unchanged before and after filtering, the filtering operation should commute with the differential operation, and this is described by H. Perez \cite{HPerez:2011} as follows: 
 \begin{equation} 
 \overline{\frac{\mathrm{d} \phi}{\mathrm{d} x} } = \frac{\mathrm{d} \bar{\phi}}{dx} \: .
 \end{equation}
@@ -31,12 +26,9 @@ In general, filters do not commute when variable filter width is used. To be acc
  \begin{equation} \label{eq:commutation_error}
 \left[ \frac{\mathrm{d} \phi}{\mathrm{d} x}   \right]  \equiv \left| \overline{\frac{\mathrm{d} \phi}{\mathrm{d} x} } - \frac{\mathrm{d} \bar{\phi}}{\mathrm{d}x}\right| = \mathcal{O}(\Delta^n) \: ,
 \end{equation}
- where $n$ is the order of the filter, which should be at least equal to the order of accuracy of the spatial discretization scheme.
+ where $n$ is the order of the filter, which should be at least equal to the order of accuracy of the spatial discretization scheme. Thus for a $p^{th}$ order numerical scheme, $n = p$.
 
 
-\subsubsection{Sub-Filter Scale Modelling}
-Because of the closure problem, we need to model the necessary Sub Filter Scale terms, as described in the Appendix, section ~\ref{section:Favre}.
-The unresolved scales need to be modelled, since they have a pronounced effect on the resolved scales. The Energy Cascade, first described by Richardson in 1922, explains how the Turbulent Kinetic Energy is mainly contained in the larger scales, and dissipated by the smallest scales via viscosity.\cite{Pope:2005}.\par
-A number of approaches have been used to model the SFS terms. One of the first was by Smagorinsky \cite{Smagorinsky:1963} which models SFS stress tensors and the Reynolds Stress tensor. This approach also defines a Sub Filter Scale Eddy Viscosity which is in turn used to relate SFS stresses to the filtered Strain rates, based on the assumption that the SFS stress tensor behaves similar to the Viscous stress tensor, itself proportional to the Strain rate tensor. The model goes ahead to express the SFS Eddy Viscosity as proportional to the magnitude of the filtered Strain rate tensor. The constant of proportionality is termed the Smagorinsky Coefficient.
-
-The dynamic Smagorinsky model is a modification of the Smagorinsky model. It observes that the Smagorinsky Coefficient is only valid for an optimized flow regime. Thus a variable coefficient is introduced. This will likely be the approach of choice for this research.
+\subsubsection{Sub-filter scale (SFS) modelling}
+The SFS terms (see section ~\ref{section:Favre}) need to be modeled in LES, since they have a pronounced effect on the resolved scales. The energy cascade, first described by Richardson in 1922, explains how the Turbulent Kinetic Energy is mainly contained in the larger scales, and dissipated by the smallest scales via viscosity.\cite{Pope:2005}.\par
+A number of approaches have been used to model the SFS terms. One of the first was by Smagorinsky \cite{Smagorinsky:1963} which models SFS stress tensors and the Reynolds' stress tensor. This approach also defines a SFS eddy viscosity which is in turn used to relate SFS stresses to the filtered strain rates, based on the assumption that the SFS stress tensor behaves similar to the viscous stress tensor, itself proportional to the Strain rate tensor. The model goes ahead to express the SFS eddy viscosity as proportional to the magnitude of the filtered strain rate tensor. The constant of proportionality is termed the Smagorinsky Coefficient. In the case where the Smagorinsky coefficient is valid only for an optimized flow regime, we obtain the dynamic Smagorinsky model. This will likely be the model of choice for this research.

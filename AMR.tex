@@ -1,13 +1,9 @@
 \subsection{Block-based adaptive mesh refinement (AMR)}
-The model geometry needs to be discretized into unique cells, in a process called meshing. For increase in accuracy, a finer mesh resolution (smaller grid size) is usually be required. \par
+The model geometry needs to be discretized into unique cells, in a process called meshing. For increase in accuracy, a finer mesh resolution (smaller grid size) is usually be required. Adaptive mesh refinement (AMR) takes its name from the increase in localized grid resolution to allow for improved accuracy, and this commonly results in a reduction of cost. Performing a uniform refinement over all the cells would be easier to perform, but often results in a high performance and storage cost to achieve the same effectiveness as s localized approach. Groth \etal ~\cite{Groth:1999, Williamschen:2013, Northrup:2005b, Groth:2013, zhang:2011a, zhang:2011b} developed some of the initial work with block-based AMR and extended it to enable parallel implementation for a variety of complex flows.
 
-Adaptive Mesh Refinement (AMR) takes its name from the increase in localized grid resolution to allow for improved accuracy, and this commonly results in a reduction of cost. Performing a uniform refinement over all the cells would be easier to perform, but often results in a high performance and storage cost to achieve the same effectiveness as s localized approach.\par
+Block-based AMR groups cells into blocks, making it an optimal configuration for parallel systems, where each processor could have a certain number of blocks. Message Passing Interface (MPI) could be used for processor inter-communication, whereby  information exchange between the different blocks is facilitated by ghost cells that lie in the periphery of the block. Originally, the ghost cells were of the same mesh refinement level as the interior block.\par
 
-Groth \etal ~\cite{Groth:1999, Williamschen:2013, Northrup:2005b, Groth:2013, zhang:2011a, zhang:2011b} developed some of the initial work with Block-Based AMR extended it to enable parallel implementation for a variety of complex flows.
-
-Block-based AMR groups cells into blocks, making it an optimal configuration for parallel systems, where each processor could have a certain number of blocks. Message Passing Interface (MPI) could be used for processor inter-communication, whereby  information exchange between the different blocks is facilitated by ghost cells that lie in the periphery of the block. Originally, the ghost cells were of the same mesh refinement level as the interior block.
-
-However, Freret and Groth \cite{Freret:2015} have completed a new formulation for a non-uniform block-based approach that targets the the ghost cells. In this method, a block will copy over the mesh resolution and solution information of its neighboring block to its own ghost cells. This eliminates the interpolation error in multiple restriction and prolongation cycles within a uniform block-based scheme, while saving the computational cost of otherwise-necessary message passing to ensure flux conservation between the blocks. This message passing was described by Zhang~\cite{zhang:2011b} as a temporary remedy for inter-block flux evaluation applied to the ghost-cells.\par
+Recently, Freret and Groth \cite{Freret:2015} have completed a new formulation for a non-uniform block-based approach that targets the the ghost cells. In this method, a block will copy over the mesh resolution and solution information of its neighboring block to its own ghost cells. This eliminates the interpolation error in multiple restriction and prolongation cycles within a uniform block-based scheme, while saving the computational cost of otherwise-necessary message passing to ensure flux conservation between the blocks. This message passing was described by Zhang~\cite{zhang:2011b} as a temporary remedy for inter-block flux evaluation applied to the ghost-cells.\par
 
 
 %
@@ -23,8 +19,8 @@ However, Freret and Groth \cite{Freret:2015} have completed a new formulation fo
 \label{fig:moreAMR}
 \end{figure}
 
-Northrup and Groth ~\cite{Northrup:2005b} implemented a fully-implicit, parallel Newton-Krylov method, and applies Schwarz preconditioning to take advantage of the Block structure of the computational grid.
-Within Block-based AMR, the cell-connectivity is stored in a tree structure, which will typically be an octree in a 3D domain. Block-Based AMR is more optimized than a refinement performed on a cell-by-cell basis, as the information storage process for the latter is computationally expensive: The tree approach is much simpler, faster and cheaper. Blocks flagged for increased resolution can be refined using two approaches: \par
+Northrup and Groth~\cite{Northrup:2005b} implemented a fully-implicit, parallel Newton-Krylov method, and applies Schwarz preconditioning to take advantage of the Block structure of the computational grid.
+Within block-based AMR, the cell-connectivity is stored in a tree structure, which will typically be an octree in a 3D domain. Block-Based AMR is more optimized than a refinement performed on a cell-by-cell basis, as the information storage process for the latter is computationally expensive: The tree approach is much simpler, faster and cheaper. Blocks flagged for increased resolution can be refined using two approaches: \par
 
 %  
 \begin{figure}[t!]

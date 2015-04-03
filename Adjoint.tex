@@ -8,74 +8,23 @@ To make error estimation more relevant to engineering applications it is useful 
 
 Extensive research has been performed by Giles and Pierce ~\cite{Giles:2000}, Becker and Rannacher~\cite{Becker:2001}, Venditti and Darmofal~\cite{Venditti:2000, Venditti:2002} and a review carried out by Fidkowski and Darmofal ~\cite{Fidkowski:2011}.
 
-The adjoint has two main formulations: the continuous and the discrete.\par
+The adjoint has two main formulations: the \textit{continuous} and the \textit{discrete}. In the \textbf{continuous} approach, an objective function is formed to enforce the flow conditions (i.e. primal nonlinear PDEs). Next, linear perturbations to the primal flow variables are considered, while enforcing the objective function to remain constant with respect to the perturbations. As a result, analytical adjoint equations are obtained, and relevant boundary conditions applied. The formulation is then discretized directly. \par
 
-In the \textit{continuous} approach, an objective function is formed to enforce the flow conditions (i.e. primal nonlinear PDEs). Next, linear perturbations to the primal flow variables are considered, while enforcing the objective function to remain constant with respect to the perturbations. As a result, analytical adjoint equations are obtained, and relevant boundary conditions applied. The formulation is then discretized directly. \par
-
-For the \textit{discrete} formulation, the nonlinear discrete residual equations from the primal problem are the starting point, and, similar to the continual approach, linear perturbations are applied. If the system is adjoint consistent, i.e. discrete adjoint = continuous adjoint, then there is no need for boundary condition specification. These get automatically incorporated via the primal residual. Finally, a linear system of equations is established with the only necessary evaluation being the linear sensitivities of the functional and the Jacobian matrix associated with the primal residual. \par
+For the \textbf{discrete} formulation, the nonlinear discrete residual equations from the primal problem are the starting point, and, similar to the continual approach, linear perturbations are applied. If the system is adjoint consistent, i.e. discrete adjoint = continuous adjoint, then there is no need for boundary condition specification. These get automatically incorporated via the primal residual. Finally, a linear system of equations is established with the only necessary evaluation being the linear sensitivities of the functional and the Jacobian matrix associated with the primal residual. \par
 
 Adjoint-based Error Estimation focuses on the \textit{sensitivities}, whereby some output of interest (henceforth termed as a \textit{functional}), e.g. Lift on an airfoil, is sensitive to the mesh refinement levels upstream of the airfoil along the chord line. The Adjoint approach is a more efficient, albeit expensive, criteria for mesh refinement: only one calculation for the sensitivity needs to be calculated, whereas for gradient based approaches, each quantity will require a unique calculation.\par
 
 The adjoint-based method applies a \textit{posteriori} technique, in that an initial solution, known as the \textit{Primal solution}, needs to first be evaluated - no refinement criteria can be carried out until the primal solution is established. Once this is met, error estimates can be evaluated from the adjoint, and this could be used as a mesh refinement criteria. \par
 
-Other key research on adjoints applied to aerodynamic flows was performed by Giles and Pierce ~\cite{Giles:2000}, Becker and Rannacher ~\cite{Becker:2001} and Venditti and Darmofal ~\cite{Venditti:2003}, with a key summary done by Fidkowski and Darmofal \cite{Fidkowski:2011}.
+One of the main benefits of adjoint vs gradient based methods are that the adjoint technique is a one time calculation for the sensitivity of a single output to several inputs, whereas a gradient based approach requires a separate evaluation for each new sensitivity. ~\cite{Giles:2000}
 
-
-\subsection{Derivation}
-If \textbf{R} is the set of all residuals for all cells in the domain, then the systems of equations can be written as:
-\begin{equation}
-\textbf{R}(\textbf{U}) = 0
-\end{equation}
-Considering a scalar output of interest \cite{Fidkowski:2013}, say, $J$, we can define it such that:
-\begin{equation}
-J = J(U)
-\end{equation}
-where U is a vector containing the solution variable. We define a discrete Adjoint, $\Psi \in \mathbb{R}^N$ as a vector of sensitivities of the output to the $N$ residuals. Each entry of the adjoint essentially tells us the effect that a perturbation in the corresponding entry within the residual vector would have on output $J$. Consider the case fo a residual perturbation due to a change to the input parameter, $\mu$, and $\mu \in \mathbb{R}^{N_p}$. A local sensitivity analysis can be applied as follows:\par
-\begin{equation} \label{eqn:chain}
-\underbrace{\mu}_{\text{inputs} ~\in~\mathbb{R}^{N_\mu}} ~\to~ \underbrace{\textbf{R}(\textbf{U},\textbf{$\mu$}) = 0}_{\text{\textit{N} equations}} ~ \to ~ \underbrace{\textbf{U}}_{\text{state} ~\in~ \mathbb{R}^N} ~\to~ \underbrace{\text{\textit{J}(\textbf{U})}}_\text{output(scalar)} 
-\end{equation}
-
-To monitor the change of $J$ with $\mu$,
-\begin{equation}
-\frac{dJ}{d\mu} ~\in~ \mathbb{R}^{1~\times~N_{\mu}} = N_\mu ~ \text{sensitivities}
-\end{equation}
-
-recalling $\mu \in \mathbb{R}^{N_p}$. If $J$ depended directly on $\mu$ then we would have had $\frac{dJ}{d\mu}$, but in the scenario we consider the case that $J = J(U)$ alone. To evaluate the $N_\mu$ sensitivities we could use: \textit{finite differencing} where the inputs are  perturbed one at a time;  \textit{forward linearization} where the sequence of operations in Equation ~\eqref{eqn:chain} are linearized; and, lastly, the \textit{adjoint approach} which requires an inexpensive residual perturbation calculation, followed by an adjoint weighting to compute the effect on the output:\par
-\begin{equation}
-\frac{dJ}{d\mu} = \Psi^T ~\frac{\partial R}{\partial \mu}
-\end{equation}
-One of the key ideas behind the adjoint approach is that the forward problem need be solved only once to evaluate a sensitivity. Given a particular input, $\mu$, we could solve the system to find \textbf{U} such that \textbf{R(U,$\mu$} $ = 0$. Once we perturb $\mu ~\to~ \mu + \delta \mu$, to find the effect on $J$, we would otherwise need to re-solve the discretized system, which would be an expensive step. The Adjoint, on the other hand, precomputes the eddect of \textbf{R} on $J$. The resulting $N$ sensitiviteis are stored in vector $\Psi$.\par
-
-Consider the chain of events in computing sensitivities (i.e. the effects of a small perturbance of the input, $\delta \mu$) via a direct approach:
-\begin{enumerate}
-\item Input:  $\mu ~\to~ \mu + \delta \mu$
-\item Residual: \textbf{R(U, $\mu ~+~ \delta \mu$)} $=$ $\delta$\textbf{R} $\neq 0$ ~$\to$~ \textbf{R(U, $\mu$)} $+$ $\frac{\partial \text{\textbf{R}}}{\partial \mu}$ $\bigg|_{\textbf{U, $\mu$}}$ $\delta \mu = \delta$\textbf{R}
-\item State: \textbf{R(U $+ \delta$U, $ \mu + \delta\mu$)} $= ~0$ ~$\to$~ \textbf{R(U, $\mu$)} $+$ $\frac{\partial \text{\textbf{R}}}{\partial \mu}$ $\bigg|_{\textbf{U, $\mu$}}$ $\delta \mu$ $ + \frac{\partial \text{\textbf{R}}}{\partial \text{\textbf{U}}}$     $\bigg|_{\textbf{U, $\mu$}} \delta$U  $ = 0$
-\item Output: $J(\textbf{U} + \delta \textbf{U}) = J(\textbf{U}) + \delta J ~\to~ \delta J = \frac{\partial J}{\partial \textbf{U}} \delta U $
-\end{enumerate}
-
-Subtracting step 2 from 3:
-\begin{equation}
-\begin{split}
-\frac{\partial \textbf{R}} {\partial \textbf{U}} \bigg|_{\textbf{U, $\mu$}} \delta U &= - \delta R \\
-\delta \textbf{U} &= - \left[\frac{\partial \textbf{R}}{\partial \textbf{U}} \right]^{-1} \delta \textbf{R} \\
-\end{split}
-\end{equation}
-
-We combine this to the output linearization in step 4 to give the output perturbation, $\delta \textbf{U}$ in terms of the residual perturbation, $\delta \textbf{R}$:
-\begin{equation}
-\begin{split}
-\delta J &= \frac{\partial J}{\partial U} \delta \textbf{U} \\
-& = \underbrace{\frac{\partial J}{\partial U} \left[\frac{\partial \textbf{R}}{\partial \textbf{U}} \right]^{-1}}_{\Psi^T ~\in~ \mathbb{R}^\textit{N}} \delta \textbf{R}
-\end{split}
-\end{equation}
-
-The \textit{Adjoint Equation} is then written as:
+Other key research on adjoints applied to aerodynamic flows was performed by Giles and Pierce ~\cite{Giles:2000}, Becker and Rannacher ~\cite{Becker:2001} and Venditti and Darmofal ~\cite{Venditti:2003}, with a key summary done by Fidkowski and Darmofal \cite{Fidkowski:2011}. The \textit{discrete} adjoint equation is written as:
 \begin{equation}
 \left( \frac{\partial \textbf{R}}{\partial \textbf{U}} \right)^T ~\Psi~ = \left(\frac{\partial J}{\partial \textbf{U}}\right)^T
 \end{equation}
+Please refer to Section~\ref{subsection:DerivAdj} of the appendix for the detailed derivation.\par
 
-Once we have $\Psi$, no more solves are required for the system. The calculation of $\frac{\partial \textbf{R}}{\partial \textbf{$\mu$}}$ (henceforth called the \textit{Jacobian}) is much cheaper compared to a forward solve. Ways to calculate $\frac{\partial{\mathbf{J}}}{\partial{\mathbf{U}}}$:
+Once we have $\Psi$, no more solves are required for the system. The calculation of ${\partial \mathbf{R}}$/$\partial{\mathbf{\mu}}$ (henceforth called the \textit{Jacobian}) is much cheaper compared to a forward solve. Ways to calculate ${\partial{\mathbf{J}}}$/${\partial{\mathbf{U}}}$:
 \begin{itemize}
 \item Complexifying variables by calculating derivatives using complex numbers. Martins et al, ~\cite{Martins:2003}
 \item Finite Differences where the state $\mathbf{U}$ is perturbed to get updated values of $\mathbf{R}(\mathbf{U})$ 
@@ -98,7 +47,6 @@ Since the Isotropic Adaptive Mesh Refinement (AMR) is easier as an initial imple
 For steady simulations, the solution of the Adjoint is a one time event, and the computational cost is low.
 
 \subsubsection{Unsteady adjoints}
-The Adjoint solution needs to be calculated every single time-step within an unsteady simulation (e.g. for the goal of the project, which is to simulate Turbulent Premixed Flows). This occurs via running the simulation forward in time while evaluating all the \textit{Primal} solution values at the different time levels until the final time-step, and then marching backwards in time, and solving the Adjoint at each of those time-steps, and re-meshing as required. An error threshold could be defined prior to the process such that arrival of the solution within a favorable regime could indicate to the automated process a suitable end to the refinement cycle.\par
-The computational cost for this may likely be very high, and perhaps unattainable for practical purposes.\par
+For unsteady adjoints, the adaptation is achieved by marching the solution forward in time while evaluating $\psi$, and then marching backwards in time. Once all the sensitivities are obtained, they can be used to refine the mesh at those time levels. The tolerance is compared to the set threshold value and repeat until convergence.\par
 
 

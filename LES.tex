@@ -1,15 +1,15 @@
 \subsection{Large eddy simulation (LES)}
-The level of fidelity of LES lies between the fully resolved Direct Numerical Simulation (DNS) and the fully modelled Reynolds-Averaged Navier Stokes (RANS) methods. LES applies a filter size ($\bar{\Delta}$) to the turbulence scales, resolving the larger ones, and modelling those smaller than the filter size. Flow variables need to be decomposed into filtered(resolved) and residual (modelled or Sub-Filter Scale (SFS)) components via a spatial filtering procedure. Consequently, the Navier Stokes Equations (Section \ref{section:Navier}) need to be Favre-filtered (Section \ref{section:Favre}) before being used in LES. Two main techniques for Filtering are used: implicit and explicit filtering.\par  
+The level of fidelity of LES lies between the fully resolved DNS and the fully modelled RANS methods. LES applies a filter size ($\bar{\Delta}$) to the turbulence scales, resolving the larger ones, and modelling those smaller than the filter size. Flow variables need to be decomposed into filtered(resolved) and residual (modelled or Sub-Filter Scale (SFS)) components via a spatial filtering procedure. Consequently, the Navier Stokes Equations (Section \ref{subsection:Navier}) need to be Favre-filtered (Section \ref{subsection:Favre}) before being used in LES. Two main techniques for Filtering are used: implicit and explicit filtering.\par  
 
 In implicit filtering, the filter width is not explicitly defined and is inherently related to grid resolution. The main disadvantage is that it is difficult to compare results of adapted/refined meshes. Hence there is need for explicit filtering, whereby Define $\bar{\Delta} $ is fixed for the entire mesh, and convergence tests are more consistent. \cite{HPerez:2011, Deconinck:2008}
 
 
 \subsubsection{Aliasing errors} \label{section:aliasing_errors}
-As a result of Favre filtering on the governing equations, (see section \ref{section:Favre}) a non-linear correlation will result:\par
+As a result of the Favre filtering applied to the governing equations, (see Section \ref{subsection:Favre}) a non-linear correlation will result:\par
 \begin{equation}
  \frac{\partial \;\;}{\partial x_\mathrm{j}} (\overline{\rho u_\mathrm{i} u_\mathrm{j}}) \: ,
  \end{equation}
-This creates a closure problem. To solve this, the product of the closed filtered velocities is evaluated and the remaining term is modeled, essentially transfering the closure problem to the right-hand side of the filtered Navier-Stokes equation:
+This creates a closure problem for the filtered equations. To solve this, the product of the closed filtered velocities is evaluated and the remaining term is modeled, essentially transfering the closure problem to the right-hand side of the filtered Navier-Stokes equation:
 \begin{equation}
 \overline{\rho u_\mathrm{i} u_\mathrm{j}} = \bar{\rho} \tilde{u}_\mathrm{i} \tilde{u}_\mathrm{j} 
 +\underbrace{ (\overline{\rho u_\mathrm{i} u_\mathrm{j}} - \bar{\rho} \tilde{u}_\mathrm{i} \tilde{u}_\mathrm{j} ) }_{\sigma_\mathrm{ij}} \: ,
@@ -30,5 +30,5 @@ In general, filters do not commute when variable filter width is used. To be acc
 
 
 \subsubsection{Sub-filter scale (SFS) modelling}
-The SFS terms (see section ~\ref{section:Favre}) need to be modeled in LES, since they have a pronounced effect on the resolved scales. The energy cascade, first described by Richardson in 1922, explains how the Turbulent Kinetic Energy is mainly contained in the larger scales, and dissipated by the smallest scales via viscosity.\cite{Pope:2005}.\par
+The SFS terms (see Section ~\ref{subsection:Favre}) need to be modeled in LES, since they have a pronounced effect on the resolved scales. The energy cascade, first described by Richardson in 1922, explains how the Turbulent Kinetic Energy is mainly contained in the larger scales, and dissipated by the smallest scales via viscosity.\cite{Pope:2005}.\par
 A number of approaches have been used to model the SFS terms. One of the first was by Smagorinsky \cite{Smagorinsky:1963} which models SFS stress tensors and the Reynolds' stress tensor. This approach also defines a SFS eddy viscosity which is in turn used to relate SFS stresses to the filtered strain rates, based on the assumption that the SFS stress tensor behaves similar to the viscous stress tensor, itself proportional to the Strain rate tensor. The model goes ahead to express the SFS eddy viscosity as proportional to the magnitude of the filtered strain rate tensor. The constant of proportionality is termed the Smagorinsky Coefficient. In the case where the Smagorinsky coefficient is valid only for an optimized flow regime, we obtain the dynamic Smagorinsky model. This will likely be the model of choice for this research.

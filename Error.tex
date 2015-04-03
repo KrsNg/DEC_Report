@@ -38,7 +38,7 @@ The basis for selective mesh refinement is the need to refine the mesh where the
 Two main a posteriori approaches are the:
 \begin{itemize}
 \item gradient-based: this is the more commonplace, and some useful discussions have been done by Giles and Pierce ~\cite{Giles:2000}
-\item adjoint-based: this will be described in more detail in section ~\ref{section:Adjoint}. Extensive work has been done by Giles and Pierce, ~\cite{Giles:2000}, Venditti and Darmofal ~\cite{Venditti:2000, Venditti:2002, Venditti:2003} Fidkowski and Darmofal: ~\cite{Fidkowski:2011} 
+\item adjoint-based: this will be described in more detail in Section ~\ref{section:Adjoint}. Extensive work has been done by Giles and Pierce, ~\cite{Giles:2000}, Venditti and Darmofal ~\cite{Venditti:2000, Venditti:2002, Venditti:2003} Fidkowski and Darmofal: ~\cite{Fidkowski:2011} 
 \end{itemize}
 
 
@@ -69,5 +69,5 @@ In these simulations, the mesh or discretization order is changed based on the r
 \end{figure}  
 
 
-The number of cells to reach a convergence criteria is reduced in the case of figure \ref{fig:rhoError} by a factor of approximately $1.5$ Image sources: Freret and Groth,~\cite{Freret:2015} and Williamschen and Groth~\cite{Williamschen:2013}\\
+The number of cells to reach a convergence criteria is reduced in the case of figure \ref{fig:rhoError} by a factor of approximately $50$. Freret and Groth,~\cite{Freret:2015} and Williamschen and Groth~\cite{Williamschen:2013}.
 A clear disadvantage is that for the gradient based approach, in spite of more mesh refinement, the error norm does not reduce. The graph reveals this asymptotic behavior of the convergence, yet for increased number of cells, there should be continual reduction in the density error norm.

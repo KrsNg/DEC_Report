@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: Dec_report_Draft_2.aux
+The top-level auxiliary file: Chris_DEC_Report_Draft_3.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: appendix.aux
 Database file #1: journals-full.bib
@@ -11,7 +11,7 @@ Database file #3: chris_ref.bib
 Warning--empty journal in vreman:1995
 You've used 34 entries,
             1791 wiz_defined-function locations,
-            870 strings with 13088 characters,
+            870 strings with 13100 characters,
 and the built_in function-call counts, 6003 in all, are:
 = -- 555
 > -- 253

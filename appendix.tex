@@ -1,7 +1,7 @@
 %%=================================================
 \section{Appendix} 
 \setcounter{equation}{0}
-\subsection{Navier Stokes Equations} \label{section:Navier}
+\subsection{Navier Stokes Equations} \label{subsection:Navier}
 The conservation equations
 for a thermally perfect reactive mixture of $N$ chemical species
 evolving in time, $t$, and space, $\Vector{x}$, can then be written
@@ -60,7 +60,7 @@ where
 
 
 %%===================================================
-\subsection{Favre-Averaged Navier Stokes Equations} \label{section:Favre}
+\subsection{Favre-Averaged Navier Stokes Equations} \label{subsection:Favre}
 Favre-Filtering, essentially a density-weighted filtering procedure is defined as:
 \begin{equation}
  \tilde{\phi}=\frac{\overline{\rho \phi}}{\overline{\rho}},
@@ -185,3 +185,79 @@ Following the work of Knight \etal.~\cite{knight:1998}, term \textbf{VI} (the SF
 \end{equation}
 %
 Term \textbf{VII} involves the SFS species fluxes (term \textbf{VIII}) and is closed with the modelled SFS species fluxes. 
+
+
+
+%===================================================================================================
+\subsection{Derivation of the discrete adjoint equation} \label{subsection:DerivAdj}
+If \textbf{R} is the set of all residuals for all cells in the domain, then the systems of equations can be written as:
+\begin{equation}
+\textbf{R}(\textbf{U}) = 0
+\end{equation}
+Considering a scalar output of interest \cite{Fidkowski:2013}, say, $J$, we can define it such that:
+\begin{equation}
+J = J(\mathbf{U})
+\end{equation}
+where U is a vector containing the solution variable. We define a discrete Adjoint, $\Psi \in \mathbb{R}^N$ as a vector of sensitivities of the output to the $N$ residuals. Each entry of the adjoint essentially tells us the effect that a perturbation in the corresponding entry within the residual vector would have on output $J$. Consider the case fo a residual perturbation due to a change to the input parameter, $\mu$, and $\mu \in \mathbb{R}^{N_p}$. A local sensitivity analysis can be applied as follows:\par
+\begin{equation} \label{eqn:chain}
+\underbrace{\mu}_{\text{inputs} ~\in~\mathbb{R}^{N_\mu}} ~\to~ \underbrace{\textbf{R}(\textbf{U},\textbf{$\mu$}) = 0}_{\text{\textit{N} equations}} ~ \to ~ \underbrace{\textbf{U}}_{\text{state} ~\in~ \mathbb{R}^N} ~\to~ \underbrace{\text{\textit{J}(\textbf{U})}}_\text{output(scalar)} 
+\end{equation}
+
+To monitor the change of $J$ with $\mu$,
+\begin{equation}
+\frac{dJ}{d\mu} ~\in~ \mathbb{R}^{1~\times~N_{\mu}} = N_\mu ~ \text{sensitivities}
+\end{equation}
+
+recalling $\mu \in \mathbb{R}^{N_p}$. If $J$ depended directly on $\mu$ then we would have had ${dJ}/{d\mu}$, but in the scenario we consider the case that $J = J(\mathbf{U})$ alone. To evaluate the $N_\mu$ sensitivities we could use: \textit{finite differencing} where the inputs are  perturbed one at a time;  \textit{forward linearization} where the sequence of operations in Equation ~\eqref{eqn:chain} are linearized; and, lastly, the \textit{adjoint approach} which requires an inexpensive residual perturbation calculation, followed by an adjoint weighting to compute the effect on the output:\par
+\begin{equation}
+\frac{dJ}{d\mu} = \Psi^T ~\frac{\partial R}{\partial \mu}
+\end{equation}
+One of the key ideas behind the adjoint approach is that the forward problem need be solved only once to evaluate a sensitivity. Given a particular input, $\mu$, we could solve the system to find \textbf{U} such that \textbf{R(U,$\mu$} $ = 0$. Once we perturb $\mu ~\to~ \mu + \delta \mu$, to find the effect on $J$, we would otherwise need to re-solve the discretized system, which would be an expensive step. The Adjoint, on the other hand, precomputes the eddect of \textbf{R} on $J$. The resulting $N$ sensitiviteis are stored in vector $\Psi$.\par
+
+Consider the chain of events in computing sensitivities (i.e. the effects of a small perturbance of the input, $\delta \mu$) via a direct approach:
+\begin{enumerate}
+\item Input:  $\mu ~\to~ \mu + \delta \mu$
+\item Residual: \textbf{R(U, $\mu ~+~ \delta \mu$)} $=$ $\delta$\textbf{R} $\neq 0$ ~$\to$~ \textbf{R(U, $\mu$)} $+$ $\frac{\partial \text{\textbf{R}}}{\partial \mu}$ $\bigg|_{\textbf{U, $\mu$}}$ $\delta \mu = \delta$\textbf{R}
+\item State: \textbf{R(U $+ \delta$U, $ \mu + \delta\mu$)} $= ~0$ ~$\to$~ \textbf{R(U, $\mu$)} $+$ $\frac{\partial \text{\textbf{R}}}{\partial \mu}$ $\bigg|_{\textbf{U, $\mu$}}$ $\delta \mu$ $ + \frac{\partial \text{\textbf{R}}}{\partial \text{\textbf{U}}}$     $\bigg|_{\textbf{U, $\mu$}} \delta \mathbf{U}  = 0$
+\item Output: $J(\textbf{U} + \delta \textbf{U}) = J(\textbf{U}) + \delta J ~\to~ \delta J = \frac{\partial J}{\partial \textbf{U}} \delta \mathbf{U} $
+\end{enumerate}
+
+Subtracting step 2 from 3:
+\begin{equation}
+\begin{split}
+\frac{\partial \textbf{R}} {\partial \textbf{U}} \bigg|_{\textbf{U, $\mu$}} \delta \mathbf{U} &= - \delta \mathbf{R} \\
+\delta \textbf{U} &= - \left[\frac{\partial \textbf{R}}{\partial \textbf{U}} \right]^{-1} \delta \textbf{R} \\
+\end{split}
+\end{equation}
+
+We combine this to the output linearization in step 4 to give the output perturbation, $\delta \textbf{U}$ in terms of the residual perturbation, $\delta \textbf{R}$:
+\begin{equation}
+\begin{split}
+\delta J &= \frac{\partial J}{\partial \mathbf{U}} \delta \textbf{U} \\
+& = \underbrace{\frac{\partial J}{\partial \mathbf{U}} \left[\frac{\partial \textbf{R}}{\partial \textbf{U}} \right]^{-1}}_{\Psi^T ~\in~ \mathbb{R}^\textit{N}} \delta \textbf{R}
+\end{split}
+\end{equation}
+
+The \textit{Adjoint Equation} is then written as:
+\begin{equation}
+\left( \frac{\partial \textbf{R}}{\partial \textbf{U}} \right)^T ~\Psi~ = \left(\frac{\partial J}{\partial \textbf{U}}\right)^T
+\end{equation}
+
+
+%=====================================================================================================
+\subsection{Error estimation indicators} \label{subsection:ErrEstInd}
+This is based on the work of Venditti and Darmofal~\cite{Venditti:2000} and Fidkowski and Darmofal~\cite{Fidkowski:2011}. The goal is to reduce discretization errors based on the mesh resolution.
+
+\begin{itemize}
+\item Consider 2 levels of mesh resolution: coarse (H) and fine (h). We calculate the state ($\mathbf{U}_H$) and functional ($\mathbf{J}_H(\mathbf{U}_H)$) on the coarse space. Residual, $\mathbf{R}_H(\mathbf{U}_H) = 0$
+\item We would like to evaluate the functional on the fine space, $\mathbf{J}_h(\mathbf{U}_h)$ (expensive). Thus we use a prolongation operator ($\mathbf{U}_h^H = I_h^H \mathbf{U}_H$) to inject the fine space state onto the coarse space state.
+\item The output error, $\delta \mathbf{J} \equiv \mathbf{J}_H(\mathbf{U}_H) - \mathbf{J}_h(\mathbf{U}_h) \neq 0$
+\item Expect the new residual, $\mathbf{R}_h(\mathbf{U}_h^H) \neq 0$ 
+\item The injected coarse state solves: $ \mathbf{R}_h(\mathbf{U}_h^\prime) - \mathbf{R}_h(\mathbf{U}_h^H) = 0 \rightarrow (\mathbf{U}_h^\prime) = (\mathbf{U}_h^H)$
+\item $ \delta \mathbf{J} \approx  \mathbf{J}_h(\mathbf{U}_h^H) - \mathbf{J}_h(U_h) = \mathbf{\Psi}_h^T \delta \mathbf{R}_h = -\mathbf{\Psi}_h^T \mathbf{R}_h(\mathbf{U}_h^H)   $, using the definition of the fine space adjoint, $\mathbf{\Psi}_h$
+\item Error estimate is the value of $\delta \mathbf{J}$, and does not need evaluation of $\mathbf{U_h}$, primal solution on the fine space. We can use this error estimate as a flag for refinement, given some threshold value
+\end{itemize}
+
+ 
+ 
+%=======================================================================================================

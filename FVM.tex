@@ -1,5 +1,10 @@
-\subsection{Finite volume method}
-Finite volume methods (FVM) typically apply a cell-centered spatial discretization. The solution domain  is split into control volumes ~\cite{Toro:1997} and the integral form of the governing equations applied. The Navier Stokes and Favre-filtered Navier Stokes equations, which are of interest here, are described in the Appendix, see Section ~\ref{subsection:Navier} and ~\ref{subsection:Favre}. The Favre-filtered form of the governing equations, species mass fractions, along with the equation of state which are used the LES of turbulent reactive flows and can be expressed in the following general weak conservation form using matrix-vector notation: ~\cite{Neto:2014}
+\subsection{Finite volume method (FVM)}
+Finite volume methods (FVM) typically apply a cell-centered spatial discretization. 
+
+In such an approach, the solution domain is divided into
+discrete control volumes~\cite{Toro:1997} and the integral form of the governing equations are solved in each element or cell. The Favre-filtered form of the Navier Stokes equations are of primary interest here and will be used for the prediction of turbulent reactive flows.  They are described
+in greater detail in the appendix (see Sections~\ref{subsection:Navier} and~\ref{subsection:Favre}).
+The weak conservation form of the Favre-filtered Navier-Stokes (FANS) equations can be expressed using matrix-vector notation~\cite{Neto:2014} as:
 %%
 \begin{equation}
 \label{eq:weak.form}
@@ -24,7 +29,9 @@ The flux dyad can further be decomposed into two components and written as:
 \item $\vec{\mathcal{F}}^{\mathrm{V}} =  \vec{\mathcal{F}}^{\mathrm{V}}(\overline{\Vector{U}}, \vec{\nabla} \overline{\Vector{U}})$ which contains the elliptic or viscous components of the fluxes.
 \end{itemize}
 
-Inviscid fluxes (the hyperbolic part) within each cell (control volume) are resolved via a solution to a Riemann Problem, given the different left and right states for each cell. The goal is to obtain the final cell-centered, cell-average value. Typically, approximate Riemann solvers are used to this end.
+\noindent The inviscid fluxes, the hyperbolic part, at the face of each computational cell or control volume are resolved via the solution to a Riemann Problem, given the different left and right states for each cell. Godunov's paper~\cite{godunov:1959} discusses ways to evaluate solutions to the Riemann problem. The goal is to obtain the final cell-centered, cell-average value. Typically, approximate Riemann solvers are used to this end. The viscous fluxes (elliptic components of the flux) at the
+cell boundaries are evaluated using centrally weighted
+schemes. See Gao et al~\cite{gao:2006a, gao:2011}
 
 For the purpose of CFD, these governing equations in PDE form need to be discretized. The integral form of Eq.~(\ref{eq:weak.form}) is applied to a hexahedral reference cell $(i,j,k)$ and an $N_G$-point Gaussian quadrature numerical integration procedure is used to evaluate the solution flux along each of the $N_f$ faces of the cell, to obtain:
 
@@ -49,8 +56,9 @@ where $\omega_m$ are the face quadrature weighting coefficients, $\omega_n$ are 
 \subsubsection{Central essentially non-oscillatory (CENO) scheme}
 \label{section:CENO}
 In solution reconstruction, given cell average values, a Taylor series expansion polynomial is defined to represent the variation of the solution within the particular cell and the average solution of its neighbors. 
-The High-Order CENO reconstruction scheme of Ivan and Groth [~\cite{ivan:2007}, \cite{ivan:2013b}] uses a \textit{k}-exact least-squares reconstruction technique, essentially a $k^{th}$ order Taylor series expansion of solution variable $U$ about the cell center. This technique is applied to a monotonicity-preserving limited linear scheme. For Favre-Averaged Navier Stokes (FANS), \textit{k} corresponds to the spatial accuracy of the scheme. A smoothness indicator is used to switch between reconstruction procedures.\par
-Some of the advantages of CENO are ~\cite{Groth:2013}:
+The high order CENO reconstruction scheme of Ivan and Groth~\cite{ivan:2007, ivan:2013b} uses a \textit{k}-exact least-squares reconstruction technique, essentially a $k^{th}$ order Taylor series expansion of solution variable $U$ about the cell center. This technique is applied to a monotonicity-preserving limited linear scheme. For solution of the FANS equations having viscous terms, \textit{k}
+corresponds directly to the spatial accuracy of the scheme. A smoothness indicator is used to switch between reconstruction procedures.\par
+Some of the advantages of CENO are~\cite{Groth:2013}:
 \begin{itemize}
 \setlength\itemsep{0.1em}
 \item Provides accuracy of other essentially non-oscillatory (ENO) schemes while maintaining monotonicity near discontinuities;

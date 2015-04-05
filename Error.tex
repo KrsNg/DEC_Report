@@ -1,4 +1,4 @@
-\section{Error}
+\section{Error estimation}
 
 \subsection{Overview on error}
 We can broadly classify the two key sources of error in CFD as follows:
@@ -25,20 +25,20 @@ We can broadly classify the two key sources of error in CFD as follows:
 \end{itemize}
 	
 	
-\subsection{Error estimation}
+\subsection{Ways to estimate error}
 The basis for selective mesh refinement is the need to refine the mesh where the cells have a very critical effect on the solution, while coarsening the less critical areas to save on computational costs. There are two types of error estimation procedures available:
 \begin{itemize}
-\item a priori error estimators: these predict the long-term behavior of the errors in the discretization. They are not actually designed to approximate the error estimate for a given mesh. 
-\item a posteriori error estimators: these use the simulation results to derive estimates of solution errors. Furthermore, these results are used to guide adaptive schemes:
+\item \textit{a-priori} error estimators: these predict the long-term behavior of the errors in the discretization. They are not actually designed to approximate the error estimate for a given mesh. 
+\item \textit{a-posteriori} error estimators: these use the simulation results to derive estimates of solution errors. Furthermore, these results are used to guide adaptive schemes:
 \begin{itemize}
 \item The mesh is locally refined ($h$-refinement) 
-\item The degree of polynomial solution representation is raised ($p$-increment)
+\item The degree of polynomial solution representation is raised ($p$-refinement)
 \end{itemize}
 \end{itemize}
 Two main a posteriori approaches are the:
 \begin{itemize}
-\item gradient-based: this is the more commonplace, and some useful discussions have been done by Giles and Pierce ~\cite{Giles:2000}
-\item adjoint-based: this will be described in more detail in Section ~\ref{section:Adjoint}. Extensive work has been done by Giles and Pierce, ~\cite{Giles:2000}, Venditti and Darmofal ~\cite{Venditti:2000, Venditti:2002, Venditti:2003} Fidkowski and Darmofal: ~\cite{Fidkowski:2011} 
+\item gradient-based: this is the more commonplace, see Groth and co-workers~\cite{Groth:1999, williamschen:2013a, zhang:2011b, Freret:2015, northrup:2005} and some useful discussions have been done by Giles and Pierce~\cite{Giles:2000}
+\item adjoint-based: this will be described in more detail in Section~\ref{section:Adjoint}. Extensive work has been done by Giles and Pierce,~\cite{Giles:2000}, Venditti and Darmofal~\cite{Venditti:2000, Venditti:2002, Venditti:2003}, and Fidkowski and Darmofal~\cite{Fidkowski:2011} 
 \end{itemize}
 
 
@@ -69,5 +69,4 @@ In these simulations, the mesh or discretization order is changed based on the r
 \end{figure}  
 
 
-The number of cells to reach a convergence criteria is reduced in the case of figure \ref{fig:rhoError} by a factor of approximately $50$. Freret and Groth,~\cite{Freret:2015} and Williamschen and Groth~\cite{Williamschen:2013}.
-A clear disadvantage is that for the gradient based approach, in spite of more mesh refinement, the error norm does not reduce. The graph reveals this asymptotic behavior of the convergence, yet for increased number of cells, there should be continual reduction in the density error norm.
+Work by Freret and Groth~\cite{Freret:2015} and Williamschen and Groth~\cite{Williamschen:2013} reveals that the number of cells to reach a convergence criteria is reduced in the case of figure \ref{fig:rhoError} by a factor of approximately $50$. A clear disadvantage is that for the gradient based approach, in spite of more mesh refinement, the error norm does not reduce. The graph reveals this asymptotic behavior of the convergence, yet for increased number of cells, there should be continual reduction in the density error norm.

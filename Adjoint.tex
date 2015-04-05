@@ -2,23 +2,21 @@
 \label{section:Adjoint}
 \subsection{Introduction}
 
-In Gradient-based Mesh adaptation techniques, emphasis is placed on the change of values of the Solution variables across cells, and any high rates of change require a mesh refinement suitable enough to capture a smoother transition, e.g. across a shock wave that forms on the upper surface of an airfoil in transonic regime. In this scenario, a quantity such as density or pressure could be monitored.\par
+In gradient-based mesh adaptation techniques, emphasis is placed on the change of values of the Solution variables across cells, and any high rates of change require a mesh refinement suitable enough to capture a smoother transition, e.g. across a shock wave that forms on the upper surface of an airfoil in transonic regime. In this scenario, a quantity such as density or pressure could be monitored.\par
 
-To make error estimation more relevant to engineering applications it is useful to assess the error made in predicting an integral quantity which represents an engineering output. This output is called the functional. For example,the output can be the average pressure on a wall. The adjoint technique is a sensitivity analysis, that measures the rates of change of a design functional to a given change in the input. \par
-
-Extensive research has been performed by Giles and Pierce ~\cite{Giles:2000}, Becker and Rannacher~\cite{Becker:2001}, Venditti and Darmofal~\cite{Venditti:2000, Venditti:2002} and a review carried out by Fidkowski and Darmofal ~\cite{Fidkowski:2011}.
+To make error estimation more relevant to engineering applications it is useful to assess the error made in predicting an integral quantity which represents an engineering output. This output is called the functional. For example,the output can be the average pressure on a wall. The adjoint technique is a sensitivity analysis, that measures the rates of change of a design functional to a given change in the input. Extensive research has been performed by Giles and Pierce~\cite{Giles:2000}, Becker and Rannacher~\cite{Becker:2001}, Venditti and Darmofal~\cite{Venditti:2000, Venditti:2002} and a review carried out by Fidkowski and Darmofal~\cite{Fidkowski:2011}. \par
 
 The adjoint has two main formulations: the \textit{continuous} and the \textit{discrete}. In the \textbf{continuous} approach, an objective function is formed to enforce the flow conditions (i.e. primal nonlinear PDEs). Next, linear perturbations to the primal flow variables are considered, while enforcing the objective function to remain constant with respect to the perturbations. As a result, analytical adjoint equations are obtained, and relevant boundary conditions applied. The formulation is then discretized directly. \par
 
 For the \textbf{discrete} formulation, the nonlinear discrete residual equations from the primal problem are the starting point, and, similar to the continual approach, linear perturbations are applied. If the system is adjoint consistent, i.e. discrete adjoint = continuous adjoint, then there is no need for boundary condition specification. These get automatically incorporated via the primal residual. Finally, a linear system of equations is established with the only necessary evaluation being the linear sensitivities of the functional and the Jacobian matrix associated with the primal residual. \par
 
-Adjoint-based Error Estimation focuses on the \textit{sensitivities}, whereby some output of interest (henceforth termed as a \textit{functional}), e.g. Lift on an airfoil, is sensitive to the mesh refinement levels upstream of the airfoil along the chord line. The Adjoint approach is a more efficient, albeit expensive, criteria for mesh refinement: only one calculation for the sensitivity needs to be calculated, whereas for gradient based approaches, each quantity will require a unique calculation.\par
+Adjoint-based error estimation focuses on the \textit{sensitivities}, whereby some output of interest (henceforth termed as a \textit{functional}), e.g. Lift on an airfoil, is sensitive to the mesh refinement levels upstream of the airfoil along the chord line. The Adjoint approach is a more efficient, albeit expensive, criteria for mesh refinement: only one calculation for the sensitivity needs to be calculated, whereas for gradient based approaches, each quantity will require a unique calculation.\par
 
 The adjoint-based method applies a \textit{posteriori} technique, in that an initial solution, known as the \textit{Primal solution}, needs to first be evaluated - no refinement criteria can be carried out until the primal solution is established. Once this is met, error estimates can be evaluated from the adjoint, and this could be used as a mesh refinement criteria. \par
 
-One of the main benefits of adjoint vs gradient based methods are that the adjoint technique is a one time calculation for the sensitivity of a single output to several inputs, whereas a gradient based approach requires a separate evaluation for each new sensitivity. ~\cite{Giles:2000}
+One of the main benefits of adjoint- vs. gradient-based methods are that the adjoint technique is a one-off calculation for the sensitivity of a single output to several inputs, whereas a gradient based approach requires a separate evaluation for each new sensitivity~\cite{Giles:2000}.
 
-Other key research on adjoints applied to aerodynamic flows was performed by Giles and Pierce ~\cite{Giles:2000}, Becker and Rannacher ~\cite{Becker:2001} and Venditti and Darmofal ~\cite{Venditti:2003}, with a key summary done by Fidkowski and Darmofal \cite{Fidkowski:2011}. The \textit{discrete} adjoint equation is written as:
+Other key research on adjoints applied to aerodynamic flows was performed by Giles and Pierce~\cite{Giles:2000}, Becker and Rannacher~\cite{Becker:2001} and Venditti and Darmofal~\cite{Venditti:2003}, with a key summary done by Fidkowski and Darmofal~\cite{Fidkowski:2011}. The \textit{discrete} adjoint equation is written as:
 \begin{equation}
 \left( \frac{\partial \textbf{R}}{\partial \textbf{U}} \right)^T ~\Psi~ = \left(\frac{\partial J}{\partial \textbf{U}}\right)^T
 \end{equation}
@@ -26,25 +24,25 @@ Please refer to Section~\ref{subsection:DerivAdj} of the appendix for the detail
 
 Once we have $\Psi$, no more solves are required for the system. The calculation of ${\partial \mathbf{R}}$/$\partial{\mathbf{\mu}}$ (henceforth called the \textit{Jacobian}) is much cheaper compared to a forward solve. Ways to calculate ${\partial{\mathbf{J}}}$/${\partial{\mathbf{U}}}$:
 \begin{itemize}
-\item Complexifying variables by calculating derivatives using complex numbers. Martins et al, ~\cite{Martins:2003}
-\item Finite Differences where the state $\mathbf{U}$ is perturbed to get updated values of $\mathbf{R}(\mathbf{U})$ 
-\item Automatic Differentiation Techniques. The ADIFOR tool written by Bischof, ~\cite{Bischof94theadifor}.
+\item Complexifying variables by calculating derivatives using complex numbers. Martins et al~\cite{Martins:2003}
+\item Finite differences where the state $\mathbf{U}$ is perturbed to get updated values of $\mathbf{R}(\mathbf{U})$ 
+\item Automatic differentiation techniques. The ADIFOR tool written by Bischof~\cite{Bischof94theadifor}.
 \item Analytically - by evaluating the exact Jacobian, and this is an expensive, but very accurate, process.
-\item Approximate Jacobian - This will be the starting approach, and then an evaluation will be made on cost and accuracy. A decision will thereafter be made on whether to use the Analytical approach or not. Northrup \cite{Northrup:2013} implemented the script within the CFFC code that builds part of the structure of the Flux Jacobian matrix.
+\item Approximate Jacobian - This will be the starting approach, and then an evaluation will be made on cost and accuracy. A decision will thereafter be made on whether to use the analytical approach or not. Northrup \cite{Northrup:2013} implemented the script within the CFFC code that builds part of the structure of the flux Jacobian matrix.
 \end{itemize}
 
 \subsection{Solution of linear systems}
-The Adjoint problem therefore takes the form of a linear system of equations, $\mathbf{Ax}=\mathbf{b}$, which will be solved utilizing the Trilinos set of packages, written by Sandia National Labs. Trilinos contains very powerful and parallelizable linear algebra solvers. This suite of programs has already been linked to the CFFC code within the SciNET network.
+The adjoint problem therefore takes the form of a linear system of equations, $\mathbf{Ax}=\mathbf{b}$, which will be solved utilizing the Trilinos set of packages, written by Sandia National Labs. Trilinos contains very powerful and parallelizable linear algebra solvers. This suite of programs has already been linked to the CFFC code within the SciNET network.
 
 \subsection{Use of solution error estimates in mesh adaptation}
-The Adjoint solution will indicate areas of higher sensitivity to given changes in input, and this information could indicate a \textit{posteriori} where the mesh would need to be better refined for higher accuracy.
+The adjoint solution will indicate areas of higher sensitivity to given changes in input, and this information could indicate \textit{a-posteriori} where the mesh would need to be better refined for higher accuracy.
 
 \subsection{Implementing isotropic mesh refinement}
-Since the Isotropic Adaptive Mesh Refinement (AMR) is easier as an initial implementation, this will be the first step attempted before applying Anisotropic AMR which further decreases the cell counts, for a comparable level of accuracy that can be achieved by Isotropic AMR.
+Since the isotropic adaptive mesh refinement (AMR) is easier as an initial implementation, this will be the first step attempted before applying anisotropic AMR which further decreases the cell counts, for a comparable level of accuracy that can be achieved by isotropic AMR.
 
 \subsubsection{Steady adjoints}
 
-For steady simulations, the solution of the Adjoint is a one time event, and the computational cost is low.
+For steady simulations, the solution of the adjoint is a one time event, and the computational cost is low.
 
 \subsubsection{Unsteady adjoints}
 For unsteady adjoints, the adaptation is achieved by marching the solution forward in time while evaluating $\psi$, and then marching backwards in time. Once all the sensitivities are obtained, they can be used to refine the mesh at those time levels. The tolerance is compared to the set threshold value and repeat until convergence.\par

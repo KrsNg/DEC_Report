@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.10)  5 APR 2015 16:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.10)  5 APR 2015 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Chris_DEC_Report_Draft_3.tex
-(./Chris_DEC_Report_Draft_3.tex
+**Chris_DEC_Report_FinalCopy.tex
+(./Chris_DEC_Report_FinalCopy.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
@@ -301,7 +301,7 @@ Package hyperref Info: Option `colorlinks' set `false' on input line 16.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2009/09/02 v1.0a change counter resetting
 )
-(./Chris_DEC_Report_Draft_3.aux
+(./Chris_DEC_Report_FinalCopy.aux
 
 LaTeX Warning: Label `fig:3D Block' multiply defined.
 
@@ -315,7 +315,7 @@ LaTeX Warning: Label `fig:3D Block' multiply defined.
 LaTeX Warning: Label `sub@fig:3D Block' multiply defined.
 
 (./appendix.aux))
-\openout1 = `Chris_DEC_Report_Draft_3.aux'.
+\openout1 = `Chris_DEC_Report_FinalCopy.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
 LaTeX Font Info:    ... okay on input line 72.
@@ -378,9 +378,9 @@ LaTeX Info: Redefining \ref on input line 72.
 LaTeX Info: Redefining \pageref on input line 72.
 LaTeX Info: Redefining \nameref on input line 72.
 
-(./Chris_DEC_Report_Draft_3.out) (./Chris_DEC_Report_Draft_3.out)
+(./Chris_DEC_Report_FinalCopy.out) (./Chris_DEC_Report_FinalCopy.out)
 \@outlinefile=\write3
-\openout3 = `Chris_DEC_Report_Draft_3.out'.
+\openout3 = `Chris_DEC_Report_FinalCopy.out'.
 
 
 <./figs/utias_logo_blue.jpg, id=144, 651.8754pt x 826.7688pt>
@@ -417,7 +417,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.129 \item L
-             arge eddy simulation [1
+             arge eddy simulation (LES) [1
 
 ] (./AMR.tex
 <figs/ghostblock.png, id=174, 683.55376pt x 554.07pt>
@@ -495,41 +495,24 @@ File: figs/shockCubeAniso3.jpg Graphic file (type jpg)
 <use figs/shockCubeAniso3.jpg>
 Package pdftex.def Info: figs/shockCubeAniso3.jpg used on input line 66.
 (pdftex.def)             Requested size: 113.688pt x 101.17645pt.
-) (./FVM.tex
-
-LaTeX Warning: Citation `godunov:1959' on page 4 undefined on input line 32.
-
-
-LaTeX Warning: Citation `gao:2006a' on page 4 undefined on input line 34.
-
-
-LaTeX Warning: Citation `2011' on page 4 undefined on input line 34.
-
-[4 <./figs/shockCubeIso0.jpg> <./figs/shockCubeIso3.jpg> <./figs/shockCubeAniso
-0.jpg> <./figs/shockCubeAniso3.jpg>]) (./LES.tex [5] [6]) (./CombModelling.tex
-[7]) (./Error.tex [8]
-
-LaTeX Warning: Citation `williamschen:2013a' on page 9 undefined on input line 
-40.
-
-
-LaTeX Warning: Citation `northrup:2005' on page 9 undefined on input line 40.
-
-<./figs/outflowIso.png, id=315, 745.78625pt x 664.4825pt>
+) (./FVM.tex [4 <./figs/shockCubeIso0.jpg> <./figs/shockCubeIso3.jpg> <./figs/s
+hockCubeAniso0.jpg> <./figs/shockCubeAniso3.jpg>] [5]) (./LES.tex [6]) (./CombM
+odelling.tex [7]) (./Error.tex [8]
+<./figs/outflowIso.png, id=323, 745.78625pt x 664.4825pt>
 File: ./figs/outflowIso.png Graphic file (type png)
 
 <use ./figs/outflowIso.png>
 Package pdftex.def Info: ./figs/outflowIso.png used on input line 60.
 (pdftex.def)             Requested size: 133.69745pt x 119.115pt.
 
-<./figs/outflowAniso.png, id=317, 745.78625pt x 664.4825pt>
+<./figs/outflowAniso.png, id=325, 745.78625pt x 664.4825pt>
 File: ./figs/outflowAniso.png Graphic file (type png)
 
 <use ./figs/outflowAniso.png>
 Package pdftex.def Info: ./figs/outflowAniso.png used on input line 63.
 (pdftex.def)             Requested size: 133.69745pt x 119.115pt.
 
-<./figs/outflowError.png, id=319, 745.78625pt x 664.4825pt>
+<./figs/outflowError.png, id=327, 745.78625pt x 664.4825pt>
 File: ./figs/outflowError.png Graphic file (type png)
 
 <use ./figs/outflowError.png>
@@ -546,27 +529,27 @@ on_indicators.tex) (./Scope.tex [12])
 \c@prop=\count126
 \c@lem=\count127
 \c@rem=\count128
- [13] [14] <figs/Poisson2D.png, id=403, 560.0925pt x 472.6458pt>
+ [13] [14] <figs/Poisson2D.png, id=413, 560.0925pt x 472.6458pt>
 File: figs/Poisson2D.png Graphic file (type png)
 
 <use figs/Poisson2D.png>
 Package pdftex.def Info: figs/Poisson2D.png used on input line 96.
 (pdftex.def)             Requested size: 210.63086pt x 177.06458pt.
 
-<figs/3D_Poisson.png, id=405, 1184.425pt x 1052.93375pt>
+<figs/3D_Poisson.png, id=415, 1184.425pt x 1052.93375pt>
 File: figs/3D_Poisson.png Graphic file (type png)
 
 <use figs/3D_Poisson.png>
 Package pdftex.def Info: figs/3D_Poisson.png used on input line 101.
 (pdftex.def)             Requested size: 199.41486pt x 177.06458pt.
 ) (./LES_example.tex
-<figs/fsd2_0ms.png, id=407, 1178.4025pt x 1067.99pt>
+<figs/fsd2_0ms.png, id=417, 1178.4025pt x 1067.99pt>
 File: figs/fsd2_0ms.png Graphic file (type png)
  <use figs/fsd2_0ms.png>
 Package pdftex.def Info: figs/fsd2_0ms.png used on input line 8.
 (pdftex.def)             Requested size: 139.53218pt x 126.47249pt.
 
-<figs/fsd4_25ms.png, id=408, 1178.4025pt x 1072.005pt>
+<figs/fsd4_25ms.png, id=418, 1178.4025pt x 1072.005pt>
 File: figs/fsd4_25ms.png Graphic file (type png)
 
 <use figs/fsd4_25ms.png>
@@ -577,7 +560,7 @@ Underfull \hbox (badness 4556) in paragraph at lines 13--13
 []\OT1/cmr/m/n/9 (b) At t=4.25ms 5595 (8x8x8)
  []
 
-<figs/fsd7_0ms.png, id=409, 1178.4025pt x 1073.00874pt>
+<figs/fsd7_0ms.png, id=419, 1178.4025pt x 1073.00874pt>
 File: figs/fsd7_0ms.png Graphic file (type png)
 
 <use figs/fsd7_0ms.png>
@@ -588,14 +571,14 @@ Underfull \hbox (badness 4120) in paragraph at lines 18--18
 []\OT1/cmr/m/n/9 (c) At 7.0 ms, 18531 (8x8x8)
  []
 
-<./figs/Time_averaged_c_O2.png, id=410, 794.97pt x 705.63625pt>
+<./figs/Time_averaged_c_O2.png, id=420, 794.97pt x 705.63625pt>
 File: ./figs/Time_averaged_c_O2.png Graphic file (type png)
 
 <use ./figs/Time_averaged_c_O2.png>
 Package pdftex.def Info: ./figs/Time_averaged_c_O2.png used on input line 27.
 (pdftex.def)             Requested size: 227.96378pt x 202.3529pt.
 
-<./figs/Flame_temp.png, id=411, 794.97pt x 705.63625pt>
+<./figs/Flame_temp.png, id=421, 794.97pt x 705.63625pt>
 File: ./figs/Flame_temp.png Graphic file (type png)
 
 <use ./figs/Flame_temp.png>
@@ -604,13 +587,13 @@ Package pdftex.def Info: ./figs/Flame_temp.png used on input line 31.
  [15 <./figs/Poisson2D.png> <./figs/3D_Poisson.png (PNG copy)> <./figs/fsd2_0ms
 .png (PNG copy)> <./figs/fsd4_25ms.png (PNG copy)> <./figs/fsd7_0ms.png (PNG co
 py)>]) (./Adjoint_examples.tex
-<figs/20Rho.png, id=431, 794.97pt x 705.63625pt>
+<figs/20Rho.png, id=441, 794.97pt x 705.63625pt>
 File: figs/20Rho.png Graphic file (type png)
  <use figs/20Rho.png>
 Package pdftex.def Info: figs/20Rho.png used on input line 18.
 (pdftex.def)             Requested size: 256.46986pt x 227.64894pt.
 
-<./figs/20RhoAdj.png, id=432, 794.97pt x 705.63625pt>
+<./figs/20RhoAdj.png, id=442, 794.97pt x 705.63625pt>
 File: ./figs/20RhoAdj.png Graphic file (type png)
 
 <use ./figs/20RhoAdj.png>
@@ -629,21 +612,19 @@ PNG copy)>] [18]
  (./appendix.tex [19
 
 ] [20] [21] [22]) [23]
-(./Chris_DEC_Report_Draft_3.bbl [24
+(./Chris_DEC_Report_FinalCopy.bbl [24
 
 ] [25])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
  [26]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
- (./Chris_DEC_Report_Draft_3.aux (./appendix.aux))
+
+(./Chris_DEC_Report_FinalCopy.aux (./appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 213.
-Package rerunfilecheck Info: File `Chris_DEC_Report_Draft_3.out' has not change
-d.
-(rerunfilecheck)             Checksum: DD499F3DD333FEB999533D728A950EB8;2724.
-
-
-LaTeX Warning: There were undefined references.
+Package rerunfilecheck Info: File `Chris_DEC_Report_FinalCopy.out' has not chan
+ged.
+(rerunfilecheck)             Checksum: 8D6A6277AF278E1F1DCE387D55E272D7;2749.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -651,13 +632,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
  ) 
 Here is how much of TeX's memory you used:
- 7872 strings out of 493109
- 117638 string characters out of 6135003
- 207692 words of memory out of 5000000
- 10999 multiletter control sequences out of 15000+600000
+ 7875 strings out of 493109
+ 117732 string characters out of 6135003
+ 207847 words of memory out of 5000000
+ 10998 multiletter control sequences out of 15000+600000
  19053 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,26n,40p,1732b,443s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,26n,40p,1734b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
@@ -680,10 +661,10 @@ dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2014/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2014/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Chris_DEC_Report_Draft_3.pdf (27 pages, 3981195 bytes).
+Output written on Chris_DEC_Report_FinalCopy.pdf (27 pages, 3982913 bytes).
 PDF statistics:
- 642 PDF objects out of 1000 (max. 8388607)
- 550 compressed objects within 6 object streams
- 168 named destinations out of 1000 (max. 500000)
+ 652 PDF objects out of 1000 (max. 8388607)
+ 560 compressed objects within 6 object streams
+ 172 named destinations out of 1000 (max. 500000)
  434 words of extra memory for PDF output out of 10000 (max. 10000000)
 
